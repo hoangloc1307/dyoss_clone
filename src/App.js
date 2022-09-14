@@ -1,10 +1,27 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { publicRoutes } from '~/routes';
+import MasterLayout from '~/layouts/MasterLayout';
 
 function App() {
     return (
-        <div className="App">
-            <h1>Hello React</h1>
-        </div>
+        <BrowserRouter>
+            <MasterLayout>
+                <Routes>
+                    {publicRoutes.map((route, index) => {
+                        const Page = route.component;
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                element={<Page />}
+                            />
+                        );
+                    })}
+                </Routes>
+            </MasterLayout>
+        </BrowserRouter>
     );
 }
 
