@@ -1,6 +1,10 @@
-//Font
+@import './Variables.scss';
 
-//Variable
+//Font
+@font-face {
+    font-family: 'Gotham Light';
+    src: url('../../assets/fonts/SVN_Gotham_Light.woff');
+}
 
 //Init css
 * {
@@ -16,10 +20,16 @@ html {
 
 body {
     font-size: 1.6rem;
+    font-family: 'Gotham Light';
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }
 
 .container {
-    max-width: 96rem;
+    width: 96rem;
     margin-left: auto;
     margin-right: auto;
 }
