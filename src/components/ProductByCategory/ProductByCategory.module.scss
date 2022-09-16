@@ -1,0 +1,25 @@
+.product-list-title {
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+}
+
+.product-list-description {
+    width: 80%;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-item {
+    width: calc(100% / var(--column));
+    padding: 0 10px;
+}
