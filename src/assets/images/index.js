@@ -7,6 +7,10 @@ const images = {
     bannerHomePage: require('~/assets/images/rosa-bannerhomepage.jpg'),
     womenCategory: require('~/assets/images/02-1.jpg'),
     menCategory: require('~/assets/images/01-3.jpg'),
+    aboutImage: require('~/assets/images/mattrangdaykl.jpg'),
+    feature1: require('~/assets/images/img-100.jpg'),
+    feature2: require('~/assets/images/img-100-2.jpg'),
+    feature3: require('~/assets/images/img-100-3.jpg'),
     //Products
     product1: require('~/assets/images/product_images/01_01.jpg'),
     product1_2: require('~/assets/images/product_images/01_02.jpg'),

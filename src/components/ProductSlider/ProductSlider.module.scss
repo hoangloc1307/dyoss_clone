@@ -1,0 +1,47 @@
+.slider {
+    position: relative;
+}
+
+.slides {
+    width: 300px;
+    position: relative;
+}
+
+.btn-controls {
+    position: absolute;
+    top: 150px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .btn-prev,
+    .btn-next {
+        border: none;
+        cursor: pointer;
+        padding: 6px 12px;
+        background: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        width: 110px;
+        transform: rotate(-90deg);
+        border: 1px solid;
+        border-radius: 6px;
+    }
+
+    .btn-prev {
+        right: 90%;
+    }
+
+    .btn-next {
+        left: 90%;
+    }
+}
+
+//Overwrite css ProductCard
+.product-images {
+    box-shadow: none;
+}

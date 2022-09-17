@@ -4,10 +4,15 @@ import style from './ProductCard.module.scss';
 
 const cx = classNames.bind(style);
 
-function ProductCard({ product }) {
+function ProductCard({ product, customClass }) {
     return (
         <a href="/" className={cx('product-card')}>
-            <div className={cx('product-images')}>
+            <div
+                className={cx(
+                    'product-images',
+                    customClass?.['product-images'],
+                )}
+            >
                 <img src={product.image} alt={product.name} />
                 <img
                     src={product.image2}

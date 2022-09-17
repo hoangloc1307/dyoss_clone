@@ -1,0 +1,23 @@
+.button {
+    width: 250px;
+    height: 50px;
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Gotham Book';
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+
+    &:hover {
+        color: #000000;
+        background: #ffffff;
+        border-color: #000000;
+    }
+}
