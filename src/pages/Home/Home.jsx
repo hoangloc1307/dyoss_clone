@@ -18,6 +18,7 @@ function Home() {
     const dispatch = useDispatch();
 
     const products = useSelector(selectAllProducts);
+    console.log(products);
 
     const productStatus = useSelector((state) => state.products.status);
 
