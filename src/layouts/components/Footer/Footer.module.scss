@@ -1,0 +1,123 @@
+.footer {
+    padding: 50px 0;
+    font-family: 'Gotham Book';
+}
+
+.newsletter {
+    width: 480px;
+    margin: 0 auto 70px;
+
+    .title {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin: 35px;
+        text-align: center;
+    }
+
+    .form {
+        position: relative;
+
+        input {
+            background: #e5e5e5;
+            border: none;
+            outline: none;
+            height: 50px;
+            border-radius: 12px;
+            width: 480px;
+            font-family: 'Gotham Book';
+            padding-left: 20px;
+            padding-right: 160px;
+
+            &::placeholder {
+                color: #000000;
+            }
+        }
+
+        .button {
+            width: 140px;
+            position: absolute;
+            right: 0;
+            border-radius: 0 12px 12px 0;
+        }
+    }
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.menu-block {
+    width: 20%;
+    text-align: center;
+    padding: 0 15px;
+
+    .title {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .list-item {
+        li {
+            a {
+                font-size: 13px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &:not(:first-child) {
+                margin-top: 6px;
+            }
+        }
+    }
+}
+
+.showrooms {
+    text-align: center;
+    margin-bottom: 70px;
+
+    .showroom {
+        font-size: 13px;
+        line-height: 1.7;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+
+    p {
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    a {
+        padding: 0 12px;
+
+        &:not(:last-child) {
+            border-right: 1px solid #000000;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

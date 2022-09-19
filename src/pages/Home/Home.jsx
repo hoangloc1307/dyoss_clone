@@ -9,7 +9,9 @@ import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import {
     fetchProducts,
-    selectAllProducts,
+    // selectAllProducts,
+    selectProductsByType,
+    selectSellingProducts,
 } from '~/features/products/productsSlice';
 
 const cx = classNames.bind(style);
@@ -17,12 +19,18 @@ const cx = classNames.bind(style);
 function Home() {
     const dispatch = useDispatch();
 
-    const products = useSelector(selectAllProducts);
-    console.log(products);
-
     const productStatus = useSelector((state) => state.products.status);
-
-    const error = useSelector((state) => state.products.error);
+    // const error = useSelector((state) => state.products.error);
+    // const products = useSelector(selectAllProducts);
+    const sellingProducts = useSelector((state) =>
+        selectSellingProducts(state, 6),
+    );
+    const manProducts = useSelector((state) =>
+        selectProductsByType(state, 'man', 5),
+    );
+    const womanProducts = useSelector((state) =>
+        selectProductsByType(state, 'woman', 5),
+    );
 
     useEffect(() => {
         if (productStatus === 'idle') {
@@ -50,7 +58,7 @@ function Home() {
                     <ProductByCategory
                         title={'Mẫu bán chạy'}
                         description={''}
-                        listProduct={products}
+                        listProduct={sellingProducts}
                     />
                 </div>
             </div>
@@ -64,7 +72,7 @@ function Home() {
                     <Button href={'/'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider listProduct={products} />
+                    <ProductSlider listProduct={womanProducts} />
                 </div>
             </div>
 
@@ -107,7 +115,7 @@ function Home() {
                     <Button href={'/'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider listProduct={products} />
+                    <ProductSlider listProduct={manProducts} />
                 </div>
             </div>
         </main>

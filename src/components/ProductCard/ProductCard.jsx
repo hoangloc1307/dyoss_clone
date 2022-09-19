@@ -13,9 +13,9 @@ function ProductCard({ product, customClass }) {
                     customClass?.['product-images'],
                 )}
             >
-                <img src={product.image} alt={product.name} />
+                <img src={product.image[0]} alt={product.name} />
                 <img
-                    src={product.image2}
+                    src={product.image[1]}
                     alt={product.name}
                     className={cx('image-hover')}
                 />

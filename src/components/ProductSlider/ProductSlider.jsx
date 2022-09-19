@@ -33,7 +33,7 @@ function ProductSlider({ listProduct }) {
                 tag="div"
                 wrapperTag="ul"
                 autoplay={{
-                    delay: 3000,
+                    delay: 1500,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                 }}

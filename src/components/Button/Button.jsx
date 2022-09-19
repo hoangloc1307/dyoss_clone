@@ -4,7 +4,7 @@ import style from './Button.module.scss';
 
 const cx = classNames.bind(style);
 
-function Button({ children, href }) {
+function Button({ children, href, customClass }) {
     let Tag = 'button';
 
     const props = {};
@@ -15,7 +15,7 @@ function Button({ children, href }) {
     }
 
     return (
-        <Tag className={cx('button')} {...props}>
+        <Tag className={cx('button', customClass?.['button'])} {...props}>
             {children}
         </Tag>
     );

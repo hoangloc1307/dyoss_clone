@@ -1,0 +1,58 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "The Royal",
+            "description": "Tuyệt tác hoàn hảo tôn lên từng sắc thái trang phục của nam giới nay càng thêm phần hào nhoáng với sắc màu Rose Gold.",
+            "type": [1]
+        },
+        {
+            "id": 2,
+            "name": "The Mystique",
+            "description": "Một kiệt tác đến từ DYOSS TEAM vừa xuất hiện vào hè 2019. Mang xu hướng thiết kế \"vô cực\", loại bỏ hoàn toàn chi tiết thừa với chốt dây được giấu kín. Tinh tế, tối giản nhất nhưng vẫn thời trang và lịch lãm.",
+            "type": [1, 2]
+        },
+        {
+            "id": 3,
+            "name": "The Classic Iconic",
+            "description": "Là dòng đồng hồ đầu tiên của DYOSS, với thiết kế cổ điển pha chút hiện đại tạo nên dòng đồng hồ The Classic Iconic có vè đẹp sang trọng, lịch lãm - phụ kiện quan trọng cho người đàn ông thành công.",
+            "type": [1, 2]
+        },
+        {
+            "id": 4,
+            "name": "The Great Gatsby",
+            "description": "Với sự tinh giản trong thiết kế cùng tone đen nhám mạnh mẽ làm ra sự khác biệt của đồng hồ Gatsby tạo cảm giác độc đáo nhưng vẫn sang trọng giúp người đeo thể hiện cá tính của mình.",
+            "type": [1, 2]
+        },
+        {
+            "id": 5,
+            "name": "The Box",
+            "description": "Hộp quà tặng từ DYOSS thiết kế tuyệt đẹp cùng nhiều tuỳ chọn phong phú với mức giá hấp dẫn. Phù hợp làm quà tặng ý nghĩa vào các dịp đặc biệt.",
+            "type": [1, 2, 4]
+        },
+        {
+            "id": 6,
+            "name": "The Autumn",
+            "description": "Với size 32 nhỏ nhắn, thiết kế tinh giản, màu rose gold rực rỡ đã tạo ra chiếc đồng hồ DYOSS Autumn mang nét đẹp dịu dàng lại rực rỡ của mùa thu.",
+            "type": [2]
+        },
+        {
+            "id": 7,
+            "name": "The Blooming Rosa",
+            "description": "Màu rosegold mang lại một vẻ đẹp dịu dàng, nữ tính nhưng không quá điệu đà, thể hiện được vẻ đẹp trẻ trung, lôi cuốn của phái đẹp. Rosa - đồng hồ dành cho các cô nàng đam mê thời trang.",
+            "type": [2]
+        },
+        {
+            "id": 8,
+            "name": "Bracelet",
+            "description": "",
+            "type": [3]
+        },
+        {
+            "id": 9,
+            "name": "Watch Chain",
+            "description": "",
+            "type": [3]
+        }
+    ]
+}
