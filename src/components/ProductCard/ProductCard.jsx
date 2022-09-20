@@ -1,16 +1,18 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
+import { NumberWithCommas } from '~/functions';
 import style from './ProductCard.module.scss';
 
 const cx = classNames.bind(style);
 
 function ProductCard({ product, customClass }) {
     return (
-        <a href="/" className={cx('product-card')}>
+        <Link to={`/product/${product.link}`} className={cx('product-card')}>
             <div
                 className={cx(
                     'product-images',
-                    customClass?.['product-images'],
+                    customClass?.['product-images']
                 )}
             >
                 <img src={product.image[0]} alt={product.name} />
@@ -22,9 +24,11 @@ function ProductCard({ product, customClass }) {
             </div>
             <h3 className={cx('product-name')}>{product.name}</h3>
             <p className={cx('product-price')}>
-                {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                {product.stock > 0
+                    ? `${NumberWithCommas(product.price)}đ`
+                    : 'Hết hàng'}
             </p>
-        </a>
+        </Link>
     );
 }
 

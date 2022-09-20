@@ -24,7 +24,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-9.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-8.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-9.jpg"
-            ]
+            ],
+            "link": "royal-white-mesh-40"
         },
         {
             "id": 2,
@@ -50,7 +51,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-2.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-2.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-2.jpg"
-            ]
+            ],
+            "link": "royal-black-tan-40"
         },
         {
             "id": 3,
@@ -76,7 +78,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-1.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-1.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-1.jpg"
-            ]
+            ],
+            "link": "royal-white-black-40"
         },
         {
             "id": 4,
@@ -101,7 +104,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2019/07/01.jpg",
                 "https://www.dyoss.com/app/uploads/2019/07/mystique40-gocnghieng04.jpg"
-            ]
+            ],
+            "link": "mystique-black-black-mesh-40"
         },
         {
             "id": 5,
@@ -126,7 +130,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2019/07/01-1.jpg",
                 "https://www.dyoss.com/app/uploads/2019/07/mystique40-gocnghieng01.jpg"
-            ]
+            ],
+            "link": "mystique-rose-rose-mesh-40"
         },
         {
             "id": 6,
@@ -152,7 +157,8 @@
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15-1.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15-1.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13-1.jpg"
-            ]
+            ],
+            "link": "iconic-black-brown-40"
         },
         {
             "id": 7,
@@ -178,7 +184,8 @@
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13.jpg"
-            ]
+            ],
+            "link": "iconic-black-black-40"
         },
         {
             "id": 8,
@@ -205,7 +212,8 @@
                 "https://www.dyoss.com/app/uploads/2017/09/upweb_gocnghieng_11.jpg",
                 "https://www.dyoss.com/app/uploads/2017/09/upweb_goc34_den.jpg",
                 "https://www.dyoss.com/app/uploads/2017/09/upweb_gocsau_den.jpg"
-            ]
+            ],
+            "link": "gatsby-matte-mesh-40"
         },
         {
             "id": 9,
@@ -230,7 +238,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2019/06/01.jpg",
                 "https://www.dyoss.com/app/uploads/2019/06/03.jpg"
-            ]
+            ],
+            "link": "mystique-black-black-mesh-34"
         },
         {
             "id": 10,
@@ -255,7 +264,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2019/06/02.jpg",
                 "https://www.dyoss.com/app/uploads/2019/06/06.jpg"
-            ]
+            ],
+            "link": "mystique-rose-rose-mesh-34"
         },
         {
             "id": 11,
@@ -280,7 +290,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2018/11/upweb_gocchinh12-2.jpg",
                 "https://www.dyoss.com/app/uploads/2018/11/upweb_gocnghieng12-2.jpg"
-            ]
+            ],
+            "link": "autumn-white-tan-32"
         },
         {
             "id": 12,
@@ -305,7 +316,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2018/11/upweb_gocchinh12-6.jpg",
                 "https://www.dyoss.com/app/uploads/2018/11/upweb_gocnghieng12-6.jpg"
-            ]
+            ],
+            "link": "autumn-white-pink-32"
         },
         {
             "id": 13,
@@ -330,7 +342,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2019/05/rosa-blackmesh-chinh.jpg",
                 "https://www.dyoss.com/app/uploads/2019/05/rosa-blackmesh-nghieng.jpg"
-            ]
+            ],
+            "link": "rosa-black-black-mesh-36"
         },
         {
             "id": 14,
@@ -356,7 +369,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-6.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-6.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-6.jpg"
-            ]
+            ],
+            "link": "rosa-black-pink-36"
         },
         {
             "id": 15,
@@ -382,7 +396,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-3.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-3.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-3.jpg"
-            ]
+            ],
+            "link": "rosa-white-tan-36"
         },
         {
             "id": 16,
@@ -408,7 +423,8 @@
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-1.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-1.jpg",
                 "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-1.jpg"
-            ]
+            ],
+            "link": "rosa-white-black-36"
         },
         {
             "id": 17,
@@ -433,7 +449,8 @@
             "image": [
                 "https://www.dyoss.com/app/uploads/2018/12/upweb_gocchinh_12.jpg",
                 "https://www.dyoss.com/app/uploads/2018/12/upweb_gocnghieng_12.jpg"
-            ]
+            ],
+            "link": "iconic-white-pink-36"
         },
         {
             "id": 18,
@@ -459,7 +476,8 @@
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15-1.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15-1.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13-1.jpg"
-            ]
+            ],
+            "link": "iconic-black-brown-36"
         },
         {
             "id": 19,
@@ -485,7 +503,8 @@
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15.jpg",
                 "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13.jpg"
-            ]
+            ],
+            "link": "iconic-black-black-36"
         },
         {
             "id": 20,
@@ -511,7 +530,8 @@
                 "https://www.dyoss.com/app/uploads/2019/05/upweb_gocchinh_15-1.jpg",
                 "https://www.dyoss.com/app/uploads/2019/05/upweb_gocnghieng_14-1.jpg",
                 "https://www.dyoss.com/app/uploads/2019/05/upweb_gocsau_13-1.jpg"
-            ]
+            ],
+            "link": "gatsby-matte-black-36"
         }
     ]
 }

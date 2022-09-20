@@ -30,6 +30,7 @@
     color: $text-light;
     text-align: center;
     width: 100%;
+    font-family: 'Gotham Light';
 
     .title {
         font-size: 42px;
@@ -98,6 +99,7 @@
 
         h2 {
             font-size: 35px;
+            font-family: 'Gotham Light';
             text-transform: uppercase;
             color: $text-light;
             letter-spacing: 2px;
@@ -133,11 +135,11 @@
         font-size: 40px;
         font-weight: normal;
         margin-bottom: 25px;
+        font-family: 'Gotham Light';
     }
 
     .about-description {
         font-size: 13px;
-        font-family: 'Gotham Book';
         line-height: 1.5;
     }
 
@@ -159,7 +161,6 @@
             p {
                 margin-top: 12px;
                 font-size: 13px;
-                font-family: 'Gotham Book';
             }
         }
     }

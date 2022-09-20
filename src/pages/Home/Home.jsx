@@ -9,27 +9,25 @@ import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import {
     fetchProducts,
-    // selectAllProducts,
     selectProductsByType,
     selectSellingProducts,
-} from '~/features/products/productsSlice';
+} from '~/features/products';
 
 const cx = classNames.bind(style);
 
 function Home() {
     const dispatch = useDispatch();
 
-    const productStatus = useSelector((state) => state.products.status);
+    const productStatus = useSelector(state => state.products.status);
     // const error = useSelector((state) => state.products.error);
-    // const products = useSelector(selectAllProducts);
-    const sellingProducts = useSelector((state) =>
-        selectSellingProducts(state, 6),
+    const sellingProducts = useSelector(state =>
+        selectSellingProducts(state, 3)
     );
-    const manProducts = useSelector((state) =>
-        selectProductsByType(state, 'man', 5),
+    const manProducts = useSelector(state =>
+        selectProductsByType(state, 'man', 5)
     );
-    const womanProducts = useSelector((state) =>
-        selectProductsByType(state, 'woman', 5),
+    const womanProducts = useSelector(state =>
+        selectProductsByType(state, 'woman', 5)
     );
 
     useEffect(() => {
@@ -72,7 +70,11 @@ function Home() {
                     <Button href={'/'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider listProduct={womanProducts} />
+                    <ProductSlider
+                        listData={womanProducts}
+                        navigation
+                        autoplay
+                    />
                 </div>
             </div>
 
@@ -115,9 +117,10 @@ function Home() {
                     <Button href={'/'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider listProduct={manProducts} />
+                    <ProductSlider listData={manProducts} navigation autoplay />
                 </div>
             </div>
+            {/* End Product Slider */}
         </main>
     );
 }

@@ -1,0 +1,46 @@
+.product-detail {
+    display: flex;
+    margin: 50px 0;
+}
+
+.image-detail {
+    width: 40%;
+    margin-right: 10%;
+
+    .slides {
+        width: 100%;
+    }
+}
+
+.content-detail {
+    width: 50%;
+    .name {
+        font-family: 'Gotham Light';
+        font-size: 24px;
+        text-transform: capitalize;
+        margin-bottom: 12px;
+        font-weight: 300;
+    }
+
+    .price {
+        font-size: 24px;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .buy {
+        margin-bottom: 30px;
+    }
+
+    .features {
+        font-size: 13px;
+        list-style: disc;
+        line-height: 1.5;
+    }
+}

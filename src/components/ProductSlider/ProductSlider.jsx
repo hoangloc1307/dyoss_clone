@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper';
+import { Navigation, Autoplay, Thumbs } from 'swiper';
 import classNames from 'classnames/bind';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import style from './ProductSlider.module.scss';
 import 'swiper/css/bundle';
@@ -9,49 +9,107 @@ import ProductCard from '../ProductCard';
 
 const cx = classNames.bind(style);
 
-function ProductSlider({ listProduct }) {
+function ProductSlider({
+    listData,
+    navigation = false,
+    autoplay = false,
+    image = false,
+    customClass,
+}) {
     const btnPrevRef = useRef(null);
     const btnNextRef = useRef(null);
 
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
     return (
         <div className={cx('slider')}>
-            <div className={cx('btn-controls')}>
-                <button className={cx('btn-prev')} ref={btnPrevRef}>
-                    Previous
-                </button>
-                <button className={cx('btn-next')} ref={btnNextRef}>
-                    Next
-                </button>
-            </div>
+            {/* Button custom */}
+            {navigation && (
+                <div className={cx('btn-controls')}>
+                    <button className={cx('btn-prev')} ref={btnPrevRef}>
+                        Previous
+                    </button>
+                    <button className={cx('btn-next')} ref={btnNextRef}>
+                        Next
+                    </button>
+                </div>
+            )}
 
+            {/* Main slide */}
             <Swiper
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation, Autoplay, Thumbs]}
                 loop={true}
-                className={cx('slides')}
+                className={cx('slides', customClass?.['slides'])}
                 spaceBetween={12}
                 speed={1000}
                 tag="div"
                 wrapperTag="ul"
-                autoplay={{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }}
-                navigation={{
-                    prevEl: btnPrevRef.current,
-                    nextEl: btnNextRef.current,
-                }}
-                onBeforeInit={(swiper) => {
+                autoplay={
+                    autoplay
+                        ? {
+                              delay: 1500,
+                              disableOnInteraction: false,
+                              pauseOnMouseEnter: true,
+                          }
+                        : false
+                }
+                navigation={
+                    navigation
+                        ? {
+                              prevEl: btnPrevRef.current,
+                              nextEl: btnNextRef.current,
+                          }
+                        : false
+                }
+                thumbs={
+                    image
+                        ? {
+                              swiper: thumbsSwiper,
+                              slideThumbActiveClass: cx('thumbs-active'),
+                          }
+                        : false
+                }
+                onBeforeInit={swiper => {
                     swiper.params.navigation.prevEl = btnPrevRef.current;
                     swiper.params.navigation.nextEl = btnNextRef.current;
                 }}
             >
-                {listProduct.map((item) => (
-                    <SwiperSlide key={item.id} className={cx('slide')} tag="li">
-                        <ProductCard product={item} customClass={style} />
+                {listData.map((item, index) => (
+                    <SwiperSlide key={index} className={cx('slide')} tag="li">
+                        {image ? (
+                            <div className={cx('image-card')}>
+                                <img src={item} alt={`Product ${index}`} />
+                            </div>
+                        ) : (
+                            <ProductCard product={item} customClass={style} />
+                        )}
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+            {/* Thumbs */}
+            {image ? (
+                <Swiper
+                    modules={[Thumbs]}
+                    watchSlidesProgress={true}
+                    onSwiper={setThumbsSwiper}
+                    className={cx('slides-thumbs')}
+                    slidesPerView={4}
+                    spaceBetween={10}
+                >
+                    {listData.map((item, index) => (
+                        <SwiperSlide
+                            key={index}
+                            className={cx('slide')}
+                            tag="li"
+                        >
+                            <img src={item} alt={`Product ${index}`} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            ) : (
+                false
+            )}
         </div>
     );
 }
