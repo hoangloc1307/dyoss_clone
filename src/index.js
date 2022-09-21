@@ -7,10 +7,11 @@ import store from '~/app/store';
 import App from '~/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <Provider store={store}>
         <GlobalStyles>
             <App />
         </GlobalStyles>
-    </Provider>,
+    </Provider>
 );

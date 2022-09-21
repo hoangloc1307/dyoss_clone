@@ -11,13 +11,14 @@ const images = {
     feature1: require('~/assets/images/img-100.jpg'),
     feature2: require('~/assets/images/img-100-2.jpg'),
     feature3: require('~/assets/images/img-100-3.jpg'),
+    pageNotFound: require('~/assets/images/page_not_found.svg'),
     //Products
-    product1: require('~/assets/images/product_images/01_01.jpg'),
-    product1_2: require('~/assets/images/product_images/01_02.jpg'),
-    product2: require('~/assets/images/product_images/02_01.jpg'),
-    product2_2: require('~/assets/images/product_images/02_02.jpg'),
-    product3: require('~/assets/images/product_images/03_01.jpg'),
-    product3_2: require('~/assets/images/product_images/03_02.jpg'),
+    // product1: require('~/assets/images/product_images/01_01.jpg'),
+    // product1_2: require('~/assets/images/product_images/01_02.jpg'),
+    // product2: require('~/assets/images/product_images/02_01.jpg'),
+    // product2_2: require('~/assets/images/product_images/02_02.jpg'),
+    // product3: require('~/assets/images/product_images/03_01.jpg'),
+    // product3_2: require('~/assets/images/product_images/03_02.jpg'),
 };
 
 export default images;

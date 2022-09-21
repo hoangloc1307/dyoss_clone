@@ -136,20 +136,6 @@ $item-padding-vertical: 15px;
     }
 }
 
-.cart-icon {
-    width: 26px;
-    height: 32px;
-    background-image: url('../../../assets/images/icon-sprites.png');
-    background-position: -50px -50px;
-    background-size: 100px 150px;
-    cursor: pointer;
-    text-align: center;
-
-    .cart-amount {
-        line-height: 37px;
-    }
-}
-
 //Navigation
 .navigation {
     border-top: 1px solid #e6e8ea;

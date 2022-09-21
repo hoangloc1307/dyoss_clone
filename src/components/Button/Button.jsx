@@ -1,17 +1,23 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import style from './Button.module.scss';
 
 const cx = classNames.bind(style);
 
-function Button({ children, href, customClass }) {
+function Button({ children, href, to, customClass, ...passProps }) {
     let Tag = 'button';
 
-    const props = {};
+    const props = {
+        ...passProps,
+    };
 
     if (href) {
         Tag = 'a';
         props.href = href;
+    } else if (to) {
+        Tag = Link;
+        props.to = to;
     }
 
     return (

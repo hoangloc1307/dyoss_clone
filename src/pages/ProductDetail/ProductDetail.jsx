@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import style from './ProductDetail.module.scss';
@@ -7,14 +7,17 @@ import {
     selectProductBySlug,
     selectProductsRelated,
 } from '~/features/products';
+import { addToCart } from '~/features/cart';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
-import { NumberWithCommas } from '~/functions';
 import ProductByCategory from '~/components/ProductByCategory';
+import { NumberWithCommas } from '~/functions';
 
 const cx = classNames.bind(style);
 
 function ProductDetail() {
+    const dispatch = useDispatch();
+
     const params = useParams();
 
     const product = useSelector(state =>
@@ -53,7 +56,22 @@ function ProductDetail() {
                             {product.description}
                         </p>
                         <div className={cx('buy')}>
-                            <Button>Mua ngay</Button>
+                            <Button
+                                onClick={() => {
+                                    dispatch(
+                                        addToCart({
+                                            id: product.id,
+                                            name: product.name,
+                                            price: product.price,
+                                            link: product.link,
+                                            image: product.image[0],
+                                            total: 1,
+                                        })
+                                    );
+                                }}
+                            >
+                                Mua ngay
+                            </Button>
                         </div>
                         <ul className={cx('features')}>
                             {product.features.map((item, index) => (

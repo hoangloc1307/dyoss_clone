@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import style from './Header.module.scss';
 import images from '~/assets/images';
+import Cart from '~/components/Cart';
 
 const cx = classNames.bind(style);
 
@@ -63,11 +64,7 @@ function Header() {
                             <Link to={'/'} className={cx('logo')}>
                                 <img src={images.logoBlack} alt="Dyoss Logo" />
                             </Link>
-                            <div className={cx('cart')}>
-                                <div className={cx('cart-icon')}>
-                                    <div className={cx('cart-amount')}>0</div>
-                                </div>
-                            </div>
+                            <Cart customClass={style} />
                         </div>
                     </div>
                 </div>
