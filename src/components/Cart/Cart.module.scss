@@ -13,7 +13,6 @@
 
     .cart-amount {
         line-height: 37px;
-        user-select: none;
         font-size: 13px;
     }
 }
@@ -81,7 +80,6 @@
         font-family: 'Gotham Bold';
         display: flex;
         align-items: center;
-        user-select: none;
 
         & > span {
             margin-right: 12px;

@@ -1,2 +1,0 @@
-- Ở trang chủ thì gọi API lấy dữ liệu cần thiết để hiện thị ra giao diện.
-- Khi bấm vào một sản phẩm thì gọi API lấy dữ liệu sản phẩm đó ra.
