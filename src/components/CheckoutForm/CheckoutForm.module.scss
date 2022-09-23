@@ -14,12 +14,12 @@
 }
 
 .input-field {
-    width: 500px;
+    width: 600px;
     margin: auto;
     position: relative;
     border: 1px solid #cccccc;
     font-size: 13px;
-    margin-bottom: 12px;
+    margin-bottom: 35px;
 
     input,
     textarea {
@@ -59,27 +59,47 @@
         transform: translateY(-50%);
         color: #898989;
         transition: 0.2s ease-in-out;
-        cursor: initial;
+        cursor: text;
     }
 }
 
 .address-select {
-    width: 500px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-bottom: 12px;
+    margin-bottom: 35px;
 
-    select {
-        outline: none;
-        border: 1px solid #cccccc;
-        padding: 10px;
-        color: #898989;
+    .select {
+        width: 195px;
+        position: relative;
+
+        select {
+            outline: none;
+            border: 1px solid #cccccc;
+            padding: 10px 5px;
+            color: #898989;
+            width: 100%;
+        }
     }
 
     option:first-child {
         display: none;
+    }
+}
+
+.form-error {
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transform: translateY(100%);
+    color: red;
+
+    &::before {
+        content: '* ';
+        font-size: 13px;
     }
 }
 

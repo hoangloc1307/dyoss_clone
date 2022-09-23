@@ -33,7 +33,10 @@ function Cart({ customClass }) {
     const showStatus = useSelector(selectShowStatus);
 
     useEffect(() => {
-        dispatch(changeStatus({ status: false }));
+        if (showStatus === true) {
+            dispatch(changeStatus({ status: false }));
+        }
+        // eslint-disable-next-line
     }, [dispatch, location.pathname]);
 
     return (
