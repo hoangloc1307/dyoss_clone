@@ -60,6 +60,10 @@
         color: #898989;
         transition: 0.2s ease-in-out;
         cursor: text;
+
+        span {
+            color: red;
+        }
     }
 }
 
@@ -79,8 +83,17 @@
             outline: none;
             border: 1px solid #cccccc;
             padding: 10px 5px;
-            color: #898989;
+            font-size: 13px;
             width: 100%;
+            font-family: 'Gotham Book';
+        }
+    }
+
+    select.pristine {
+        color: #898989;
+
+        option {
+            color: #000000;
         }
     }
 

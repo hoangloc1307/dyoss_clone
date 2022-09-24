@@ -94,4 +94,14 @@ const showrooms = [
     },
 ];
 
-export { menuFooter, showrooms };
+const menuHeader = [
+    { title: 'The box', link: '/box' },
+    { title: 'Nam', link: '/nam' },
+    { title: 'Nữ', link: '/nu' },
+    { title: 'Phụ kiện', link: '/phukien' },
+    { title: 'Gallery', link: '/gallery' },
+    { title: 'Blogs', link: '/blogs' },
+    { title: 'Giới thiệu', link: '/about-us' },
+];
+
+export { menuFooter, showrooms, menuHeader };

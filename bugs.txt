@@ -1,3 +1,6 @@
 1) Đang trong trang chi tiết sản phẩm bấm tải lại trang (F5) thì sẽ không tìm thấy sản phẩm đó
   => Nguyên nhân: Do sử dụng data từ file json, store chỉ chứa data của products lúc truy cập vào trang home.
   => Khắc phục: Sau này sẽ fetch dữ liệu chi tiết sản phẩm mỗi khi vào trang chi tiết sản phẩm.
+
+2) Validate tên người Việt chưa chính xác.
+  => Nguyên nhân: Do regex chưa tối ưu.

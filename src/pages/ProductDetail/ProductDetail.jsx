@@ -1,15 +1,16 @@
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import style from './ProductDetail.module.scss';
+import { NumberWithCommas } from '~/functions';
+import PageNotFound from '~/pages/PageNotFound';
 import { selectProductBySlug } from '~/features/products';
 import { addToCart } from '~/features/cart';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
-import { NumberWithCommas } from '~/functions';
 import ProductRelated from '~/components/ProductRelated';
-import PageNotFound from '~/pages/PageNotFound';
 
 const cx = classNames.bind(style);
 
@@ -21,6 +22,26 @@ function ProductDetail() {
     const product = useSelector(state =>
         selectProductBySlug(state, params.slug)
     );
+
+    //Lưu vào session storage
+    useEffect(() => {
+        if (product) {
+            let items;
+            const products = sessionStorage.getItem('productViewed');
+            if (products) {
+                items = JSON.parse(sessionStorage.getItem('productViewed'));
+                if (!items.includes(product.id)) {
+                    if (items.length > 5) {
+                        items.shift();
+                    }
+                    items.push(product.id);
+                }
+            } else {
+                items = [product.id];
+            }
+            sessionStorage.setItem('productViewed', JSON.stringify(items));
+        }
+    }, [product]);
 
     return (
         <>

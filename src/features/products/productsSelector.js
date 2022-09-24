@@ -42,3 +42,9 @@ export const selectProductsRelated = (state, id, type, category, amount) => {
         )
         .slice(0, amount);
 };
+
+export const selectProductsById = (state, id = []) => {
+    return state.products.productList
+        .filter(item => id.includes(item.id))
+        .sort((prev, next) => id.indexOf(next.id) - id.indexOf(prev.id));
+};

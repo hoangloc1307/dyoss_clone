@@ -41,11 +41,6 @@
     }
 }
 
-//Selling
-.selling {
-    margin: 50px 0;
-}
-
 //Sex category block
 .sex-block {
     display: flex;
@@ -98,7 +93,7 @@
         }
 
         h2 {
-            font-size: 35px;
+            font-size: 30px;
             font-family: 'Gotham Light';
             text-transform: uppercase;
             color: $text-light;
@@ -132,10 +127,11 @@
     }
 
     .about-title {
-        font-size: 40px;
+        font-size: 30px;
         font-weight: normal;
         margin-bottom: 25px;
         font-family: 'Gotham Light';
+        text-transform: uppercase;
     }
 
     .about-description {

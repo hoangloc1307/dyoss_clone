@@ -8,7 +8,7 @@ const cx = classNames.bind(style);
 function ProductByCategory({ title, description, listProduct, column = 3 }) {
     return (
         <>
-            {listProduct.length > 0 && (
+            {listProduct && listProduct.length > 0 && (
                 <div className={cx('product-by-category')}>
                     <h2 className={cx('product-list-title')}>{title}</h2>
                     <p className={cx('product-list-description')}>

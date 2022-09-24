@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Button from '~/components/Button';
 
 import style from './Footer.module.scss';
-import { menuFooter, showrooms } from '~/assets/datas/footer';
+import { menuFooter, showrooms } from '~/assets/datas';
 
 const cx = classNames.bind(style);
 

@@ -4,14 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import style from './Home.module.scss';
 import images from '~/assets/images';
-import ProductByCategory from '~/components/ProductByCategory';
-import ProductSlider from '~/components/ProductSlider';
-import Button from '~/components/Button';
 import {
     fetchProducts,
     selectProductsByType,
     selectSellingProducts,
 } from '~/features/products';
+import ProductByCategory from '~/components/ProductByCategory';
+import ProductSlider from '~/components/ProductSlider';
+import Button from '~/components/Button';
+import ProductViewed from '~/components/ProductViewed';
 
 const cx = classNames.bind(style);
 
@@ -121,6 +122,12 @@ function Home() {
                 </div>
             </div>
             {/* End Product Slider */}
+
+            {/* Viewed Product */}
+            <div className={cx('container')}>
+                <ProductViewed />
+            </div>
+            {/* End Viewed Product */}
         </main>
     );
 }

@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import style from './Header.module.scss';
 import images from '~/assets/images';
+import { menuHeader } from '~/assets/datas';
 import Cart from '~/components/Cart';
 
 const cx = classNames.bind(style);
@@ -15,6 +16,7 @@ function Header() {
 
     useEffect(() => {
         setHomePage(location.pathname === '/' ? true : false);
+        console.log(location.pathname);
     }, [location.pathname]);
 
     return (
@@ -72,27 +74,18 @@ function Header() {
                 <div className={cx('navigation')}>
                     <div className={cx('container')}>
                         <ul className={cx('inner')}>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>The box</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Nam</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Nữ</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Phụ kiện</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Gallery</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Blogs</Link>
-                            </li>
-                            <li className={cx('menu-item')}>
-                                <Link to={'/'}>Giới thiệu</Link>
-                            </li>
+                            {menuHeader.map((item, index) => (
+                                <li
+                                    key={index}
+                                    className={cx('menu-item', {
+                                        active: location.pathname.includes(
+                                            item.link
+                                        ),
+                                    })}
+                                >
+                                    <Link to={item.link}>{item.title}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

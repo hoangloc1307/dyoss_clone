@@ -1,0 +1,45 @@
+.about-us {
+    margin: 50px 0;
+    text-align: center;
+
+    .inner {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.block {
+    width: 650px;
+    padding-top: 80px;
+    margin: auto;
+    border-bottom: 1px solid #cccccc;
+
+    &:last-child {
+        border: none;
+    }
+
+    p {
+        font-size: 13px;
+        font-family: 'Gotham Book';
+        margin: 0 80px 80px;
+        line-height: 2;
+    }
+}
+
+.title {
+    font-size: 40px;
+    font-family: 'Gotham Light';
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.image {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+    margin-bottom: 30px;
+}

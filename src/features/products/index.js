@@ -3,10 +3,11 @@ export { default } from './productsSlice';
 export { fetchProducts } from './productsThunk';
 
 export {
+    selectProductsByType,
     selectProductTypes,
     selectAllProducts,
     selectSellingProducts,
-    selectProductsByType,
     selectProductBySlug,
     selectProductsRelated,
+    selectProductsById,
 } from './productsSelector';

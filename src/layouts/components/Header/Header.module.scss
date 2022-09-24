@@ -167,6 +167,10 @@ $item-padding-vertical: 15px;
         right: 0;
     }
 
+    &.active::before {
+        right: 0;
+    }
+
     a {
         display: block;
         padding: 0 18px;
