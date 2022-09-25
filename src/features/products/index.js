@@ -4,6 +4,7 @@ export { fetchProducts } from './productsThunk';
 
 export {
     selectProductsByType,
+    selectProductCategoriesByType,
     selectProductTypes,
     selectAllProducts,
     selectSellingProducts,

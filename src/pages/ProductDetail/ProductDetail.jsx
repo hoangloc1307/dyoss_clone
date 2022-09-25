@@ -66,24 +66,26 @@ function ProductDetail() {
                                 <p className={cx('description')}>
                                     {product.description}
                                 </p>
-                                <div className={cx('buy')}>
-                                    <Button
-                                        onClick={() => {
-                                            dispatch(
-                                                addToCart({
-                                                    id: product.id,
-                                                    name: product.name,
-                                                    price: product.price,
-                                                    link: product.link,
-                                                    image: product.image[0],
-                                                    total: 1,
-                                                })
-                                            );
-                                        }}
-                                    >
-                                        Mua ngay
-                                    </Button>
-                                </div>
+                                {product.stock > 0 && (
+                                    <div className={cx('buy')}>
+                                        <Button
+                                            onClick={() => {
+                                                dispatch(
+                                                    addToCart({
+                                                        id: product.id,
+                                                        name: product.name,
+                                                        price: product.price,
+                                                        link: product.link,
+                                                        image: product.image[0],
+                                                        total: 1,
+                                                    })
+                                                );
+                                            }}
+                                        >
+                                            Mua ngay
+                                        </Button>
+                                    </div>
+                                )}
                                 <ul className={cx('features')}>
                                     {product.features.map((item, index) => (
                                         <li key={index}>{item}</li>

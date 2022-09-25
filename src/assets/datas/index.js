@@ -4,11 +4,11 @@ const menuFooter = [
         list: [
             {
                 title: 'Đồng hồ nam',
-                link: '/',
+                link: '/product-category/man',
             },
             {
                 title: 'Đồng hồ nữ',
-                link: '/',
+                link: '/product-category/woman',
             },
         ],
     },
@@ -17,11 +17,11 @@ const menuFooter = [
         list: [
             {
                 title: 'Giới thiệu',
-                link: '/',
+                link: '/about-us',
             },
             {
                 title: 'Blogs',
-                link: '/',
+                link: '/blogs',
             },
             {
                 title: 'Câu hỏi thường gặp',
@@ -96,8 +96,8 @@ const showrooms = [
 
 const menuHeader = [
     { title: 'The box', link: '/box' },
-    { title: 'Nam', link: '/nam' },
-    { title: 'Nữ', link: '/nu' },
+    { title: 'Nam', link: '/product-category/man' },
+    { title: 'Nữ', link: '/product-category/woman' },
     { title: 'Phụ kiện', link: '/phukien' },
     { title: 'Gallery', link: '/gallery' },
     { title: 'Blogs', link: '/blogs' },

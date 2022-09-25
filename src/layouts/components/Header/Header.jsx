@@ -16,7 +16,6 @@ function Header() {
 
     useEffect(() => {
         setHomePage(location.pathname === '/' ? true : false);
-        console.log(location.pathname);
     }, [location.pathname]);
 
     return (

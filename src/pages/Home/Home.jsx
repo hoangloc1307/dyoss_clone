@@ -24,12 +24,17 @@ function Home() {
     const sellingProducts = useSelector(state =>
         selectSellingProducts(state, 3)
     );
-    const manProducts = useSelector(state =>
-        selectProductsByType(state, 'man', 5)
-    );
+    const manProducts = useSelector(state => selectProductsByType(state, 'man'))
+        .filter(item => item.stock > 0)
+        .sort((prev, next) => next.view - prev.view)
+        .slice(0, 5);
+
     const womanProducts = useSelector(state =>
-        selectProductsByType(state, 'woman', 5)
-    );
+        selectProductsByType(state, 'woman')
+    )
+        .filter(item => item.stock > 0)
+        .sort((prev, next) => next.view - prev.view)
+        .slice(0, 5);
 
     useEffect(() => {
         if (productStatus === 'idle') {
@@ -68,7 +73,7 @@ function Home() {
                 <div className={cx('category')}>
                     <img src={images.womenCategory} alt="Women product" />
                     <h2>Đồng hồ nữ</h2>
-                    <Button href={'/'}>Xem tất cả</Button>
+                    <Button to={'/product-category/woman'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
                     <ProductSlider
@@ -104,7 +109,7 @@ function Home() {
                             <p>Máy Miyota Nhật Bản</p>
                         </div>
                     </div>
-                    <Button href={'/'}>Tìm hiểu thêm</Button>
+                    <Button to={'/about-us'}>Tìm hiểu thêm</Button>
                 </div>
                 <div className={cx('photo')}>
                     <img src={images.aboutImage} alt="Men product" />
@@ -115,7 +120,7 @@ function Home() {
                 <div className={cx('category')}>
                     <img src={images.menCategory} alt="Men product" />
                     <h2>Đồng hồ nam</h2>
-                    <Button href={'/'}>Xem tất cả</Button>
+                    <Button to={'/product-category/man'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
                     <ProductSlider listData={manProducts} navigation autoplay />

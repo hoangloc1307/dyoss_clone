@@ -5,6 +5,7 @@ import Gallery from '~/pages/Gallery';
 import ProductDetail from '~/pages/ProductDetail';
 import PageNotFound from '~/pages/PageNotFound';
 import Checkout from '~/pages/Checkout';
+import ProductCategory from '~/pages/ProductCategory';
 
 const publicRoutes = [
     { path: '/', component: Home },
@@ -13,6 +14,7 @@ const publicRoutes = [
     { path: '/checkout', component: Checkout },
     { path: '/gallery', component: Gallery },
     { path: '/product/:slug', component: ProductDetail },
+    { path: '/product-category/:type', component: ProductCategory },
     { path: '*', component: PageNotFound },
 ];
 

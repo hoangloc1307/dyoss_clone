@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
-import Button from '~/components/Button';
+import { Link } from 'react-router-dom';
 
 import style from './Footer.module.scss';
 import { menuFooter, showrooms } from '~/assets/datas';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(style);
 
@@ -27,7 +28,7 @@ function Footer() {
                             <ul className={cx('list-item')}>
                                 {menu.list.map((item, index) => (
                                     <li key={index}>
-                                        <a href={item.link}>{item.title}</a>
+                                        <Link to={item.link}>{item.title}</Link>
                                     </li>
                                 ))}
                             </ul>
