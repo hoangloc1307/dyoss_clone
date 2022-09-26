@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 import {
     changeStatus,
@@ -13,12 +14,10 @@ import {
     updateCartItem,
     removeItem,
 } from '~/features/cart';
-import { NumberWithCommas } from '~/functions';
-import Button from '../Button';
-import InputNumber from '~/components/InputNumber';
-
 import style from './Cart.module.scss';
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { NumberWithCommas } from '~/functions';
+import Button from '~/components/Button';
+import InputNumber from '~/components/InputNumber';
 
 const cx = classNames.bind(style);
 

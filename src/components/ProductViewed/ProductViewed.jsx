@@ -27,11 +27,13 @@ function ProductViewed() {
 
     return (
         <div className={cx('product-viewed')}>
-            <ProductByCategory
-                title={'Sản phẩm đã xem'}
-                listProduct={products}
-                column={3}
-            />
+            {products.length > 0 && (
+                <ProductByCategory
+                    title={'Sản phẩm đã xem'}
+                    listProduct={products}
+                    column={3}
+                />
+            )}
         </div>
     );
 }

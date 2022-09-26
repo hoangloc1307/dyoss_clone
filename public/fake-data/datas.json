@@ -1,0 +1,819 @@
+{
+    "Colors": [
+        "Black",
+        "White",
+        "Silver",
+        "Tan",
+        "Rose Gold",
+        "Brown",
+        "Matte Black",
+        "Pink"
+    ],
+    "Materials": ["Mesh", "Leather"],
+
+    "Watchs": [
+        {
+            "id": "b93d40e1-d947-45ec-a4b3-958ed59e733d",
+            "name": "Royal - White/Mesh/40",
+            "price": 3100000,
+            "sex": 1,
+            "type": 1,
+            "category": 1,
+            "stock": 15,
+            "sold": 95,
+            "view": 188,
+            "link": "royal-white-mesh-40",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 40,
+            "strapColor": "Rose Gold",
+            "strapSize": 20,
+            "strapMaterial": "Mesh",
+            "description": "Dyoss Royal White - chiếc đồng hồ khoác lên mình bộ áo kiêu kì rosegold - phụ kiện tuy đơn giản nhưng vô cùng sang trọng khi kết hợp cùng bộ suits lịch lãm hoặc thậm chí là trang phục casual hàng ngày.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-9.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-8.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-9.jpg"
+            ]
+        },
+        {
+            "id": "3c2db6b8-5f7f-4313-a998-32a8a9d6c15b",
+            "name": "Mystique - Black/Black Mesh/40",
+            "price": 3100000,
+            "sex": 1,
+            "type": 1,
+            "category": 2,
+            "stock": 55,
+            "sold": 44,
+            "view": 388,
+            "link": "mystique-black-black-mesh-40",
+            "bezel": "Matte Black",
+            "watchFaceColor": "Matte Black",
+            "watchFaceSize": 40,
+            "strapColor": "Black",
+            "strapSize": 20,
+            "strapMaterial": "Mesh",
+            "description": "Sản phẩm vô cùng bắt mắt mới được \"trình làng\" của Dyoss hè 2019. Với thiết kế hoàn toàn mới, loại bỏ các chi tiết thừa, mang xu hướng thiết kế \"vô cực\". Là biểu trưng cho sự tinh giản, hiện đại vượt thời gian. Sự bóng bẩy trong thiết kế, cũng như nét lôi cuốn mà chiếc đồng hồ sở hữu sẽ làm bạn cảm thấy tự tin và nổi bật khi có phụ kiện này yên vị trên cổ tay của mình.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/07/01.jpg",
+                "https://www.dyoss.com/app/uploads/2019/07/mystique40-gocnghieng04.jpg"
+            ]
+        },
+        {
+            "id": "e4e0526c-d337-469b-ad05-9a4948eced71",
+            "name": "Iconic - Black/Brown/40",
+            "price": 2890000,
+            "sex": 1,
+            "type": 1,
+            "category": 3,
+            "stock": 0,
+            "sold": 92,
+            "view": 786,
+            "link": "iconic-black-brown-40",
+            "bezel": "Silver",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 40,
+            "strapColor": "Brown",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "description": "Đã thể thao thì ko thể sang trọng? Đã năng động thì ko thể quý phái? Hoàn toàn sai với Dyoss Iconic dark brown, một chiếc đồng hồ có thể kết hợp với trang phục thể thao lẫn những bộ com-lê sang trọng, một chiếc đồng hồ phá vỡ mọi quy luật.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15-1.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15-1.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13-1.jpg"
+            ]
+        },
+        {
+            "id": "3d57cf53-f8ac-4e5d-ae2b-d51798f20262",
+            "name": "Gatsby - Matte/Mesh/40",
+            "price": 3100000,
+            "sex": 1,
+            "type": 1,
+            "category": 4,
+            "stock": 65,
+            "sold": 71,
+            "view": 139,
+            "link": "gatsby-matte-mesh-40",
+            "bezel": "Matte Black",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 40,
+            "strapColor": "Black",
+            "strapSize": 20,
+            "strapMaterial": "Mesh",
+            "description": "Nếu bạn là tín đồ của phong cách tối giản, bạn sẽ không thể bỏ qua thiết kế sống động và hoàn hảo này của Dyoss. Mặt đồng hồ hoàn toàn màu đen toát lên vẻ hiện đại vượt thời gian cùng với dây đeo thép mắt lưới phù hợp với mọi cỡ tay là những đặc điểm có một không hai của sản phẩm đồng hồ unisex mới xuất hiện này.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 20mm",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh12.jpg",
+                "https://www.dyoss.com/app/uploads/2017/09/upweb_gocnghieng_11.jpg",
+                "https://www.dyoss.com/app/uploads/2017/09/upweb_goc34_den.jpg",
+                "https://www.dyoss.com/app/uploads/2017/09/upweb_gocsau_den.jpg"
+            ]
+        },
+        {
+            "id": "cd683f77-a4f7-4a10-94a0-1bc932af9d39",
+            "name": "Iconic - Black/Black/40",
+            "price": 2890000,
+            "sex": 1,
+            "type": 1,
+            "category": 3,
+            "stock": 28,
+            "sold": 2,
+            "view": 690,
+            "link": "iconic-black-black-40",
+            "bezel": "Silver",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 40,
+            "strapColor": "Black",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "description": "Phụ kiện hoàn toàn màu đen độc đáo này của Dyoss là mảnh ghép còn thiếu cho màn trình diễn của các quý ông. Hiện đại, sang trọng và thanh lịch, mang chiếc đồng hồ hoàn hảo này trên cổ tay cũng đồng nghĩa với việc bạn cởi bỏ đi sự nhàm chán của mình.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13.jpg"
+            ]
+        },
+        {
+            "id": "a8379b88-867d-4054-867b-7e35b9dbacdc",
+            "name": "Mystique - Rose/Rose Mesh/40",
+            "price": 3100000,
+            "sex": 1,
+            "type": 1,
+            "category": 2,
+            "stock": 59,
+            "sold": 84,
+            "view": 873,
+            "link": "mystique-rose-rose-mesh-40",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "Matte Black",
+            "watchFaceSize": 40,
+            "strapColor": "Rose Gold",
+            "strapSize": 20,
+            "strapMaterial": "Mesh",
+            "description": "Sản phẩm vô cùng bắt mắt mới được \"trình làng\" của Dyoss hè 2019. Với thiết kế hoàn toàn mới, loại bỏ các chi tiết thừa, mang xu hướng thiết kế \"vô cực\". Là biểu trưng cho sự tinh giản, hiện đại vượt thời gian. Sự bóng bẩy trong thiết kế, cũng như nét lôi cuốn mà chiếc đồng hồ sở hữu sẽ làm bạn cảm thấy tự tin và nổi bật khi có phụ kiện này yên vị trên cổ tay của mình.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/07/01-1.jpg",
+                "https://www.dyoss.com/app/uploads/2019/07/mystique40-gocnghieng01.jpg"
+            ]
+        },
+        {
+            "id": "ac7b04dc-050b-4143-ac66-d7b3054a1b89",
+            "name": "Royal - Black/Tan/40",
+            "price": 2990000,
+            "sex": 1,
+            "type": 1,
+            "category": 1,
+            "stock": 56,
+            "sold": 97,
+            "view": 868,
+            "link": "royal-black-tan-40",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 40,
+            "strapColor": "Tan",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "description": "Dyoss Royal Black - chiếc đồng hồ khoác lên mình bộ áo kiêu kì rosegold - phụ kiện tuy đơn giản nhưng vô cùng sang trọng khi kết hợp cùng bộ suits lịch lãm hoặc thậm chí là trang phục casual hàng ngày.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-2.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-2.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-2.jpg"
+            ]
+        },
+        {
+            "id": "99fa0f98-2524-4414-84dc-59d4cdae942e",
+            "name": "Royal - White/Black/40",
+            "price": 2990000,
+            "sex": 1,
+            "type": 1,
+            "category": 1,
+            "stock": 65,
+            "sold": 95,
+            "view": 281,
+            "link": "royal-white-black-40",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 40,
+            "strapColor": "Black",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "description": "Dyoss Royal Black - chiếc đồng hồ khoác lên mình bộ áo kiêu kì rosegold - phụ kiện tuy đơn giản nhưng vô cùng sang trọng khi kết hợp cùng bộ suits lịch lãm hoặc thậm chí là trang phục casual hàng ngày.",
+            "features": [
+                "Đường kính 40mm - dành cho Nam.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 20mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-1.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-1.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-1.jpg"
+            ]
+        },
+        {
+            "id": "626f6e84-a529-4f4f-b7c9-326ddf7ef441",
+            "name": "Rosa - Black/Black Mesh/36",
+            "price": 3100000,
+            "sex": 0,
+            "type": 1,
+            "category": 7,
+            "stock": 96,
+            "sold": 10,
+            "view": 244,
+            "link": "rosa-black-black-mesh-36",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 36,
+            "strapColor": "Black",
+            "strapSize": 18,
+            "strapMaterial": "Mesh",
+            "description": "Đã là dòng đồng hồ thời trang thì trong bộ sưu tập của DYOSS không thể thiết màu rosegold - DYOSS Royal Black được kết hợp từ mặt đồng hồ đen và dây rosegold tạo nét đẹp mâu thuẫn sang trọng mà tinh tế có thể kết hợp với mọi loại trang phục từ nơi công sở đến chốn tiệc tùng.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/05/rosa-blackmesh-chinh.jpg",
+                "https://www.dyoss.com/app/uploads/2019/05/rosa-blackmesh-nghieng.jpg"
+            ]
+        },
+        {
+            "id": "4da22c1b-3031-4aa6-b645-9d188050a457",
+            "name": "Rosa - Black/Pink/36",
+            "price": 2990000,
+            "sex": 0,
+            "type": 1,
+            "category": 7,
+            "stock": 35,
+            "sold": 22,
+            "view": 465,
+            "link": "rosa-black-pink-36",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 36,
+            "strapColor": "Pink",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Mặt đen rosegold kết hợp với dây da hồng tạo nên chiếc đồng hồ Iconic Rose Gold Black Pink Leather - cá tính lại không mất phần nữ tính, giúp tạo điểm nhấn cho các trang phục công sở đơn điệu nhàm chán.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-6.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-6.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-6.jpg"
+            ]
+        },
+        {
+            "id": "c3befc1a-c0d3-4ca3-ab6c-d67d44cbf3ba",
+            "name": "Rosa - White/Tan/36",
+            "price": 2990000,
+            "sex": 0,
+            "type": 1,
+            "category": 7,
+            "stock": 56,
+            "sold": 98,
+            "view": 468,
+            "link": "rosa-white-tan-36",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 36,
+            "strapColor": "Tan",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Màu dây nâu cổ điển kết hợp với mặt đồng hồ trắng rosegold hiện đại tạo nên chiếc đồng hồ DYOSS Iconic Rose Gold White Tan Leather vừa cổ điển lại hiện đại dễ dàng kết hợp với mọi loại trang phục trong tủ đồ của bạn.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-3.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-3.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-3.jpg"
+            ]
+        },
+        {
+            "id": "2f46958d-41bf-42cb-a287-ecedd5e606a2",
+            "name": "Rosa - White/Black/36",
+            "price": 2990000,
+            "sex": 0,
+            "type": 1,
+            "category": 7,
+            "stock": 76,
+            "sold": 99,
+            "view": 716,
+            "link": "rosa-white-black-36",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 36,
+            "strapColor": "Black",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Quá thường cho một chiếc đồng hồ mặt trắng dây đen? DYOSS Iconic Rose Gold White Black Leather với thay đổi màu kim thành rosegold tạo ra điểm mới lạ cho một chiếc đồng hồ classic.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocchinh12_rosegold-1.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocnghieng12_rosegold-1.jpg",
+                "https://www.dyoss.com/app/uploads/2018/08/upweb_gocsau12_rosegold-1.jpg"
+            ]
+        },
+        {
+            "id": "5b1a84d4-726d-4aae-82a2-1b7dafe49d81",
+            "name": "Autumn - White/Tan/32",
+            "price": 2990000,
+            "sex": 0,
+            "type": 1,
+            "category": 6,
+            "stock": 55,
+            "sold": 26,
+            "view": 389,
+            "link": "autumn-white-tan-32",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 32,
+            "strapColor": "Tan",
+            "strapSize": 14,
+            "strapMaterial": "Leather",
+            "description": "DYOSS Autumn White Tan Leather size 32 nhỏ xinh với mặt màu trắng rose gold hiện đại kết hợp với dây da nâu nhạt cổ điển tạo ra chiếc dông hồ vừa hiện đại lại cổ điển. DYOSS Autumn White Tan trở thành món phụ kiện quan trọng của các bạn nữ yêu thời trang.",
+            "features": [
+                "Đường kính 32mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 14mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/11/upweb_gocchinh12-2.jpg",
+                "https://www.dyoss.com/app/uploads/2018/11/upweb_gocnghieng12-2.jpg"
+            ]
+        },
+        {
+            "id": "9f5fc5c5-c27e-4536-b743-f992ef7e9d3d",
+            "name": "Autumn - White/Pink/32",
+            "price": 2990000,
+            "sex": 0,
+            "type": 1,
+            "category": 6,
+            "stock": 35,
+            "sold": 82,
+            "view": 466,
+            "link": "autumn-white-pink-32",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "White",
+            "watchFaceSize": 32,
+            "strapColor": "Pink",
+            "strapSize": 14,
+            "strapMaterial": "Leather",
+            "description": "Còn gì tuyệt vời hơn dành cho các cô nàng nữ tính bằng một chiếc đồng hồ DYOSS Autumn White Pink Leather với mặt trắng của case rose gold và dây hồng nữ tính. DYOSS Autumn White Pink Leather - chiếc dồng hồ tăng thêm nét nữ tính dành cho bạn.",
+            "features": [
+                "Đường kính 32mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 14mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/11/upweb_gocchinh12-6.jpg",
+                "https://www.dyoss.com/app/uploads/2018/11/upweb_gocnghieng12-6.jpg"
+            ]
+        },
+        {
+            "id": "b6734ed5-f550-4d82-bb4b-171a84587192",
+            "name": "Gatsby - Matte/Black/36",
+            "price": 3100000,
+            "sex": 0,
+            "type": 1,
+            "category": 4,
+            "stock": 72,
+            "sold": 97,
+            "view": 272,
+            "link": "gatsby-matte-black-36",
+            "bezel": "Matte Black",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 36,
+            "strapColor": "Black",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Có khi nào bạn có một một đồ cá tính lại cực kì khó phối phụ kiện? Cứu cách của các nàng là đây Gatsby Black Leather - một chiếc đồng hồ được tạo nên bởi màu đen huyền bí, kết hợp với dây da cao cấp tạo nên chiếc đồng hồ vừa cao cấp lại cá tính.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ và Unisex.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/05/upweb_gocchinh_15-1.jpg",
+                "https://www.dyoss.com/app/uploads/2019/05/upweb_gocnghieng_14-1.jpg",
+                "https://www.dyoss.com/app/uploads/2019/05/upweb_gocsau_13-1.jpg"
+            ]
+        },
+        {
+            "id": "f15bac76-9037-4eda-9562-ddff40c32567",
+            "name": "Iconic - White/Pink/36",
+            "price": 2890000,
+            "sex": 0,
+            "type": 1,
+            "category": 3,
+            "stock": 61,
+            "sold": 9,
+            "view": 860,
+            "link": "iconic-white-pink-36",
+            "bezel": "Silver",
+            "watchFaceColor": "White",
+            "watchFaceSize": 36,
+            "strapColor": "Pink",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Những bộ trang phục công sở quá nhàm chán? Ko có điểm nhấn? Đồng hồ Dyoss Iconic White Pink thanh lịch nữ tính sẽ giúp thời trang công sở trở nên sang trọng. Dyoss Iconic tạo điểm nhấn cho phong cách thời trang của bạn.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/12/upweb_gocchinh_12.jpg",
+                "https://www.dyoss.com/app/uploads/2018/12/upweb_gocnghieng_12.jpg"
+            ]
+        },
+        {
+            "id": "955f2e41-43a1-4be6-bf89-98baa6b6c97b",
+            "name": "Iconic - Black/Brown/36",
+            "price": 2890000,
+            "sex": 0,
+            "type": 1,
+            "category": 3,
+            "stock": 0,
+            "sold": 70,
+            "view": 395,
+            "link": "iconic-black-brown-36",
+            "bezel": "Silver",
+            "watchFaceColor": "White",
+            "watchFaceSize": 36,
+            "strapColor": "Brown",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Màu đen huyền bí kết hợp với màu nâu đậm cá tính tạo nên chiếc đồng hồ Dyoss Iconic dark brown mang phong cách mạnh mẽ mà ko kém phần quyến rũ, dễ dàng kết hợp với nhiều loại trang phục từ quần jean cá tính đến những bộ đầm quyến rũ. Dyoss Iconic thể hiện bản chất của người phụ nữ hiện đại.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15-1.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15-1.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13-1.jpg"
+            ]
+        },
+        {
+            "id": "5967a89b-56bd-43a4-a2bc-7ee2066ec18b",
+            "name": "Iconic - Black/Black/36",
+            "price": 2890000,
+            "sex": 0,
+            "type": 1,
+            "category": 3,
+            "stock": 0,
+            "sold": 93,
+            "view": 345,
+            "link": "iconic-black-black-36",
+            "bezel": "Silver",
+            "watchFaceColor": "Black",
+            "watchFaceSize": 36,
+            "strapColor": "Black",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "description": "Màu đen sần đem lại một cảm giác đơn giản nhưng không hề nhàm chán. Sự khỏe khoắn, cứng cáp của sản phẩm này là gợi ý của Dyoss dành cho các cô nàng muốn thêm vào tủ đồ của mình một chút cá tính hiện đại.",
+            "features": [
+                "Đường kính 36mm - dành cho Nữ và Unisex.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây da nhập khẩu - size 18mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocchinh_15.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocnghieng_15.jpg",
+                "https://www.dyoss.com/app/uploads/2017/07/upweb_gocsau_13.jpg"
+            ]
+        },
+        {
+            "id": "6e0586a0-23df-4f5a-ac53-866764272443",
+            "name": "Mystique - Black/Black Mesh/34",
+            "price": 3100000,
+            "sex": 0,
+            "type": 1,
+            "category": 2,
+            "stock": 0,
+            "sold": 73,
+            "view": 851,
+            "link": "mystique-black-black-mesh-34",
+            "bezel": "Matte Black",
+            "watchFaceColor": "Matte Black",
+            "watchFaceSize": 34,
+            "strapColor": "Black",
+            "strapSize": 14,
+            "strapMaterial": "Mesh",
+            "description": "Sản phẩm vô cùng bắt mắt mới được \"trình làng\" của Dyoss hè 2019. Với thiết kế hoàn toàn mới, loại bỏ các chi tiết thừa, mang xu hướng thiết kế \"vô cực\". Là biểu trưng cho sự tinh giản, hiện đại vượt thời gian. Sự bóng bẩy trong thiết kế, cũng như nét lôi cuốn mà chiếc đồng hồ sở hữu sẽ làm bạn cảm thấy tự tin và nổi bật khi có phụ kiện này yên vị trên cổ tay của mình.",
+            "features": [
+                "Đường kính 34mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 14mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/06/01.jpg",
+                "https://www.dyoss.com/app/uploads/2019/06/03.jpg"
+            ]
+        },
+        {
+            "id": "7595586d-9ed5-4197-be25-bd61676d581a",
+            "name": "Mystique - Rose/Rose Mesh/34",
+            "price": 3100000,
+            "sex": 0,
+            "type": 1,
+            "category": 2,
+            "stock": 72,
+            "sold": 100,
+            "view": 939,
+            "link": "mystique-rose-rose-mesh-34",
+            "bezel": "Rose Gold",
+            "watchFaceColor": "Matte Black",
+            "watchFaceSize": 34,
+            "strapColor": "Rose Gold",
+            "strapSize": 14,
+            "strapMaterial": "Mesh",
+            "description": "Sản phẩm vô cùng bắt mắt mới được \"trình làng\" của Dyoss hè 2019. Với thiết kế hoàn toàn mới, loại bỏ các chi tiết thừa, mang xu hướng thiết kế \"vô cực\". Là biểu trưng cho sự tinh giản, hiện đại vượt thời gian. Sự bóng bẩy trong thiết kế, cũng như nét lôi cuốn mà chiếc đồng hồ sở hữu sẽ làm bạn cảm thấy tự tin và nổi bật khi có phụ kiện này yên vị trên cổ tay của mình.",
+            "features": [
+                "Đường kính 34mm - dành cho Nữ.",
+                "Máy Quartz Miyota Nhật Bản.",
+                "Mặt kính Sapphire chống trầy cao cấp.",
+                "Chống nước 5ATM (có thể đeo khi bơi - không khuyến khích).",
+                "Vỏ đồng hồ và khoá bằng thép không gỉ.",
+                "Dây thép nhập khẩu, không gỉ, sơn tĩnh diện - size 14mm.",
+                "Bảo hành 1 năm cho máy và thay pin miễn phí."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2019/06/02.jpg",
+                "https://www.dyoss.com/app/uploads/2019/06/06.jpg"
+            ]
+        }
+    ],
+    "Straps": [
+        {
+            "id": "53944cdc-10c0-43e3-b18f-2be142747733",
+            "name": "Pink Leather Straps - Rose Gold/18",
+            "price": 499000,
+            "sex": 0,
+            "type": 3,
+            "category": 8,
+            "stock": 56,
+            "sold": 94,
+            "view": 621,
+            "link": "pink-leather-straps-rose-gold-18",
+            "strapColor": "Pink",
+            "strapSize": 18,
+            "strapMaterial": "Leather",
+            "buckleColor": "Rose Gold",
+            "description": "Dây da được làm từ chất dây da bê, được xử lý nhuộm màu không bóng. Lỗ xỏ dây tròn nhỏ, khóa bằng thép không gỉ có khắc logo Dyoss. Dây da đệm dày, chỉ cùng màu may sát viền da. Dây được đánh cạnh kỹ càng, mặt sau lót lớp da màu nâu. Khi đeo rất ôm tay.",
+            "features": [
+                "Dây da bê màu hồng nhập khẩu chất lượng cao.",
+                "Kích thước dây 18mm, sử dụng cho đồng hồ Dyoss size 36mm.",
+                "Khoá bằng thép không gỉ màu rosegold."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/08/Pink-Leather-Straps-18-d%C3%A2y-h%E1%BB%93ng.jpg"
+            ]
+        },
+        {
+            "id": "52a527d2-d628-4d12-98b6-a79d585fd118",
+            "name": "Silver Mesh Straps - 18",
+            "price": 699000,
+            "sex": 0,
+            "type": 3,
+            "category": 8,
+            "stock": 48,
+            "sold": 39,
+            "view": 321,
+            "link": "silver-mesh-straps-18",
+            "strapColor": "Silver",
+            "strapSize": 18,
+            "strapMaterial": "Mesh",
+            "buckleColor": "Silver",
+            "description": "Dây mesh được làm từ chất liệu thép không gỉ. Độ dài dây có thể tùy chỉnh theo từng cổ tay khác nhau. Dây mesh khắc phục được điểm yếu gây cấn tay khi đeo của dây kim loại thông thường. Các mắt thép được đan thành lưới ôm vừa khít tay và không gây khó chịu khi đeo.",
+            "features": [
+                "Dây kim loại nhập khẩu chất lượng cao.",
+                "Kích thước dây 18mm, sử dụng cho đồng hồ Dyoss size 36mm.",
+                "Chất liệu bằng thép không gỉ màu bạc (silver)."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2017/11/straps_silvermesh.png"
+            ]
+        },
+        {
+            "id": "e414dff9-039d-4993-ba22-a4b28717ded8",
+            "name": "Brown Leather Straps - Silver/20",
+            "price": 499000,
+            "sex": 1,
+            "type": 3,
+            "category": 8,
+            "stock": 49,
+            "sold": 38,
+            "view": 358,
+            "link": "brown-leather-straps-silver-20",
+            "strapColor": "Brown",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "buckleColor": "Silver",
+            "description": "Dây da được làm từ chất dây da bê, được xử lý nhuộm màu không bóng. Lỗ xỏ dây tròn nhỏ, khóa bằng thép không gỉ có khắc logo Dyoss. Dây da đệm dày, chỉ cùng màu may sát viền da. Dây được đánh cạnh kỹ càng, mặt sau lót lớp da màu nâu. Khi đeo rất ôm tay.",
+            "features": [
+                "Dây da bê màu nâu nhập khẩu chất lượng cao.",
+                "Kích thước dây 20mm, sử dụng cho đồng hồ Dyoss size 40mm.",
+                "Khoá bằng thép không gỉ màu màu bạc (silver)."
+            ],
+            "images": ["https://www.dyoss.com/app/uploads/2018/05/straps-1.jpg"]
+        },
+        {
+            "id": "db99c914-0b23-45fc-9fc9-9a1ecd95feef",
+            "name": "Black Leather Straps - Silver/20",
+            "price": 499000,
+            "sex": 1,
+            "type": 3,
+            "category": 8,
+            "stock": 38,
+            "sold": 83,
+            "view": 495,
+            "link": "black-leather-straps-silver-20",
+            "strapColor": "Black",
+            "strapSize": 20,
+            "strapMaterial": "Leather",
+            "buckleColor": "Silver",
+            "description": "Dây da được làm từ chất dây da bê, được xử lý nhuộm màu không bóng. Lỗ xỏ dây tròn nhỏ, khóa bằng thép không gỉ có khắc logo Dyoss. Dây da đệm dày, chỉ cùng màu may sát viền da. Dây được đánh cạnh kỹ càng, mặt sau lót lớp da màu nâu. Khi đeo rất ôm tay.",
+            "features": [
+                "Dây da bê màu nâu nhập khẩu chất lượng cao.",
+                "Kích thước dây 20mm, sử dụng cho đồng hồ Dyoss size 40mm.",
+                "Khoá bằng thép không gỉ màu màu bạc (silver)."
+            ],
+            "images": ["https://www.dyoss.com/app/uploads/2018/05/straps-1.jpg"]
+        }
+    ],
+    "Bracelets": [
+        {
+            "id": "c0fd80f6-ba2c-4170-a1f0-ce5db57aca99",
+            "name": "Infinity Cuff - Silver",
+            "price": 499000,
+            "sex": 2,
+            "type": 3,
+            "category": 9,
+            "stock": 12,
+            "sold": 75,
+            "view": 325,
+            "link": "infinity-cuff-silver",
+            "color": "Silver",
+            "size": "No size",
+            "strapMaterial": "Inox",
+            "description": "Được làm bằng chất liệu là 100% inox không gỉ, đảm bảo không bị dị ứng. Công nghệ tĩnh điện chân không giúp vòng giữ màu lâu (2-3 năm tuỳ người sử dụng). Với thiết kế tinh tế, sang trọng, nữ tính, vòng tay Infinity Cuff màu silver giúp các bạn nữ dễ dàng phối hợp với đồng hồ và trang phục trong tất cả các dịp từ đi làm đến đi chơi.",
+            "features": [
+                "Vòng tay nhập khẩu chất lượng cao.",
+                "Đường kính 5,6 cm, vừa với cỡ tay trung bình của người Việt Nam.",
+                "Chất liệu bằng inox không gỉ."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/10/SILVER-cuff-detail-01.jpg",
+                "https://www.dyoss.com/app/uploads/2018/10/IMG_8239-1024x1024.jpeg"
+            ]
+        },
+        {
+            "id": "a0fae4d7-b70e-43d3-a3c0-bfeada08323b",
+            "name": "Infinity Cuff - Rose Gold",
+            "price": 499000,
+            "sex": 2,
+            "type": 3,
+            "category": 9,
+            "stock": 32,
+            "sold": 64,
+            "view": 564,
+            "link": "infinity-cuff-rose-gold",
+            "color": "Rose Gold",
+            "size": "No size",
+            "strapMaterial": "Inox",
+            "description": "Được làm bằng chất liệu là 100% inox không gỉ, đảm bảo không bị dị ứng. Công nghệ tĩnh điện chân không giúp vòng giữ màu lâu (2-3 năm tuỳ người sử dụng). Với thiết kế tinh tế, sang trọng, nữ tính, vòng tay Infinity Cuff màu rose gold giúp các bạn nữ dễ dàng phối hợp với đồng hồ và trang phục trong tất cả các dịp từ đi làm đến đi chơi.",
+            "features": [
+                "Vòng tay nhập khẩu chất lượng cao.",
+                "Đường kính 5,6 cm, vừa với cỡ tay trung bình của người Việt Nam.",
+                "Chất liệu bằng inox không gỉ."
+            ],
+            "images": [
+                "https://www.dyoss.com/app/uploads/2018/10/ROSE-cuff-detail-01.jpg",
+                "https://www.dyoss.com/app/uploads/2018/10/IMG_0010-1024x1024.jpg"
+            ]
+        }
+    ]
+}

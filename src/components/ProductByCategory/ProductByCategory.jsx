@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
 import style from './ProductByCategory.module.scss';
-import ProductCard from '../ProductCard';
+import ProductCard from '~/components/ProductCard';
 
 const cx = classNames.bind(style);
 

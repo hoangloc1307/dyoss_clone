@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import style from './Home.module.scss';
 import images from '~/assets/images';
@@ -18,6 +19,8 @@ const cx = classNames.bind(style);
 
 function Home() {
     const dispatch = useDispatch();
+
+    const { t } = useTranslation();
 
     const productStatus = useSelector(state => state.products.status);
     // const error = useSelector((state) => state.products.error);
@@ -50,7 +53,7 @@ function Home() {
                 <div className={cx('hero-content')}>
                     <h1 className={cx('title')}>Dyoss Watch</h1>
                     <p className={cx('sub-title')}>
-                        Sự tối giản luôn hợp thời.
+                        {t('Sự tối giản luôn hợp thời.')}
                     </p>
                 </div>
             </div>
@@ -59,11 +62,13 @@ function Home() {
             {/* Selling */}
             <div className={cx('selling')}>
                 <div className={cx('container')}>
-                    <ProductByCategory
-                        title={'Mẫu bán chạy'}
-                        description={''}
-                        listProduct={sellingProducts}
-                    />
+                    {sellingProducts.length > 0 && (
+                        <ProductByCategory
+                            title={'Mẫu bán chạy'}
+                            description={''}
+                            listProduct={sellingProducts}
+                        />
+                    )}
                 </div>
             </div>
             {/* End Selling */}
@@ -76,11 +81,13 @@ function Home() {
                     <Button to={'/product-category/woman'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider
-                        listData={womanProducts}
-                        navigation
-                        autoplay
-                    />
+                    {womanProducts.length > 0 && (
+                        <ProductSlider
+                            listData={womanProducts}
+                            navigation
+                            autoplay
+                        />
+                    )}
                 </div>
             </div>
 
@@ -123,7 +130,13 @@ function Home() {
                     <Button to={'/product-category/man'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    <ProductSlider listData={manProducts} navigation autoplay />
+                    {manProducts.length > 0 && (
+                        <ProductSlider
+                            listData={manProducts}
+                            navigation
+                            autoplay
+                        />
+                    )}
                 </div>
             </div>
             {/* End Product Slider */}

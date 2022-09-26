@@ -50,11 +50,13 @@ function ProductDetail() {
                     <div className={cx('container')}>
                         <div className={cx('product-detail')}>
                             <div className={cx('image-detail')}>
-                                <ProductSlider
-                                    listData={product.image}
-                                    image
-                                    customClass={style}
-                                />
+                                {product.image.length > 0 && (
+                                    <ProductSlider
+                                        listData={product.image}
+                                        image
+                                        customClass={style}
+                                    />
+                                )}
                             </div>
                             <div className={cx('content-detail')}>
                                 <h1 className={cx('name')}>{product.name}</h1>

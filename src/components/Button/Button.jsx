@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
 import style from './Button.module.scss';
 
@@ -27,4 +28,4 @@ function Button({ children, href, to, customClass, ...passProps }) {
     );
 }
 
-export default Button;
+export default memo(Button);
