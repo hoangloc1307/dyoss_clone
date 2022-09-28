@@ -5,11 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import style from './Home.module.scss';
 import images from '~/assets/images';
-import {
-    fetchProducts,
-    selectProductsByType,
-    selectSellingProducts,
-} from '~/features/products';
+import { fetchProducts } from '~/features/products';
 import ProductByCategory from '~/components/ProductByCategory';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
@@ -24,20 +20,13 @@ function Home() {
 
     const productStatus = useSelector(state => state.products.status);
     // const error = useSelector((state) => state.products.error);
-    const sellingProducts = useSelector(state =>
-        selectSellingProducts(state, 3)
+    const sellingProducts = useSelector(
+        state => state.products.sellingProducts
     );
-    const manProducts = useSelector(state => selectProductsByType(state, 'man'))
-        .filter(item => item.stock > 0)
-        .sort((prev, next) => next.view - prev.view)
-        .slice(0, 5);
 
-    const womanProducts = useSelector(state =>
-        selectProductsByType(state, 'woman')
-    )
-        .filter(item => item.stock > 0)
-        .sort((prev, next) => next.view - prev.view)
-        .slice(0, 5);
+    const manProducts = useSelector(state => state.products.manProducts);
+
+    const womanProducts = useSelector(state => state.products.womanProducts);
 
     useEffect(() => {
         if (productStatus === 'idle') {
@@ -85,7 +74,7 @@ function Home() {
                         <ProductSlider
                             listData={womanProducts}
                             navigation
-                            autoplay
+                            autoplaya
                         />
                     )}
                 </div>
@@ -134,7 +123,7 @@ function Home() {
                         <ProductSlider
                             listData={manProducts}
                             navigation
-                            autoplay
+                            autoplaya
                         />
                     )}
                 </div>

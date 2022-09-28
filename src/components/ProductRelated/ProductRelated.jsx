@@ -1,27 +1,25 @@
 import classNames from 'classnames/bind';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 import style from './ProductRelated.module.scss';
 import ProductByCategory from '~/components/ProductByCategory';
-import { selectProductsRelated } from '~/features/products';
+import * as http from '~/utils/http';
 
 const cx = classNames.bind(style);
 
 function ProductRelated({ product }) {
-    const productsRelated = useSelector(state =>
-        selectProductsRelated(
-            state,
-            product.id,
-            product.type,
-            product.category,
-            3
-        )
-    );
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        http.get(http.Dyoss, `product/related/${product.id}`).then(res =>
+            setProducts(res)
+        );
+    }, [product]);
     return (
         <div className={cx('product-related')}>
             <ProductByCategory
                 title={'Sản phẩm liên quan'}
-                listProduct={productsRelated}
+                listProduct={products}
                 column={4}
             />
         </div>

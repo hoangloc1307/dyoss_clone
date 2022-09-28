@@ -1,31 +1,39 @@
 import classNames from 'classnames/bind';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 
 import style from './ProductDetail.module.scss';
 import { NumberWithCommas } from '~/functions';
+import * as http from '~/utils/http';
 import PageNotFound from '~/pages/PageNotFound';
-import { selectProductBySlug } from '~/features/products';
 import { addToCart } from '~/features/cart';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductRelated from '~/components/ProductRelated';
+import { useState } from 'react';
 
 const cx = classNames.bind(style);
 
 function ProductDetail() {
     const dispatch = useDispatch();
-
     const params = useParams();
+    const [product, setProduct] = useState({});
 
-    const product = useSelector(state =>
-        selectProductBySlug(state, params.slug)
-    );
-
-    //Lưu vào session storage
+    //Get product detail
     useEffect(() => {
-        if (product) {
+        http.get(http.Dyoss, `product/${params.slug}`).then(response => {
+            const [prod] = [...response];
+            prod.features = JSON.parse(prod.features);
+            prod.images = JSON.parse(prod.images);
+            setProduct(prod);
+        });
+    }, [params.slug]);
+
+    //Save into session storage
+    useEffect(() => {
+        if (!isEmpty(product)) {
             let items;
             const products = sessionStorage.getItem('productViewed');
             if (products) {
@@ -34,6 +42,10 @@ function ProductDetail() {
                     if (items.length > 5) {
                         items.shift();
                     }
+                    items.push(product.id);
+                } else {
+                    const index = items.indexOf(product.id);
+                    items.splice(index, 1);
                     items.push(product.id);
                 }
             } else {
@@ -45,14 +57,14 @@ function ProductDetail() {
 
     return (
         <>
-            {product ? (
+            {!isEmpty(product) ? (
                 <main className={cx('product-detail-page')}>
                     <div className={cx('container')}>
                         <div className={cx('product-detail')}>
                             <div className={cx('image-detail')}>
-                                {product.image.length > 0 && (
+                                {product.images.length > 0 && (
                                     <ProductSlider
-                                        listData={product.image}
+                                        listData={product.images}
                                         image
                                         customClass={style}
                                     />
@@ -78,7 +90,8 @@ function ProductDetail() {
                                                         name: product.name,
                                                         price: product.price,
                                                         link: product.link,
-                                                        image: product.image[0],
+                                                        image: product
+                                                            .images[0],
                                                         total: 1,
                                                     })
                                                 );

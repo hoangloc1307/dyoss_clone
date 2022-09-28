@@ -105,7 +105,7 @@ function CheckoutForm() {
 
     //Lấy data tỉnh
     useEffect(() => {
-        http.get('master-data/province').then(res =>
+        http.get(http.GHN, 'master-data/province').then(res =>
             setProvinces(
                 res.data.sort((prev, next) =>
                     prev.ProvinceName.localeCompare(next.ProvinceName)
@@ -117,7 +117,7 @@ function CheckoutForm() {
     //Tính phí vận chuyển
     useEffect(() => {
         if (formik.values.wardCode !== '') {
-            http.post('v2/shipping-order/fee', {
+            http.post(http.GHN, 'v2/shipping-order/fee', {
                 shop_id: 3281000,
                 service_type_id: 2,
                 insurance_value: 0,
@@ -138,7 +138,7 @@ function CheckoutForm() {
         formik.setFieldValue('province', e.target[e.target.selectedIndex].text);
         formik.setFieldValue('provinceID', e.target.value);
 
-        http.post('master-data/district', {
+        http.post(http.GHN, 'master-data/district', {
             province_id: parseInt(e.target.value),
         }).then(res => {
             setDistricts(
@@ -158,7 +158,7 @@ function CheckoutForm() {
         formik.setFieldValue('district', e.target[e.target.selectedIndex].text);
         formik.setFieldValue('districtID', e.target.value);
 
-        http.post('master-data/ward', {
+        http.post(http.GHN, 'master-data/ward', {
             district_id: parseInt(e.target.value),
         }).then(res =>
             setWards(

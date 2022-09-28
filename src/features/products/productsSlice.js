@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchProducts } from './productsThunk';
 
 const initialState = {
-    productList: [],
-    productType: [],
-    productCategory: [],
+    sellingProducts: [],
+    manProducts: [],
+    womanProducts: [],
     status: 'idle',
     error: null,
 };
@@ -21,15 +21,9 @@ const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.productList = state.productList.concat(
-                    action.payload[0].products
-                );
-                state.productType = state.productType.concat(
-                    action.payload[1].types
-                );
-                state.productCategory = state.productCategory.concat(
-                    action.payload[2].categories
-                );
+                state.sellingProducts = action.payload[0];
+                state.manProducts = action.payload[1];
+                state.womanProducts = action.payload[2];
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.status = 'failed';

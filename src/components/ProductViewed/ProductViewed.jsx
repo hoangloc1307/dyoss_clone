@@ -1,19 +1,14 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState, memo } from 'react';
 
 import style from './ProductViewed.module.scss';
+import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
-import { selectProductsById } from '~/features/products';
 
 const cx = classNames.bind(style);
 
 function ProductViewed() {
-    const [productsId, setProductsId] = useState([]);
-
-    const products = useSelector(state =>
-        selectProductsById(state, productsId)
-    );
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         const productViewd = JSON.parse(
@@ -21,7 +16,16 @@ function ProductViewed() {
         );
 
         if (productViewd) {
-            setProductsId(productViewd);
+            http.get(
+                http.Dyoss,
+                `product/viewed?id=${productViewd.toString()}`
+            ).then(res => {
+                const orderList = [];
+                productViewd.map(id => {
+                    orderList.push(res.find(item => item.id === id));
+                });
+                setProducts(orderList.reverse());
+            });
         }
     }, []);
 
@@ -38,4 +42,4 @@ function ProductViewed() {
     );
 }
 
-export default ProductViewed;
+export default memo(ProductViewed);
