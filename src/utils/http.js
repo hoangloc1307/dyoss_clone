@@ -9,7 +9,7 @@ export const GHN = axios.create({
 });
 
 export const Dyoss = axios.create({
-    baseURL: 'https://dyoss-api.herokuapp.com/api/',
+    baseURL: 'https://dyoss-clone-be-tz1r.vercel.app/api/',
 });
 
 export const get = async (instance, path, option = {}) => {
