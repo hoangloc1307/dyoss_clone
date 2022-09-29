@@ -2,6 +2,14 @@
     position: relative;
 }
 
+.cart-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    line-height: 1;
+}
+
 .cart-icon {
     width: 26px;
     height: 32px;
@@ -23,7 +31,7 @@
     background: #ffffff;
     position: absolute;
     right: 0;
-    top: 150%;
+    top: 50px;
     z-index: 99;
     border-radius: 12px;
     border: 1px solid #000000;

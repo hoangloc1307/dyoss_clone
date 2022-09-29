@@ -1,35 +1,42 @@
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { isEmpty } from 'lodash';
+import { useState } from 'react';
 
 import style from './ProductDetail.module.scss';
 import { NumberWithCommas } from '~/functions';
 import * as http from '~/utils/http';
-import PageNotFound from '~/pages/PageNotFound';
 import { addToCart } from '~/features/cart';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductRelated from '~/components/ProductRelated';
-import { useState } from 'react';
+import { changeState } from '~/features/loader/loaderSlice';
 
 const cx = classNames.bind(style);
 
 function ProductDetail() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const params = useParams();
     const [product, setProduct] = useState({});
 
     //Get product detail
     useEffect(() => {
+        dispatch(changeState(true));
         http.get(http.Dyoss, `product/${params.slug}`).then(response => {
-            const [prod] = [...response];
-            prod.features = JSON.parse(prod.features);
-            prod.images = JSON.parse(prod.images);
-            setProduct(prod);
+            if (response.length > 0) {
+                const [prod] = [...response];
+                prod.features = JSON.parse(prod.features);
+                prod.images = JSON.parse(prod.images);
+                setProduct(prod);
+                dispatch(changeState(false));
+            } else {
+                navigate('/');
+            }
         });
-    }, [params.slug]);
+    }, [params.slug, dispatch, navigate]);
 
     //Save into session storage
     useEffect(() => {
@@ -57,7 +64,7 @@ function ProductDetail() {
 
     return (
         <>
-            {!isEmpty(product) ? (
+            {!isEmpty(product) && (
                 <main className={cx('product-detail-page')}>
                     <div className={cx('container')}>
                         <div className={cx('product-detail')}>
@@ -111,8 +118,6 @@ function ProductDetail() {
                         <ProductRelated product={product} />
                     </div>
                 </main>
-            ) : (
-                <PageNotFound />
             )}
         </>
     );

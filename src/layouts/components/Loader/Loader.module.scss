@@ -1,0 +1,29 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.loader.show {
+    display: flex;
+}
+
+.loader-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        scale: 3;
+    }
+}

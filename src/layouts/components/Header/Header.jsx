@@ -6,6 +6,7 @@ import style from './Header.module.scss';
 import images from '~/assets/images';
 import { menuHeader } from '~/assets/datas';
 import Cart from '~/components/Cart';
+import Search from '~/components/Search';
 
 const cx = classNames.bind(style);
 
@@ -59,9 +60,7 @@ function Header() {
                 <div className={cx('middle')}>
                     <div className={cx('container')}>
                         <div className={cx('inner')}>
-                            <div className={cx('search')}>
-                                <div className={cx('search-icon')}></div>
-                            </div>
+                            <Search customClass={style} />
                             <Link to={'/'} className={cx('logo')}>
                                 <img src={images.logoBlack} alt="Dyoss Logo" />
                             </Link>

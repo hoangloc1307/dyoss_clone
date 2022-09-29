@@ -21,9 +21,9 @@ function ProductViewed() {
                 `product/viewed?id=${productViewd.toString()}`
             ).then(res => {
                 const orderList = [];
-                productViewd.map(id => {
-                    orderList.push(res.find(item => item.id === id));
-                });
+                productViewd.map(id =>
+                    orderList.push(res.find(item => item.id === id))
+                );
                 setProducts(orderList.reverse());
             });
         }

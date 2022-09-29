@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import {
     changeStatus,
@@ -52,80 +53,103 @@ function Cart({ customClass }) {
             </div>
 
             {showStatus && (
-                <div className={cx('cart-detail')}>
-                    {products.length > 0 ? (
-                        <ul className={cx('cart-items')}>
-                            {products.map(item => (
-                                <li key={item.id} className={cx('cart-item')}>
-                                    <div className={cx('item-contain')}>
-                                        <Link
-                                            to={`/product/${item.link}`}
-                                            className={cx('image-box')}
-                                        >
-                                            <img
-                                                src={item.image}
-                                                alt={item.name}
-                                            />
-                                        </Link>
-                                        <div className={cx('item-detail')}>
+                <>
+                    <span
+                        className={cx(
+                            'cart-arrow',
+                            customClass?.['cart-arrow']
+                        )}
+                    >
+                        <FontAwesomeIcon icon={faCaretDown} />
+                    </span>
+                    <div
+                        className={cx(
+                            'cart-detail',
+                            customClass?.['cart-detail']
+                        )}
+                    >
+                        {products.length > 0 ? (
+                            <ul className={cx('cart-items')}>
+                                {products.map(item => (
+                                    <li
+                                        key={item.id}
+                                        className={cx('cart-item')}
+                                    >
+                                        <div className={cx('item-contain')}>
                                             <Link
                                                 to={`/product/${item.link}`}
-                                                className={cx('name')}
+                                                className={cx('image-box')}
                                             >
-                                                {item.name}
-                                            </Link>
-                                            <p className={cx('price')}>
-                                                {NumberWithCommas(item.price)}đ
-                                            </p>
-                                            <div className={cx('amount')}>
-                                                <span>SL:</span>
-                                                <InputNumber
-                                                    value={item.total}
-                                                    onIncrease={() =>
-                                                        dispatch(
-                                                            updateCartItem({
-                                                                id: item.id,
-                                                                type: 'increase',
-                                                            })
-                                                        )
-                                                    }
-                                                    onDecrease={() =>
-                                                        dispatch(
-                                                            updateCartItem({
-                                                                id: item.id,
-                                                                type: 'decrease',
-                                                            })
-                                                        )
-                                                    }
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
                                                 />
+                                            </Link>
+                                            <div className={cx('item-detail')}>
+                                                <Link
+                                                    to={`/product/${item.link}`}
+                                                    className={cx('name')}
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                                <p className={cx('price')}>
+                                                    {NumberWithCommas(
+                                                        item.price
+                                                    )}
+                                                    đ
+                                                </p>
+                                                <div className={cx('amount')}>
+                                                    <span>SL:</span>
+                                                    <InputNumber
+                                                        value={item.total}
+                                                        onIncrease={() =>
+                                                            dispatch(
+                                                                updateCartItem({
+                                                                    id: item.id,
+                                                                    type: 'increase',
+                                                                })
+                                                            )
+                                                        }
+                                                        onDecrease={() =>
+                                                            dispatch(
+                                                                updateCartItem({
+                                                                    id: item.id,
+                                                                    type: 'decrease',
+                                                                })
+                                                            )
+                                                        }
+                                                    />
+                                                </div>
                                             </div>
+                                            <FontAwesomeIcon
+                                                icon={faCircleXmark}
+                                                className={cx('remove')}
+                                                onClick={() => {
+                                                    dispatch(
+                                                        removeItem({
+                                                            id: item.id,
+                                                        })
+                                                    );
+                                                }}
+                                            />
                                         </div>
-                                        <FontAwesomeIcon
-                                            icon={faCircleXmark}
-                                            className={cx('remove')}
-                                            onClick={() => {
-                                                dispatch(
-                                                    removeItem({ id: item.id })
-                                                );
-                                            }}
-                                        />
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p className={cx('empty')}>
-                            Bạn chưa chọn sản phẩm nào
-                        </p>
-                    )}
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p className={cx('empty')}>
+                                Bạn chưa chọn sản phẩm nào
+                            </p>
+                        )}
 
-                    <div className={cx('total')}>
-                        TỔNG CỘNG: {NumberWithCommas(totalPrice)}đ
+                        <div className={cx('total')}>
+                            TỔNG CỘNG: {NumberWithCommas(totalPrice)}đ
+                        </div>
+                        <Button to={'/checkout'} customClass={style}>
+                            Thanh toán
+                        </Button>
                     </div>
-                    <Button to={'/checkout'} customClass={style}>
-                        Thanh toán
-                    </Button>
-                </div>
+                </>
             )}
         </div>
     );

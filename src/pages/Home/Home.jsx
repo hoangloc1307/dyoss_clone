@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import style from './Home.module.scss';
 import images from '~/assets/images';
 import { fetchProducts } from '~/features/products';
+import { changeState } from '~/features/loader/loaderSlice';
 import ProductByCategory from '~/components/ProductByCategory';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
@@ -30,7 +31,11 @@ function Home() {
 
     useEffect(() => {
         if (productStatus === 'idle') {
+            dispatch(changeState(true));
             dispatch(fetchProducts());
+        }
+        if (productStatus === 'succeeded') {
+            dispatch(changeState(false));
         }
     }, [productStatus, dispatch]);
 

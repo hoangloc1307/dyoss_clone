@@ -115,15 +115,6 @@ $item-padding-vertical: 15px;
     }
 }
 
-.search-icon {
-    width: 32px;
-    height: 32px;
-    background-image: url('../../../assets/images/icon-sprites.png');
-    background-position: -50px 0;
-    background-size: 100px 150px;
-    cursor: pointer;
-}
-
 .logo {
     display: block;
     width: 180px;
@@ -195,6 +186,10 @@ $item-padding-vertical: 15px;
         background-position: 0 0;
     }
 
+    .search-input {
+        background-color: #ffffff;
+    }
+
     .logo {
         img {
             filter: invert(1);
@@ -207,6 +202,15 @@ $item-padding-vertical: 15px;
         .cart-amount {
             color: $text-light;
         }
+    }
+
+    .cart-arrow,
+    .search-arrow {
+        color: #ffffff;
+    }
+
+    .cart-detail {
+        border-color: #ffffff;
     }
 
     .navigation {

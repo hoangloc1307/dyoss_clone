@@ -12,6 +12,8 @@ const images = {
     feature2: require('~/assets/images/img-100-2.jpg'),
     feature3: require('~/assets/images/img-100-3.jpg'),
     pageNotFound: require('~/assets/images/page_not_found.svg'),
+    loading: require('~/assets/images/loading.gif'),
+    loading2: require('~/assets/images/loading2.gif'),
 };
 
 export default images;

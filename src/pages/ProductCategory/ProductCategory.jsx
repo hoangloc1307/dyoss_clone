@@ -1,41 +1,42 @@
 import classNames from 'classnames/bind';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import style from './ProductCategory.module.scss';
 import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
+import { changeState } from '~/features/loader/loaderSlice';
 
 const cx = classNames.bind(style);
 
 function ProductCategory() {
+    const dispatch = useDispatch();
     const params = useParams();
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        dispatch(changeState(true));
+        let url;
         switch (params.type) {
             case 'man':
-                http.get(
-                    http.Dyoss,
-                    'product/collections?type=watch&sex=m'
-                ).then(res => setProducts(res));
+                url = 'product/collections?type=watch&sex=m';
                 break;
             case 'woman':
-                http.get(
-                    http.Dyoss,
-                    'product/collections?type=watch&sex=w'
-                ).then(res => setProducts(res));
+                url = 'product/collections?type=watch&sex=w';
                 break;
             case 'accessory':
-                http.get(http.Dyoss, 'product/collections?type=accessory').then(
-                    res => setProducts(res)
-                );
+                url = 'product/collections?type=accessory';
                 break;
             default:
-                setProducts([]);
         }
-    }, [params.type]);
+
+        http.get(http.Dyoss, url).then(res => {
+            setProducts(res);
+            dispatch(changeState(false));
+        });
+    }, [params.type, dispatch]);
 
     return (
         <main className={cx('product-categories')}>
