@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import style from './ProductCategory.module.scss';
 import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
-import { changeState } from '~/features/loader/loaderSlice';
+import { changeProgress } from '~/features/loader';
+import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -17,7 +18,7 @@ function ProductCategory() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        dispatch(changeState(true));
+        dispatch(changeProgress(50));
         let url;
         switch (params.type) {
             case 'man':
@@ -34,12 +35,13 @@ function ProductCategory() {
 
         http.get(http.Dyoss, url).then(res => {
             setProducts(res);
-            dispatch(changeState(false));
+            dispatch(changeProgress(100));
         });
     }, [params.type, dispatch]);
 
     return (
         <main className={cx('product-categories')}>
+            <TopLoading />
             <div className={cx('container')}>
                 {products.length > 0 &&
                     products.map(item => {

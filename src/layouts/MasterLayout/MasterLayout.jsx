@@ -7,7 +7,6 @@ function MasterLayout({ children }) {
         <>
             <Header />
             {children}
-            <Loader />
             <Footer />
         </>
     );

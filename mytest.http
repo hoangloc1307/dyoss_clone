@@ -16,3 +16,5 @@
 # token: 221a29d9-3a3e-11ed-8008-c673db1cbf27
 
 # {"district_id": 1708}
+
+get me/media?fields=id,caption&access_token=

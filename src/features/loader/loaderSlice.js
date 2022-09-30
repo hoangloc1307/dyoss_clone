@@ -1,17 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { status: false };
+const initialState = {
+    status: false,
+    progress: 0,
+};
 
 const loaderSlice = createSlice({
     name: 'loader',
     initialState,
     reducers: {
-        changeState: (state, action) => {
+        changeShowStatus: (state, action) => {
             state.status = action.payload;
+        },
+        changeProgress: (state, action) => {
+            state.progress = action.payload;
         },
     },
 });
 
-export const { changeState } = loaderSlice.actions;
+export const { changeShowStatus, changeProgress } = loaderSlice.actions;
 
 export default loaderSlice.reducer;

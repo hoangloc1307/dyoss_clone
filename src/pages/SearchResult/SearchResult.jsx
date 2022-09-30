@@ -6,7 +6,8 @@ import { useLocation } from 'react-router-dom';
 import style from './SearchResult.module.scss';
 import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
-import { changeState } from '~/features/loader/loaderSlice';
+import { changeProgress } from '~/features/loader';
+import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -18,9 +19,10 @@ function SearchResult() {
     const [displayKeyword, setDisplayKeyword] = useState('');
 
     const keyword = useSelector(state => state.search.keyword);
+    const fetchStatus = useSelector(state => state.loader.progress);
 
     useEffect(() => {
-        dispatch(changeState(true));
+        dispatch(changeProgress(50));
         let url;
         if (keyword) {
             url = `product/search?name=${keyword}`;
@@ -32,22 +34,27 @@ function SearchResult() {
         }
         http.get(http.Dyoss, url).then(res => {
             setProducts(res);
-            dispatch(changeState(false));
+            dispatch(changeProgress(100));
         });
     }, [keyword, location.search, dispatch]);
 
     return (
         <main className={cx('search-page')}>
+            <TopLoading />
             <div className={cx('container')}>
-                {products.length > 0 ? (
-                    <ProductByCategory
-                        title={`Search Result: "${displayKeyword}"`}
-                        listProduct={products}
-                    />
-                ) : (
-                    <h2 className={cx('not-found')}>
-                        Không tìm thấy kết quả cho "{displayKeyword}"
-                    </h2>
+                {(fetchStatus === 0 || fetchStatus === 100) && (
+                    <>
+                        {products.length > 0 ? (
+                            <ProductByCategory
+                                title={`Search Result: "${displayKeyword}"`}
+                                listProduct={products}
+                            />
+                        ) : (
+                            <h2 className={cx('not-found')}>
+                                Không tìm thấy kết quả cho "{displayKeyword}"
+                            </h2>
+                        )}
+                    </>
                 )}
             </div>
         </main>

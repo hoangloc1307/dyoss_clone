@@ -1,13 +1,19 @@
 import classNames from 'classnames/bind';
+import { useDispatch } from 'react-redux';
 
 import style from './AboutUs.module.scss';
 import images from '~/assets/images';
+import TopLoading from '~/components/TopLoading';
+import { changeProgress } from '~/features/loader';
 
 const cx = classNames.bind(style);
 
 function AboutUs() {
+    const dispatch = useDispatch();
+    dispatch(changeProgress(100));
     return (
         <main className={cx('about-us')}>
+            <TopLoading />
             <div className={cx('container')}>
                 <div className={cx('inner')}>
                     <div className={cx('block')}>

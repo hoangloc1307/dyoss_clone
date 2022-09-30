@@ -12,6 +12,10 @@ export const Dyoss = axios.create({
     baseURL: 'https://dyoss-clone-be-tz1r.vercel.app/api/',
 });
 
+export const Instagram = axios.create({
+    baseURL: 'https://graph.instagram.com/',
+});
+
 export const get = async (instance, path, option = {}) => {
     const reponse = await instance.get(path, option);
     return reponse.data;

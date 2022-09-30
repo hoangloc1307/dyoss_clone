@@ -4,15 +4,17 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { useState } from 'react';
+import _ from 'lodash';
 
 import style from './ProductDetail.module.scss';
 import { NumberWithCommas } from '~/functions';
 import * as http from '~/utils/http';
 import { addToCart } from '~/features/cart';
+import { changeProgress } from '~/features/loader';
+import TopLoading from '~/components/TopLoading';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
-import ProductRelated from '~/components/ProductRelated';
-import { changeState } from '~/features/loader/loaderSlice';
+import ProductByCategory from '~/components/ProductByCategory';
 
 const cx = classNames.bind(style);
 
@@ -21,21 +23,25 @@ function ProductDetail() {
     const navigate = useNavigate();
     const params = useParams();
     const [product, setProduct] = useState({});
+    const [relatedProducts, setRelatedProducts] = useState([]);
 
     //Get product detail
     useEffect(() => {
-        dispatch(changeState(true));
-        http.get(http.Dyoss, `product/${params.slug}`).then(response => {
-            if (response.length > 0) {
-                const [prod] = [...response];
-                prod.features = JSON.parse(prod.features);
-                prod.images = JSON.parse(prod.images);
-                setProduct(prod);
-                dispatch(changeState(false));
-            } else {
-                navigate('/');
+        dispatch(changeProgress(50));
+        http.get(http.Dyoss, `product/detail/${params.slug}/4`).then(
+            response => {
+                if (!_.isEmpty(response)) {
+                    const prod = response.detail;
+                    prod.features = JSON.parse(prod.features);
+                    prod.images = JSON.parse(prod.images);
+                    setProduct(prod);
+                    setRelatedProducts(response.relatedProducts);
+                    dispatch(changeProgress(80));
+                } else {
+                    navigate('/');
+                }
             }
-        });
+        );
     }, [params.slug, dispatch, navigate]);
 
     //Save into session storage
@@ -59,11 +65,13 @@ function ProductDetail() {
                 items = [product.id];
             }
             sessionStorage.setItem('productViewed', JSON.stringify(items));
+            dispatch(changeProgress(100));
         }
-    }, [product]);
+    }, [product, dispatch]);
 
     return (
         <>
+            <TopLoading />
             {!isEmpty(product) && (
                 <main className={cx('product-detail-page')}>
                     <div className={cx('container')}>
@@ -115,7 +123,13 @@ function ProductDetail() {
                                 </ul>
                             </div>
                         </div>
-                        <ProductRelated product={product} />
+                        <div className={cx('product-related')}>
+                            <ProductByCategory
+                                title={'Sản phẩm liên quan'}
+                                listProduct={relatedProducts}
+                                column={4}
+                            />
+                        </div>
                     </div>
                 </main>
             )}

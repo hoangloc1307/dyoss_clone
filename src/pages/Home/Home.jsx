@@ -6,11 +6,12 @@ import { useTranslation } from 'react-i18next';
 import style from './Home.module.scss';
 import images from '~/assets/images';
 import { fetchProducts } from '~/features/products';
-import { changeState } from '~/features/loader/loaderSlice';
+import { changeProgress } from '~/features/loader';
 import ProductByCategory from '~/components/ProductByCategory';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductViewed from '~/components/ProductViewed';
+import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -31,16 +32,17 @@ function Home() {
 
     useEffect(() => {
         if (productStatus === 'idle') {
-            dispatch(changeState(true));
+            dispatch(changeProgress(50));
             dispatch(fetchProducts());
         }
         if (productStatus === 'succeeded') {
-            dispatch(changeState(false));
+            dispatch(changeProgress(100));
         }
     }, [productStatus, dispatch]);
 
     return (
         <main className={cx('home')}>
+            <TopLoading />
             {/* Hero */}
             <div className={cx('hero')}>
                 <img src={images.bannerHomePage} alt="Dyoss hero" />

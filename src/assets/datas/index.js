@@ -95,12 +95,12 @@ const showrooms = [
 ];
 
 const menuHeader = [
-    { title: 'The box', link: '/box' },
+    // { title: 'The box', link: '/box' },
     { title: 'Nam', link: '/product-category/man' },
     { title: 'Nữ', link: '/product-category/woman' },
     { title: 'Phụ kiện', link: '/product-category/accessory' },
     { title: 'Gallery', link: '/gallery' },
-    { title: 'Blogs', link: '/blogs' },
+    // { title: 'Blogs', link: '/blogs' },
     { title: 'Giới thiệu', link: '/about-us' },
 ];
 

@@ -1,1 +1,1 @@
-export { default } from './loaderSlice';
+export { default, changeShowStatus, changeProgress } from './loaderSlice';
