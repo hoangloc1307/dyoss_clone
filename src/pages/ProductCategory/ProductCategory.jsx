@@ -7,7 +7,6 @@ import style from './ProductCategory.module.scss';
 import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
 import { changeProgress } from '~/features/loader';
-import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -41,7 +40,6 @@ function ProductCategory() {
 
     return (
         <main className={cx('product-categories')}>
-            <TopLoading />
             <div className={cx('container')}>
                 {products.length > 0 &&
                     products.map(item => {

@@ -17,6 +17,26 @@ export function RemoveAscent(str) {
     return str;
 }
 
+export function GetTagsFromCaption(str) {
+    const regex = /#\w+(?=\s)|#\w+\w$/gim;
+    return str.match(regex);
+}
+
+export function GetProductSlugsFromCaption(str) {
+    const regex = /\/product\/[\w-]*/gim;
+    return str.match(regex);
+}
+
+export function GetTitleFromCaption(str) {
+    let index;
+    let x = str.indexOf('#');
+    let y = str.indexOf('Link sản phẩm:');
+
+    index = x < 0 ? (y < 0 ? undefined : y) : y < 0 ? x : x < y ? x : y;
+
+    return str.slice(0, index);
+}
+
 //Validate
 export function IsValidPhone(phone) {
     // eslint-disable-next-line

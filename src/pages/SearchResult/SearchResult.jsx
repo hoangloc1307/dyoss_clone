@@ -7,7 +7,6 @@ import style from './SearchResult.module.scss';
 import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
 import { changeProgress } from '~/features/loader';
-import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -40,7 +39,6 @@ function SearchResult() {
 
     return (
         <main className={cx('search-page')}>
-            <TopLoading />
             <div className={cx('container')}>
                 {(fetchStatus === 0 || fetchStatus === 100) && (
                     <>

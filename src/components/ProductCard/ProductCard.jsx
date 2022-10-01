@@ -26,8 +26,10 @@ function ProductCard({ product, customClass }) {
                     />
                 )}
             </div>
-            <h3 className={cx('product-name')}>{product.name}</h3>
-            <p className={cx('product-price')}>
+            <h3 className={cx('product-name', customClass?.['product-name'])}>
+                {product.name}
+            </h3>
+            <p className={cx('product-price', customClass?.['product-price'])}>
                 {product.stock > 0
                     ? `${NumberWithCommas(product.price)}đ`
                     : 'Hết hàng'}

@@ -11,7 +11,6 @@ import { NumberWithCommas } from '~/functions';
 import * as http from '~/utils/http';
 import { addToCart } from '~/features/cart';
 import { changeProgress } from '~/features/loader';
-import TopLoading from '~/components/TopLoading';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductByCategory from '~/components/ProductByCategory';
@@ -71,7 +70,6 @@ function ProductDetail() {
 
     return (
         <>
-            <TopLoading />
             {!isEmpty(product) && (
                 <main className={cx('product-detail-page')}>
                     <div className={cx('container')}>

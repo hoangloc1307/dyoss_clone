@@ -11,7 +11,6 @@ import ProductByCategory from '~/components/ProductByCategory';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductViewed from '~/components/ProductViewed';
-import TopLoading from '~/components/TopLoading';
 
 const cx = classNames.bind(style);
 
@@ -42,7 +41,6 @@ function Home() {
 
     return (
         <main className={cx('home')}>
-            <TopLoading />
             {/* Hero */}
             <div className={cx('hero')}>
                 <img src={images.bannerHomePage} alt="Dyoss hero" />
