@@ -17,5 +17,27 @@
         "noItem": "You have not selected any products!",
         "total": "Total",
         "checkout": "Checkout"
+    },
+    "home": {
+        "brandName": "Dyoss Watch",
+        "slogan": "Simplicity is always trendy.",
+        "selling": "Selling products",
+        "womenWatches": "Women's Watches",
+        "menWatches": "Men's Watches",
+        "introduce": "Introduce",
+        "moreInfor": "More information",
+        "scratchResistant": "Scratch resistant Sapphire glass",
+        "waterResistant": "5ATM water resistant",
+        "miyotaMachine": "Japan Miyota Machine"
+    },
+    "button": {
+        "viewAll": "View All"
+    },
+    "slider": {
+        "previous": "Previous",
+        "next": "Next"
+    },
+    "productCard": {
+        "outOfStock": "Out of stock"
     }
 }

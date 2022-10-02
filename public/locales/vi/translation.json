@@ -17,5 +17,27 @@
         "noItem": "Bạn chưa chọn sản phẩm nào!",
         "total": "Tổng cộng",
         "checkout": "Thanh toán"
+    },
+    "home": {
+        "brandName": "Đồng hồ Dyoss",
+        "slogan": "Sự tối giản luôn hợp thời.",
+        "selling": "Sản phẩm bán chạy",
+        "womenWatches": "Đồng hồ nữ",
+        "menWatches": "Đồng hồ nam",
+        "introduce": "Giới thiệu",
+        "moreInfor": "Tìm hiểu thêm",
+        "scratchResistant": "Kính Sapphire chống trầy",
+        "waterResistant": "Chống nước 5ATM",
+        "miyotaMachine": "Máy Miyota Nhật Bản"
+    },
+    "button": {
+        "viewAll": "Xem tất cả"
+    },
+    "slider": {
+        "previous": "Trước",
+        "next": "Sau"
+    },
+    "productCard": {
+        "outOfStock": "Hết hàng"
     }
 }

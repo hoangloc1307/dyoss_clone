@@ -43,6 +43,11 @@
         border: 1px solid;
         border-radius: 6px;
         line-height: 1;
+
+        &:hover {
+            background: #000000;
+            color: #fff;
+        }
     }
 
     .btn-prev {

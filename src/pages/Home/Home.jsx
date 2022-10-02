@@ -19,11 +19,8 @@ function Home() {
     const { t } = useTranslation();
 
     const productStatus = useSelector(state => state.products.status);
-    // const error = useSelector((state) => state.products.error);
     const sellingProducts = useSelector(state => state.products.sellingProducts);
-
     const manProducts = useSelector(state => state.products.manProducts);
-
     const womanProducts = useSelector(state => state.products.womanProducts);
 
     useEffect(() => {
@@ -42,8 +39,8 @@ function Home() {
             <div className={cx('hero')}>
                 <img src={images.bannerHomePage} alt="Dyoss hero" />
                 <div className={cx('hero-content')}>
-                    <h1 className={cx('title')}>Dyoss Watch</h1>
-                    <p className={cx('sub-title')}>{t('test')}</p>
+                    <h1 className={cx('title')}>{t('home.brandName')}</h1>
+                    <p className={cx('sub-title')}>{t('home.slogan')}</p>
                 </div>
             </div>
             {/* End Hero */}
@@ -52,7 +49,7 @@ function Home() {
             <div className={cx('selling')}>
                 <div className={cx('container')}>
                     {sellingProducts.length > 0 && (
-                        <ProductByCategory title={'Mẫu bán chạy'} description={''} listProduct={sellingProducts} />
+                        <ProductByCategory title={t('home.selling')} description={''} listProduct={sellingProducts} />
                     )}
                 </div>
             </div>
@@ -62,8 +59,8 @@ function Home() {
             <div className={cx('sex-block')}>
                 <div className={cx('category')}>
                     <img src={images.womenCategory} alt="Women product" />
-                    <h2>Đồng hồ nữ</h2>
-                    <Button to={'/product-category/woman'}>Xem tất cả</Button>
+                    <h2>{t('home.womenWatches')}</h2>
+                    <Button to={'/product-category/woman'}>{t('button.viewAll')}</Button>
                 </div>
                 <div className={cx('product-slider')}>
                     {womanProducts.length > 0 && <ProductSlider listData={womanProducts} navigation autoplaya />}
@@ -73,7 +70,7 @@ function Home() {
             <div className={cx('about-block')}>
                 <div className={cx('about-content')}>
                     <h2 className={cx('about-title')}>
-                        Giới thiệu <br /> Dyoss Watch
+                        {t('home.introduce')} <br /> {t('home.brandName')}
                     </h2>
                     <p className={cx('about-description')}>
                         Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết
@@ -83,18 +80,18 @@ function Home() {
                     <div className={cx('about-feature')}>
                         <div className={cx('item')}>
                             <img src={images.feature1} alt="Chống trầy" />
-                            <p>Kính Sapphire chống trầy</p>
+                            <p>{t('home.scratchResistant')}</p>
                         </div>
                         <div className={cx('item')}>
                             <img src={images.feature2} alt="Chống nước" />
-                            <p>Chống nước 5ATM</p>
+                            <p>{t('home.waterResistant')}</p>
                         </div>
                         <div className={cx('item')}>
                             <img src={images.feature3} alt="Máy nhật" />
-                            <p>Máy Miyota Nhật Bản</p>
+                            <p>{t('home.miyotaMachine')}</p>
                         </div>
                     </div>
-                    <Button to={'/about-us'}>Tìm hiểu thêm</Button>
+                    <Button to={'/about-us'}>{t('home.moreInfor')}</Button>
                 </div>
                 <div className={cx('photo')}>
                     <img src={images.aboutImage} alt="Men product" />
@@ -104,8 +101,8 @@ function Home() {
             <div className={cx('sex-block')}>
                 <div className={cx('category')}>
                     <img src={images.menCategory} alt="Men product" />
-                    <h2>Đồng hồ nam</h2>
-                    <Button to={'/product-category/man'}>Xem tất cả</Button>
+                    <h2>{t('home.menWatches')}</h2>
+                    <Button to={'/product-category/man'}>{t('button.viewAll')}</Button>
                 </div>
                 <div className={cx('product-slider')}>
                     {manProducts.length > 0 && <ProductSlider listData={manProducts} navigation autoplaya />}

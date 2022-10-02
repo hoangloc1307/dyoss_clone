@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Thumbs } from 'swiper';
 import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import style from './ProductSlider.module.scss';
 import 'swiper/css/bundle';
@@ -9,13 +10,8 @@ import ProductCard from '~/components/ProductCard';
 
 const cx = classNames.bind(style);
 
-function ProductSlider({
-    listData,
-    navigation = false,
-    autoplay = false,
-    image = false,
-    customClass,
-}) {
+function ProductSlider({ listData, navigation = false, autoplay = false, image = false, customClass }) {
+    const { t } = useTranslation();
     const btnPrevRef = useRef(null);
     const btnNextRef = useRef(null);
 
@@ -27,10 +23,10 @@ function ProductSlider({
             {navigation && (
                 <div className={cx('btn-controls')}>
                     <button className={cx('btn-prev')} ref={btnPrevRef}>
-                        Previous
+                        {t('slider.previous')}
                     </button>
                     <button className={cx('btn-next')} ref={btnNextRef}>
-                        Next
+                        {t('slider.next')}
                     </button>
                 </div>
             )}
@@ -98,11 +94,7 @@ function ProductSlider({
                     spaceBetween={10}
                 >
                     {listData.map((item, index) => (
-                        <SwiperSlide
-                            key={index}
-                            className={cx('slide')}
-                            tag="li"
-                        >
+                        <SwiperSlide key={index} className={cx('slide')} tag="li">
                             <img src={item} alt={`Product ${index}`} />
                         </SwiperSlide>
                     ))}
