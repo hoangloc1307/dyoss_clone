@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
+import i18n from '~/i18n';
+import { useTranslation } from 'react-i18next';
 
 import style from './Header.module.scss';
 import images from '~/assets/images';
@@ -12,6 +14,7 @@ const cx = classNames.bind(style);
 
 function Header() {
     const location = useLocation();
+    const { t } = useTranslation();
 
     const [homePage, setHomePage] = useState(false);
 
@@ -29,28 +32,26 @@ function Header() {
                                 <img src={images.logoWhite} alt="Dyoss" />
                             </Link>
                             <Link to={'/'} className={cx('left-item')}>
-                                <img
-                                    src={images.customLogo}
-                                    alt="Dyoss Custom"
-                                />
+                                <img src={images.customLogo} alt="Dyoss Custom" />
                             </Link>
                             <Link to={'/'} className={cx('left-item')}>
                                 <img src={images.neoLogo} alt="Dyoss Neo" />
                             </Link>
                             <a href="tel:0123456789" className={cx('hotline')}>
-                                HOTLINE: 0123 456 789
+                                {t('header.hotline')}: 0123 456 789
                             </a>
                         </div>
                         <div className={cx('topbar-right')}>
                             <Link to={'/'} className={cx('right-item')}>
-                                ĐĂNG NHẬP
+                                {t('header.login')}
                             </Link>
                             <Link to={'/'} className={cx('right-item')}>
-                                ĐĂNG KÝ
+                                {t('header.register')}
                             </Link>
-                            <Link to={'/'} className={cx('right-item', 'flag')}>
-                                <img src={images.flagVN} alt="Tiếng Việt" />
-                            </Link>
+                            <div className={cx('right-item', 'flag')}>
+                                <img src={images.flagVN} alt="Tiếng Việt" onClick={() => i18n.changeLanguage('vi')} />
+                                <img src={images.flagEN} alt="English" onClick={() => i18n.changeLanguage('en')} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,12 +77,10 @@ function Header() {
                                 <li
                                     key={index}
                                     className={cx('menu-item', {
-                                        active: location.pathname.includes(
-                                            item.link
-                                        ),
+                                        active: location.pathname.includes(item.link),
                                     })}
                                 >
-                                    <Link to={item.link}>{item.title}</Link>
+                                    <Link to={item.link}>{t(`header.${item.title}`)}</Link>
                                 </li>
                             ))}
                         </ul>

@@ -16,14 +16,11 @@ const cx = classNames.bind(style);
 
 function Home() {
     const dispatch = useDispatch();
-
     const { t } = useTranslation();
 
     const productStatus = useSelector(state => state.products.status);
     // const error = useSelector((state) => state.products.error);
-    const sellingProducts = useSelector(
-        state => state.products.sellingProducts
-    );
+    const sellingProducts = useSelector(state => state.products.sellingProducts);
 
     const manProducts = useSelector(state => state.products.manProducts);
 
@@ -46,9 +43,7 @@ function Home() {
                 <img src={images.bannerHomePage} alt="Dyoss hero" />
                 <div className={cx('hero-content')}>
                     <h1 className={cx('title')}>Dyoss Watch</h1>
-                    <p className={cx('sub-title')}>
-                        {t('Sự tối giản luôn hợp thời.')}
-                    </p>
+                    <p className={cx('sub-title')}>{t('test')}</p>
                 </div>
             </div>
             {/* End Hero */}
@@ -57,11 +52,7 @@ function Home() {
             <div className={cx('selling')}>
                 <div className={cx('container')}>
                     {sellingProducts.length > 0 && (
-                        <ProductByCategory
-                            title={'Mẫu bán chạy'}
-                            description={''}
-                            listProduct={sellingProducts}
-                        />
+                        <ProductByCategory title={'Mẫu bán chạy'} description={''} listProduct={sellingProducts} />
                     )}
                 </div>
             </div>
@@ -75,13 +66,7 @@ function Home() {
                     <Button to={'/product-category/woman'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    {womanProducts.length > 0 && (
-                        <ProductSlider
-                            listData={womanProducts}
-                            navigation
-                            autoplaya
-                        />
-                    )}
+                    {womanProducts.length > 0 && <ProductSlider listData={womanProducts} navigation autoplaya />}
                 </div>
             </div>
 
@@ -91,10 +76,9 @@ function Home() {
                         Giới thiệu <br /> Dyoss Watch
                     </h2>
                     <p className={cx('about-description')}>
-                        Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng,
-                        tối giản, hiện đại đã làm siêu lòng biết bao tín đồ thời
-                        trang. Bất ngờ hơn khi có thể phối với bất kì gu thời
-                        trang nào mà bạn yêu thích.
+                        Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết
+                        bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu
+                        thích.
                     </p>
                     <div className={cx('about-feature')}>
                         <div className={cx('item')}>
@@ -124,13 +108,7 @@ function Home() {
                     <Button to={'/product-category/man'}>Xem tất cả</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    {manProducts.length > 0 && (
-                        <ProductSlider
-                            listData={manProducts}
-                            navigation
-                            autoplaya
-                        />
-                    )}
+                    {manProducts.length > 0 && <ProductSlider listData={manProducts} navigation autoplaya />}
                 </div>
             </div>
             {/* End Product Slider */}

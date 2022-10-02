@@ -27,20 +27,18 @@ function ProductDetail() {
     //Get product detail
     useEffect(() => {
         dispatch(changeProgress(50));
-        http.get(http.Dyoss, `product/detail/${params.slug}/4`).then(
-            response => {
-                if (!_.isEmpty(response)) {
-                    const prod = response.detail;
-                    prod.features = JSON.parse(prod.features);
-                    prod.images = JSON.parse(prod.images);
-                    setProduct(prod);
-                    setRelatedProducts(response.relatedProducts);
-                    dispatch(changeProgress(80));
-                } else {
-                    navigate('/');
-                }
+        http.get(http.Dyoss, `product/detail/${params.slug}/4`).then(response => {
+            if (!_.isEmpty(response)) {
+                const prod = response.detail;
+                prod.features = JSON.parse(prod.features);
+                prod.images = JSON.parse(prod.images);
+                setProduct(prod);
+                setRelatedProducts(response.relatedProducts);
+                dispatch(changeProgress(80));
+            } else {
+                navigate('/');
             }
-        );
+        });
     }, [params.slug, dispatch, navigate]);
 
     //Save into session storage
@@ -76,23 +74,15 @@ function ProductDetail() {
                         <div className={cx('product-detail')}>
                             <div className={cx('image-detail')}>
                                 {product.images.length > 0 && (
-                                    <ProductSlider
-                                        listData={product.images}
-                                        image
-                                        customClass={style}
-                                    />
+                                    <ProductSlider listData={product.images} image customClass={style} />
                                 )}
                             </div>
                             <div className={cx('content-detail')}>
                                 <h1 className={cx('name')}>{product.name}</h1>
                                 <p className={cx('price')}>
-                                    {product.stock > 0
-                                        ? `${NumberWithCommas(product.price)}đ`
-                                        : 'Hết hàng'}
+                                    {product.stock > 0 ? `${NumberWithCommas(product.price)}đ` : 'Hết hàng'}
                                 </p>
-                                <p className={cx('description')}>
-                                    {product.description}
-                                </p>
+                                <p className={cx('description')}>{product.description}</p>
                                 {product.stock > 0 && (
                                     <div className={cx('buy')}>
                                         <Button
@@ -103,8 +93,7 @@ function ProductDetail() {
                                                         name: product.name,
                                                         price: product.price,
                                                         link: product.link,
-                                                        image: product
-                                                            .images[0],
+                                                        image: product.images[0],
                                                         total: 1,
                                                     })
                                                 );
@@ -122,11 +111,7 @@ function ProductDetail() {
                             </div>
                         </div>
                         <div className={cx('product-related')}>
-                            <ProductByCategory
-                                title={'Sản phẩm liên quan'}
-                                listProduct={relatedProducts}
-                                column={4}
-                            />
+                            <ProductByCategory title={'Sản phẩm liên quan'} listProduct={relatedProducts} column={4} />
                         </div>
                     </div>
                 </main>

@@ -1,0 +1,21 @@
+{
+    "header": {
+        "hotline": "Điện thoại",
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "man": "Nam",
+        "woman": "Nữ",
+        "accessory": "Phụ kiện",
+        "gallery": "Thư viện ảnh",
+        "aboutUs": "Giới thiệu"
+    },
+    "search": {
+        "placeHolder": "Nhập từ khoá tìm kiếm...",
+        "button": "Tìm kiếm"
+    },
+    "cart": {
+        "noItem": "Bạn chưa chọn sản phẩm nào!",
+        "total": "Tổng cộng",
+        "checkout": "Thanh toán"
+    }
+}

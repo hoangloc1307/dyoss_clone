@@ -1,3 +1,13 @@
+const menuHeader = [
+    // { title: 'The box', link: '/box' },
+    { title: 'man', link: '/product-category/man' },
+    { title: 'woman', link: '/product-category/woman' },
+    { title: 'accessory', link: '/product-category/accessory' },
+    { title: 'gallery', link: '/gallery' },
+    // { title: 'Blogs', link: '/blogs' },
+    { title: 'aboutUs', link: '/about-us' },
+];
+
 const menuFooter = [
     {
         title: 'Sản phẩm',
@@ -92,16 +102,6 @@ const showrooms = [
         address: '3/31 Thành Thái, Phường 14, Quận 10, TP Hồ Chí Minh',
         hotline: '0123 456 789',
     },
-];
-
-const menuHeader = [
-    // { title: 'The box', link: '/box' },
-    { title: 'Nam', link: '/product-category/man' },
-    { title: 'Nữ', link: '/product-category/woman' },
-    { title: 'Phụ kiện', link: '/product-category/accessory' },
-    { title: 'Gallery', link: '/gallery' },
-    // { title: 'Blogs', link: '/blogs' },
-    { title: 'Giới thiệu', link: '/about-us' },
 ];
 
 export { menuFooter, showrooms, menuHeader };

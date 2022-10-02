@@ -1,0 +1,21 @@
+{
+    "header": {
+        "hotline": "Hotline",
+        "login": "Login",
+        "register": "Register",
+        "man": "Man",
+        "woman": "Woman",
+        "accessory": "Accessory",
+        "gallery": "Gallery",
+        "aboutUs": "About us"
+    },
+    "search": {
+        "placeHolder": "Enter search keyword...",
+        "button": "Search"
+    },
+    "cart": {
+        "noItem": "You have not selected any products!",
+        "total": "Total",
+        "checkout": "Checkout"
+    }
+}

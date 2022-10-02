@@ -5,6 +5,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import {
     changeStatus,
@@ -24,7 +25,7 @@ const cx = classNames.bind(style);
 
 function Cart({ customClass }) {
     const dispatch = useDispatch();
-
+    const { t } = useTranslation();
     const location = useLocation();
 
     const products = useSelector(selectCartItems);
@@ -45,59 +46,28 @@ function Cart({ customClass }) {
                 className={cx('cart-icon', customClass?.['cart-icon'])}
                 onClick={() => dispatch(changeStatus({ status: 'auto' }))}
             >
-                <div
-                    className={cx('cart-amount', customClass?.['cart-amount'])}
-                >
-                    {totalItem}
-                </div>
+                <div className={cx('cart-amount', customClass?.['cart-amount'])}>{totalItem}</div>
             </div>
 
             {showStatus && (
                 <>
-                    <span
-                        className={cx(
-                            'cart-arrow',
-                            customClass?.['cart-arrow']
-                        )}
-                    >
+                    <span className={cx('cart-arrow', customClass?.['cart-arrow'])}>
                         <FontAwesomeIcon icon={faCaretDown} />
                     </span>
-                    <div
-                        className={cx(
-                            'cart-detail',
-                            customClass?.['cart-detail']
-                        )}
-                    >
+                    <div className={cx('cart-detail', customClass?.['cart-detail'])}>
                         {products.length > 0 ? (
                             <ul className={cx('cart-items')}>
                                 {products.map(item => (
-                                    <li
-                                        key={item.id}
-                                        className={cx('cart-item')}
-                                    >
+                                    <li key={item.id} className={cx('cart-item')}>
                                         <div className={cx('item-contain')}>
-                                            <Link
-                                                to={`/product/${item.link}`}
-                                                className={cx('image-box')}
-                                            >
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.name}
-                                                />
+                                            <Link to={`/product/${item.link}`} className={cx('image-box')}>
+                                                <img src={item.image} alt={item.name} />
                                             </Link>
                                             <div className={cx('item-detail')}>
-                                                <Link
-                                                    to={`/product/${item.link}`}
-                                                    className={cx('name')}
-                                                >
+                                                <Link to={`/product/${item.link}`} className={cx('name')}>
                                                     {item.name}
                                                 </Link>
-                                                <p className={cx('price')}>
-                                                    {NumberWithCommas(
-                                                        item.price
-                                                    )}
-                                                    đ
-                                                </p>
+                                                <p className={cx('price')}>{NumberWithCommas(item.price)}đ</p>
                                                 <div className={cx('amount')}>
                                                     <span>SL:</span>
                                                     <InputNumber
@@ -137,16 +107,12 @@ function Cart({ customClass }) {
                                 ))}
                             </ul>
                         ) : (
-                            <p className={cx('empty')}>
-                                Bạn chưa chọn sản phẩm nào
-                            </p>
+                            <p className={cx('empty')}>{t('cart.noItem')}</p>
                         )}
 
-                        <div className={cx('total')}>
-                            TỔNG CỘNG: {NumberWithCommas(totalPrice)}đ
-                        </div>
+                        <div className={cx('total')}>{`${t('cart.total')}: ${NumberWithCommas(totalPrice)}đ`}</div>
                         <Button to={'/checkout'} customClass={style}>
-                            Thanh toán
+                            {t('cart.checkout')}
                         </Button>
                     </div>
                 </>

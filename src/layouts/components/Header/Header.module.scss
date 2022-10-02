@@ -69,6 +69,7 @@ $item-padding-vertical: 15px;
     font-size: 11px;
     letter-spacing: 1px;
     opacity: 0.5;
+    text-transform: uppercase;
 
     &:hover {
         opacity: 1;
@@ -83,6 +84,7 @@ $item-padding-vertical: 15px;
     line-height: calc($item-height - $item-padding-vertical * 2);
     font-size: 11px;
     position: relative;
+    text-transform: uppercase;
 
     &:not(:last-child)::after {
         content: '';
@@ -99,9 +101,20 @@ $item-padding-vertical: 15px;
         text-decoration: underline;
     }
 }
+
 .flag {
     display: flex;
     align-items: center;
+    gap: 6px;
+
+    img {
+        padding: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background: #fff;
+        }
+    }
 }
 
 //Middle

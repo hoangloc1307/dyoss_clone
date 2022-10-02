@@ -4,6 +4,7 @@ const images = {
     customLogo: require('~/assets/images/custom-logo.png'),
     neoLogo: require('~/assets/images/neo-logo.png'),
     flagVN: require('~/assets/images/flag-vn.png'),
+    flagEN: require('~/assets/images/flag-en.png'),
     bannerHomePage: require('~/assets/images/rosa-bannerhomepage.jpg'),
     womenCategory: require('~/assets/images/02-1.jpg'),
     menCategory: require('~/assets/images/01-3.jpg'),

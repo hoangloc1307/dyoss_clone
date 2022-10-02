@@ -4,6 +4,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import style from './Search.module.scss';
 import { setKeywordValue } from '~/features/search/searchSlice';
@@ -12,6 +13,7 @@ const cx = classNames.bind(style);
 
 function Search({ customClass }) {
     const location = useLocation();
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -23,10 +25,7 @@ function Search({ customClass }) {
     };
 
     const handleSearchClick = e => {
-        if (
-            e.type === 'click' ||
-            (e.type === 'keydown' && e.code === 'Enter')
-        ) {
+        if (e.type === 'click' || (e.type === 'keydown' && e.code === 'Enter')) {
             dispatch(setKeywordValue(keyword));
             setKeyword('');
             navigate(`/search?name=${keyword}`, {});
@@ -46,38 +45,22 @@ function Search({ customClass }) {
 
     return (
         <div className={cx('search')}>
-            <div
-                className={cx('search-icon', customClass?.['search-icon'])}
-                onClick={handleSearchShow}
-            ></div>
+            <div className={cx('search-icon', customClass?.['search-icon'])} onClick={handleSearchShow}></div>
             {show && (
                 <>
-                    <span
-                        className={cx(
-                            'search-arrow',
-                            customClass?.['search-arrow']
-                        )}
-                    >
+                    <span className={cx('search-arrow', customClass?.['search-arrow'])}>
                         <FontAwesomeIcon icon={faCaretDown} />
                     </span>
-                    <div
-                        className={cx(
-                            'search-input',
-                            customClass?.['search-input']
-                        )}
-                    >
+                    <div className={cx('search-input', customClass?.['search-input'])}>
                         <input
                             type="text"
-                            placeholder="Nhập tên sản phẩm..."
+                            placeholder={t('search.placeHolder')}
                             value={keyword}
                             onChange={e => handleSearchInputChange(e)}
                             onKeyDown={e => handleSearchClick(e)}
                         />
-                        <span
-                            className={cx('search-button')}
-                            onClick={e => handleSearchClick(e)}
-                        >
-                            Search
+                        <span className={cx('search-button')} onClick={e => handleSearchClick(e)}>
+                            {t('search.button')}
                         </span>
                     </div>
                 </>

@@ -43,14 +43,9 @@ function SearchResult() {
                 {(fetchStatus === 0 || fetchStatus === 100) && (
                     <>
                         {products.length > 0 ? (
-                            <ProductByCategory
-                                title={`Search Result: "${displayKeyword}"`}
-                                listProduct={products}
-                            />
+                            <ProductByCategory title={`Search Result: "${displayKeyword}"`} listProduct={products} />
                         ) : (
-                            <h2 className={cx('not-found')}>
-                                Không tìm thấy kết quả cho "{displayKeyword}"
-                            </h2>
+                            <h2 className={cx('not-found')}>Không tìm thấy kết quả cho "{displayKeyword}"</h2>
                         )}
                     </>
                 )}
