@@ -109,6 +109,7 @@
     width: 450px;
     padding-left: 12px;
     padding-top: 12px;
+    overflow-y: scroll;
 
     & > a {
         text-transform: uppercase;
@@ -216,13 +217,19 @@
     }
 }
 
+.loader {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .close-btn {
     font-size: 24px;
     position: absolute;
     top: 12px;
-    right: 12px;
+    right: 24px;
     padding: 6px 12px;
     cursor: pointer;
+    background: #fff;
 
     &:hover {
         color: #f00;

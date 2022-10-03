@@ -42,3 +42,16 @@ ul {
     margin-left: auto;
     margin-right: auto;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #363535;
+    border-radius: 10px;
+}

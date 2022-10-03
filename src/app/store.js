@@ -4,6 +4,7 @@ import cartReducer from '~/features/cart';
 import productsReducer from '~/features/products';
 import loaderReducer from '~/features/loader';
 import searchReducer from '~/features/search';
+import galleryReducer from '~/features/gallery';
 
 export default configureStore({
     reducer: {
@@ -11,5 +12,6 @@ export default configureStore({
         cart: cartReducer,
         loader: loaderReducer,
         search: searchReducer,
+        gallery: galleryReducer,
     },
 });

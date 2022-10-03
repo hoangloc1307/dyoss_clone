@@ -1,25 +1,101 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCartPlus, faChevronLeft, faChevronRight, faEye, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { PulseLoader } from 'react-spinners';
 
 import style from './Gallery.module.scss';
-import * as http from '~/utils/http';
 import { changeProgress } from '~/features/loader';
 import * as func from '~/functions';
-import { addToCart, changeStatus } from '~/features/cart';
+import { addToCart, changeStatus, selectShowStatus } from '~/features/cart';
+import { galleryFetchImageInstagram, galleryFetchProducts } from '~/features/gallery';
 
 const cx = classNames.bind(style);
 
 function Gallery() {
     const dispatch = useDispatch();
-    const [listImages, setLitImages] = useState([]);
+
     const [showDetail, setShowDetail] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState({});
-    const [products, setProducts] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [slugArray, setSlugArray] = useState([]);
+
+    const cartShowStatus = useSelector(selectShowStatus);
+    const isImagesFetch = useSelector(state => state.gallery.instagramImages.status);
+    const listImages = useSelector(state => state.gallery.instagramImages.listImage);
+    const isFetched = useSelector(state =>
+        state.gallery.fetchStatus.find(item => item.id === listImages[currentIndex]?.id) ? true : false
+    );
+    const fetchStatus = useSelector(state =>
+        state.gallery.fetchStatus.find(item => item.id === listImages[currentIndex]?.id)
+    );
+    // const fetchStatus = { status: 'loading' };
+    const allProduct = useSelector(state => state.gallery.products);
+    const products = useSelector(state => state.gallery.products.filter(item => slugArray.includes(item.link)));
+
+    //Fetch images from instagram
+    useEffect(() => {
+        if (isImagesFetch === 'idle') {
+            dispatch(galleryFetchImageInstagram());
+        }
+        // eslint-disable-next-line
+    }, []);
+
+    //Fetch product when change image
+    useEffect(() => {
+        if (showDetail) {
+            //Get slugs in caption and conver to array.
+            const slugsFromCaption = func.GetProductSlugsFromCaption(listImages[currentIndex].caption) || [];
+            const slugs = slugsFromCaption.map(item => item.replace('/product/', ''));
+
+            //Set slug to get product base on this value.
+            setSlugArray(slugs);
+
+            //Check slug is exists on store, if not exists then fetch data.
+            const notExistsSlug = slugs.filter(item => !allProduct.map(i => i.link).includes(item));
+            if (!isFetched && notExistsSlug.length > 0) {
+                const notExistsSlugString = notExistsSlug.join(',');
+                dispatch(
+                    galleryFetchProducts({
+                        id: listImages[currentIndex].id,
+                        slugString: notExistsSlugString,
+                    })
+                );
+            }
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        // eslint-disable-next-line
+    }, [showDetail, currentIndex]);
+
+    //Handle when click image
+    const handleImageClick = index => {
+        //Show detail popup
+        setShowDetail(true);
+        //Hide cart popup
+        if (cartShowStatus) {
+            dispatch(changeStatus(false));
+        }
+        //Set current image
+        setCurrentIndex(index);
+    };
+
+    //Change image by navigation button
+    const handleNavigateButtonClick = btn => {
+        const listImagesLength = listImages.length;
+        let nextViewIndex;
+
+        if (btn === 'next') {
+            nextViewIndex = (currentIndex + 1) % listImagesLength;
+        } else {
+            nextViewIndex = (currentIndex - 1 + listImagesLength) % listImagesLength;
+        }
+
+        setCurrentIndex(nextViewIndex);
+    };
 
     const handleAddToCart = item => {
         dispatch(
@@ -34,59 +110,6 @@ function Gallery() {
         );
 
         setShowDetail(false);
-    };
-
-    useEffect(() => {
-        dispatch(changeProgress(50));
-        http.get(
-            http.Instagram,
-            `me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username&access_token=${process.env.REACT_APP_INSTAGRAM_KEY}`
-        ).then(res => {
-            setLitImages(res.data);
-            dispatch(changeProgress(100));
-        });
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (showDetail) {
-            setProducts([]);
-            let slugString;
-
-            const slugs = func.GetProductSlugsFromCaption(listImages[currentIndex].caption);
-
-            if (slugs) {
-                slugString = slugs.join(',').replaceAll('/product/', '');
-            }
-
-            if (slugString) {
-                dispatch(changeProgress(75));
-                http.get(http.Dyoss, `product/search?slug=${slugString}`).then(res => {
-                    setProducts(res);
-                    dispatch(changeProgress(100));
-                });
-            }
-        }
-        // eslint-disable-next-line
-    }, [showDetail, currentIndex]);
-
-    const handleImageClick = index => {
-        setShowDetail(true);
-        dispatch(changeStatus(false));
-        setCurrentIndex(index);
-    };
-
-    const handleNavigateButtonClick = btn => {
-        const listImagesLength = listImages.length;
-        let nextViewIndex;
-
-        if (btn === 'next') {
-            nextViewIndex = (currentIndex + 1) % listImagesLength;
-            setCurrentIndex(nextViewIndex);
-        } else {
-            nextViewIndex = (currentIndex - 1 + listImagesLength) % listImagesLength;
-        }
-
-        setCurrentIndex(nextViewIndex);
     };
 
     return (
@@ -118,11 +141,7 @@ function Gallery() {
                                 href={listImages[currentIndex].permalink}
                                 target="_blank"
                                 rel="noreferrer"
-                            >{`instagram || ${new Date(listImages[currentIndex].timestamp).toLocaleDateString('vi-VN', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                            })}`}</a>
+                            >{`instagram || ${func.ConvertToDateString(listImages[currentIndex].timestamp)}`}</a>
                             <p className={cx('title')}>{func.GetTitleFromCaption(listImages[currentIndex].caption)}</p>
                             <ul className={cx('hashtags')}>
                                 {func.GetTagsFromCaption(listImages[currentIndex].caption).map((tag, index) => (
@@ -137,7 +156,7 @@ function Gallery() {
                                     </li>
                                 ))}
                             </ul>
-                            {products.length > 0 && (
+                            {(products.length > 0 || fetchStatus?.status === 'succeeded') && (
                                 <div className={cx('products-in-image')}>
                                     <h2 className={cx('title')}>Sản phẩm trong bài viết</h2>
                                     <ul className={cx('products')}>
@@ -167,6 +186,11 @@ function Gallery() {
                                             </li>
                                         ))}
                                     </ul>
+                                </div>
+                            )}
+                            {fetchStatus?.status === 'loading' && (
+                                <div className={cx('loader')}>
+                                    <PulseLoader color={'#000'} />
                                 </div>
                             )}
                         </div>

@@ -37,6 +37,10 @@ export function GetTitleFromCaption(str) {
     return str.slice(0, index);
 }
 
+export function ConvertToDateString(timestamp) {
+    return new Date(timestamp).toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 //Validate
 export function IsValidPhone(phone) {
     // eslint-disable-next-line
