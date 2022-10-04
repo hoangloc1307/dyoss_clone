@@ -6,6 +6,7 @@
         "man": "Nam",
         "woman": "Nữ",
         "accessory": "Phụ kiện",
+        "box": "The box",
         "gallery": "Thư viện ảnh",
         "aboutUs": "Giới thiệu"
     },
@@ -25,13 +26,15 @@
         "womenWatches": "Đồng hồ nữ",
         "menWatches": "Đồng hồ nam",
         "introduce": "Giới thiệu",
-        "moreInfor": "Tìm hiểu thêm",
         "scratchResistant": "Kính Sapphire chống trầy",
         "waterResistant": "Chống nước 5ATM",
-        "miyotaMachine": "Máy Miyota Nhật Bản"
+        "miyotaMachine": "Máy Miyota Nhật Bản",
+        "description": "Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu thích."
     },
     "button": {
-        "viewAll": "Xem tất cả"
+        "moreInfor": "Tìm hiểu thêm",
+        "viewAll": "Xem tất cả",
+        "viewDetail": "Xem sản phẩm"
     },
     "slider": {
         "previous": "Trước",
@@ -39,5 +42,17 @@
     },
     "productCard": {
         "outOfStock": "Hết hàng"
-    }
+    },
+    "footer": {
+        "newsletterPlaceholder": "Nhập email để nhận ưu đãi...",
+        "submitButton": "Gửi",
+        "address": "Địa chỉ",
+        "copyright": "Dyoss giả tạo ra nhằm mục đích học React.",
+        "terms": "Điều khoản điều kiện",
+        "privacy": "Chính sách bảo mật"
+    },
+    "gallery": {
+        "headingProducts": "Sản phẩm liên quan"
+    },
+    "viewedProduct": "Sảm phẩm đã xem"
 }

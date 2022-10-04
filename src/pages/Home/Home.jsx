@@ -63,7 +63,7 @@ function Home() {
                     <Button to={'/product-category/woman'}>{t('button.viewAll')}</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    {womanProducts.length > 0 && <ProductSlider listData={womanProducts} navigation autoplaya />}
+                    {womanProducts.length > 0 && <ProductSlider listData={womanProducts} navigation autoplay />}
                 </div>
             </div>
 
@@ -72,11 +72,7 @@ function Home() {
                     <h2 className={cx('about-title')}>
                         {t('home.introduce')} <br /> {t('home.brandName')}
                     </h2>
-                    <p className={cx('about-description')}>
-                        Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết
-                        bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu
-                        thích.
-                    </p>
+                    <p className={cx('about-description')}>{t('home.description')}</p>
                     <div className={cx('about-feature')}>
                         <div className={cx('item')}>
                             <img src={images.feature1} alt="Chống trầy" />
@@ -91,7 +87,7 @@ function Home() {
                             <p>{t('home.miyotaMachine')}</p>
                         </div>
                     </div>
-                    <Button to={'/about-us'}>{t('home.moreInfor')}</Button>
+                    <Button to={'/about-us'}>{t('button.moreInfor')}</Button>
                 </div>
                 <div className={cx('photo')}>
                     <img src={images.aboutImage} alt="Men product" />
@@ -105,7 +101,7 @@ function Home() {
                     <Button to={'/product-category/man'}>{t('button.viewAll')}</Button>
                 </div>
                 <div className={cx('product-slider')}>
-                    {manProducts.length > 0 && <ProductSlider listData={manProducts} navigation autoplaya />}
+                    {manProducts.length > 0 && <ProductSlider listData={manProducts} navigation autoplay />}
                 </div>
             </div>
             {/* End Product Slider */}

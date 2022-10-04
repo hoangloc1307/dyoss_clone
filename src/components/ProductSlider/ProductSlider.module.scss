@@ -6,6 +6,10 @@
     width: 300px;
 }
 
+.slide {
+    border: none;
+}
+
 .image-card {
     padding: 5px;
     img {
@@ -60,23 +64,15 @@
 }
 
 .slides-thumbs {
-    div {
-        justify-content: center;
-        margin: 20px;
+    & > div {
+        margin-top: 20px;
         width: auto;
     }
 
     li {
-        width: 70px !important;
-        height: 70px;
         padding: 10px;
-        border: 1px solid #ccc;
         border-radius: 12px;
         cursor: pointer;
-
-        &.thumbs-active {
-            border-color: #000000;
-        }
 
         img {
             width: 100%;

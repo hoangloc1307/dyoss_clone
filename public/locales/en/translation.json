@@ -6,6 +6,7 @@
         "man": "Man",
         "woman": "Woman",
         "accessory": "Accessory",
+        "box": "The box",
         "gallery": "Gallery",
         "aboutUs": "About us"
     },
@@ -25,13 +26,15 @@
         "womenWatches": "Women's Watches",
         "menWatches": "Men's Watches",
         "introduce": "Introduce",
-        "moreInfor": "More information",
         "scratchResistant": "Scratch resistant Sapphire glass",
         "waterResistant": "5ATM water resistant",
-        "miyotaMachine": "Japan Miyota Machine"
+        "miyotaMachine": "Japan Miyota Machine",
+        "description": "Dyoss' latest masterpiece with its luxurious, minimalistic, modern design has made many fashionistas super happy. It's more surprising that it can be combined with any fashion style you love."
     },
     "button": {
-        "viewAll": "View All"
+        "moreInfor": "More information",
+        "viewAll": "View All",
+        "viewDetail": "Shop the look"
     },
     "slider": {
         "previous": "Previous",
@@ -39,5 +42,17 @@
     },
     "productCard": {
         "outOfStock": "Out of stock"
-    }
+    },
+    "footer": {
+        "newsletterPlaceholder": "Enter your email to receive offers...",
+        "submitButton": "Submit",
+        "address": "Address",
+        "copyright": "Dyoss clone to learning React.",
+        "terms": "Terms & conditions",
+        "privacy": "Privacy policy"
+    },
+    "gallery": {
+        "headingProducts": "Related products"
+    },
+    "viewedProduct": "Viewed products"
 }

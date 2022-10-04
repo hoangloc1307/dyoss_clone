@@ -1,22 +1,25 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCartPlus, faChevronLeft, faChevronRight, faEye, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { PulseLoader } from 'react-spinners';
+import { useTranslation } from 'react-i18next';
 
 import style from './Gallery.module.scss';
-import { changeProgress } from '~/features/loader';
 import * as func from '~/functions';
 import { addToCart, changeStatus, selectShowStatus } from '~/features/cart';
 import { galleryFetchImageInstagram, galleryFetchProducts } from '~/features/gallery';
+import i18n from '~/i18n';
 
 const cx = classNames.bind(style);
 
 function Gallery() {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
+    const popup = useRef();
 
     const [showDetail, setShowDetail] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,10 +52,8 @@ function Gallery() {
             //Get slugs in caption and conver to array.
             const slugsFromCaption = func.GetProductSlugsFromCaption(listImages[currentIndex].caption) || [];
             const slugs = slugsFromCaption.map(item => item.replace('/product/', ''));
-
             //Set slug to get product base on this value.
             setSlugArray(slugs);
-
             //Check slug is exists on store, if not exists then fetch data.
             const notExistsSlug = slugs.filter(item => !allProduct.map(i => i.link).includes(item));
             if (!isFetched && notExistsSlug.length > 0) {
@@ -64,9 +65,13 @@ function Gallery() {
                     })
                 );
             }
+            //To remove scrollbar when show popup
             document.body.style.overflow = 'hidden';
+            //Focus main tag to listen event keydown
+            popup.current.focus();
         } else {
             document.body.style.overflow = 'unset';
+            popup.current.blur();
         }
         // eslint-disable-next-line
     }, [showDetail, currentIndex]);
@@ -97,6 +102,24 @@ function Gallery() {
         setCurrentIndex(nextViewIndex);
     };
 
+    const handleKeyDown = e => {
+        switch (e.code) {
+            case 'Escape':
+                setShowDetail(false);
+                break;
+            case 'ArrowRight':
+                handleNavigateButtonClick('next');
+                break;
+            case 'ArrowLeft':
+                handleNavigateButtonClick('prev');
+                break;
+            case 'Tab':
+                e.preventDefault();
+                break;
+            default:
+        }
+    };
+
     const handleAddToCart = item => {
         dispatch(
             addToCart({
@@ -113,7 +136,7 @@ function Gallery() {
     };
 
     return (
-        <main className={cx('gallery-page')}>
+        <main className={cx('gallery-page')} ref={popup} tabIndex={1} onKeyDown={e => handleKeyDown(e)}>
             {listImages.length > 0 && (
                 <ul className={cx('images')}>
                     {listImages.map((item, index) => (
@@ -121,27 +144,32 @@ function Gallery() {
                             <img src={item.media_url} alt={item.caption} />
                             <div className={cx('view')}>
                                 <FontAwesomeIcon icon={faInstagram} className={cx('icon')} />
-                                <p>Xem chi tiết</p>
+                                <p>{t('button.viewDetail')}</p>
                             </div>
                         </li>
                     ))}
                 </ul>
             )}
-
             {/* Detail popup */}
             {showDetail && (
                 <div className={cx('detail-popup')}>
                     <div className={cx('overlay')} onClick={() => setShowDetail(false)}></div>
                     <div className={cx('popup-container')}>
                         <div className={cx('detail-image')}>
-                            <img src={listImages[currentIndex].media_url} alt={listImages[currentIndex].caption} />
+                            <img
+                                src={listImages[currentIndex].media_url}
+                                alt={func.GetTitleFromCaption(listImages[currentIndex].caption)}
+                            />
                         </div>
                         <div className={cx('detail-content')}>
                             <a
                                 href={listImages[currentIndex].permalink}
                                 target="_blank"
                                 rel="noreferrer"
-                            >{`instagram || ${func.ConvertToDateString(listImages[currentIndex].timestamp)}`}</a>
+                            >{`instagram || ${func.ConvertToDateString(
+                                listImages[currentIndex].timestamp,
+                                i18n.language === 'vi' ? 'vi-VN' : 'en-EN'
+                            )}`}</a>
                             <p className={cx('title')}>{func.GetTitleFromCaption(listImages[currentIndex].caption)}</p>
                             <ul className={cx('hashtags')}>
                                 {func.GetTagsFromCaption(listImages[currentIndex].caption).map((tag, index) => (
@@ -156,9 +184,9 @@ function Gallery() {
                                     </li>
                                 ))}
                             </ul>
-                            {(products.length > 0 || fetchStatus?.status === 'succeeded') && (
+                            {products.length > 0 && (
                                 <div className={cx('products-in-image')}>
-                                    <h2 className={cx('title')}>Sản phẩm trong bài viết</h2>
+                                    <h2 className={cx('title')}>{t('gallery.headingProducts')}</h2>
                                     <ul className={cx('products')}>
                                         {products.map(item => (
                                             <li className={cx('product')} key={item.id}>

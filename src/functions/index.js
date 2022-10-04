@@ -37,8 +37,8 @@ export function GetTitleFromCaption(str) {
     return str.slice(0, index);
 }
 
-export function ConvertToDateString(timestamp) {
-    return new Date(timestamp).toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' });
+export function ConvertToDateString(timestamp, nation) {
+    return new Date(timestamp).toLocaleDateString(nation, { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 //Validate

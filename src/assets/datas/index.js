@@ -1,5 +1,5 @@
 const menuHeader = [
-    // { title: 'The box', link: '/box' },
+    { title: 'box', link: '/product-category/box' },
     { title: 'man', link: '/product-category/man' },
     { title: 'woman', link: '/product-category/woman' },
     { title: 'accessory', link: '/product-category/accessory' },
@@ -10,81 +10,100 @@ const menuHeader = [
 
 const menuFooter = [
     {
-        title: 'Sản phẩm',
+        titleVI: 'Sản phẩm',
+        titleEN: 'Products',
         list: [
             {
-                title: 'Đồng hồ nam',
+                titleVI: 'Đồng hồ nam',
+                titleEN: "Men's watches",
                 link: '/product-category/man',
             },
             {
-                title: 'Đồng hồ nữ',
+                titleVI: 'Đồng hồ nữ',
+                titleEN: "Women's watches",
                 link: '/product-category/woman',
             },
         ],
     },
     {
-        title: 'Về DYOSS',
+        titleVI: 'Về DYOSS',
+        titleEN: 'About DYOSS',
         list: [
             {
-                title: 'Giới thiệu',
+                titleVI: 'Giới thiệu',
+                titleEN: 'Introduce',
                 link: '/about-us',
             },
             {
-                title: 'Blogs',
+                titleVI: 'Bài viết',
+                titleEN: 'Blogs',
                 link: '/blogs',
             },
             {
-                title: 'Câu hỏi thường gặp',
+                titleVI: 'Câu hỏi thường gặp',
+                titleEN: 'FAQ',
                 link: '/',
             },
             {
-                title: 'Thanh toán & giao nhận',
+                titleVI: 'Thanh toán & giao nhận',
+                titleEN: 'Payment & shipping',
                 link: '/',
             },
             {
-                title: 'Chế độ bảo hành',
+                titleVI: 'Chế độ bảo hành',
+                titleEN: 'Warranty policy',
                 link: '/',
             },
             {
-                title: 'Liên hệ',
-                link: '/',
-            },
-        ],
-    },
-    {
-        title: 'Cộng đồng',
-        list: [
-            {
-                title: 'Instagram',
-                link: '/',
-            },
-            {
-                title: 'Facebook',
-                link: '/',
-            },
-            {
-                title: 'Youtube',
-                link: '/',
-            },
-            {
-                title: 'Pinterest',
+                titleVI: 'Liên hệ',
+                titleEN: 'Contact',
                 link: '/',
             },
         ],
     },
     {
-        title: 'Liên hệ',
+        titleVI: 'Cộng đồng',
+        titleEN: 'Social',
         list: [
             {
-                title: 'Hotline: 0123 456 789',
+                titleVI: 'Instagram',
+                titleEN: 'Instagram',
                 link: '/',
             },
             {
-                title: 'Zalo: 0123 456 789',
+                titleVI: 'Facebook',
+                titleEN: 'Facebook',
                 link: '/',
             },
             {
-                title: 'Viber: 0123 456 789',
+                titleVI: 'Youtube',
+                titleEN: 'Youtube',
+                link: '/',
+            },
+            {
+                titleVI: 'Pinterest',
+                titleEN: 'Pinterest',
+                link: '/',
+            },
+        ],
+    },
+    {
+        titleVI: 'Liên hệ',
+        titleEN: 'Contact',
+        list: [
+            {
+                titleVI: 'Điện thoại: 0123 456 789',
+                titleEN: 'Hotline: 0123 456 789',
+                link: '/',
+            },
+            {
+                titleVI: 'Zalo: 0123 456 789',
+                titleEN: 'Zalo: 0123 456 789',
+                link: '/',
+            },
+            {
+                titleVI: 'Viber: 0123 456 789',
+                titleEN: 'Viber: 0123 456 789',
                 link: '/',
             },
         ],
@@ -93,13 +112,17 @@ const menuFooter = [
 
 const showrooms = [
     {
-        name: 'SHOWROOM 1 VÀ BẢO HÀNH DYOSS',
-        address: '453/32 Nguyễn Đình Chiểu, Phường 5, Quận 3, TP Hồ Chí Minh',
+        nameVI: 'SHOWROOM 1 VÀ BẢO HÀNH DYOSS',
+        nameEN: 'SHOWROOM 1 AND DYOSS WARRANTY',
+        addressVI: '453/32 Nguyễn Đình Chiểu, Phường 5, Quận 3, Thành Phố Hồ Chí Minh.',
+        addressEN: '453/32 Nguyen Dinh Chieu, Ward 5, District 3, Ho Chi Minh City.',
         hotline: '0123 456 789',
     },
     {
-        name: 'SHOWROOM 2',
-        address: '3/31 Thành Thái, Phường 14, Quận 10, TP Hồ Chí Minh',
+        nameVI: 'SHOWROOM 2',
+        nameEN: 'SHOWROOM 2',
+        addressVI: '3/31 Thành Thái, Phường 14, Quận 10, Thành Phố Hồ Chí Minh.',
+        addressEN: '3/31 Thanh Thai, Ward 14, District 10, Ho Chi Minh City.',
         hotline: '0123 456 789',
     },
 ];

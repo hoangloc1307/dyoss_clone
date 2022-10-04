@@ -20,6 +20,9 @@ function ProductCategory() {
         dispatch(changeProgress(50));
         let url;
         switch (params.type) {
+            case 'box':
+                url = 'product/collections?type=box';
+                break;
             case 'man':
                 url = 'product/collections?type=watch&sex=m';
                 break;

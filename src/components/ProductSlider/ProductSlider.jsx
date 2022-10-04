@@ -61,7 +61,7 @@ function ProductSlider({ listData, navigation = false, autoplay = false, image =
                     image
                         ? {
                               swiper: thumbsSwiper,
-                              slideThumbActiveClass: cx('thumbs-active'),
+                              //   slideThumbActiveClass: cx('thumbs-active'),
                           }
                         : false
                 }
@@ -84,23 +84,21 @@ function ProductSlider({ listData, navigation = false, autoplay = false, image =
             </Swiper>
 
             {/* Thumbs */}
-            {image ? (
+            {image && (
                 <Swiper
-                    modules={[Thumbs]}
-                    watchSlidesProgress={true}
                     onSwiper={setThumbsSwiper}
-                    className={cx('slides-thumbs')}
-                    slidesPerView={4}
                     spaceBetween={10}
+                    slidesPerView={4}
+                    watchSlidesProgress={true}
+                    modules={[Thumbs]}
+                    className={cx('slides-thumbs')}
                 >
                     {listData.map((item, index) => (
-                        <SwiperSlide key={index} className={cx('slide')} tag="li">
+                        <SwiperSlide key={index} className={cx('slide-thumb')} tag="li">
                             <img src={item} alt={`Product ${index}`} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            ) : (
-                false
             )}
         </div>
     );

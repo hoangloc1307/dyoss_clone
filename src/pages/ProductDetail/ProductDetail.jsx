@@ -74,7 +74,7 @@ function ProductDetail() {
                         <div className={cx('product-detail')}>
                             <div className={cx('image-detail')}>
                                 {product.images.length > 0 && (
-                                    <ProductSlider listData={product.images} image customClass={style} />
+                                    <ProductSlider listData={product.images} image customClass={style} autoplay />
                                 )}
                             </div>
                             <div className={cx('content-detail')}>
@@ -83,6 +83,7 @@ function ProductDetail() {
                                     {product.stock > 0 ? `${NumberWithCommas(product.price)}đ` : 'Hết hàng'}
                                 </p>
                                 <p className={cx('description')}>{product.description}</p>
+                                <p className={cx('note')}>{product.note}</p>
                                 {product.stock > 0 && (
                                     <div className={cx('buy')}>
                                         <Button
