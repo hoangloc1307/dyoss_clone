@@ -40,9 +40,7 @@ function CheckoutForm() {
         },
         validationSchema: Yup.object({
             name: Yup.string().required('Nhập tên!'),
-            email: Yup.string()
-                .email('Email không hợp lệ!')
-                .required('Nhập email!'),
+            email: Yup.string().email('Email không hợp lệ!').required('Nhập email!'),
             address: Yup.string().required('Nhập địa chỉ!'),
             provinceID: Yup.string().required('Chọn tỉnh/thành phố!'),
             note: Yup.string().nullable(),
@@ -106,11 +104,7 @@ function CheckoutForm() {
     //Lấy data tỉnh
     useEffect(() => {
         http.get(http.GHN, 'master-data/province').then(res =>
-            setProvinces(
-                res.data.sort((prev, next) =>
-                    prev.ProvinceName.localeCompare(next.ProvinceName)
-                )
-            )
+            setProvinces(res.data.sort((prev, next) => prev.ProvinceName.localeCompare(next.ProvinceName)))
         );
     }, []);
 
@@ -141,11 +135,7 @@ function CheckoutForm() {
         http.post(http.GHN, 'master-data/district', {
             province_id: parseInt(e.target.value),
         }).then(res => {
-            setDistricts(
-                res.data.sort((prev, next) =>
-                    prev.DistrictName.localeCompare(next.DistrictName)
-                )
-            );
+            setDistricts(res.data.sort((prev, next) => prev.DistrictName.localeCompare(next.DistrictName)));
 
             setWards([]);
 
@@ -160,13 +150,7 @@ function CheckoutForm() {
 
         http.post(http.GHN, 'master-data/ward', {
             district_id: parseInt(e.target.value),
-        }).then(res =>
-            setWards(
-                res.data.sort((prev, next) =>
-                    prev.WardName.localeCompare(next.WardName)
-                )
-            )
-        );
+        }).then(res => setWards(res.data.sort((prev, next) => prev.WardName.localeCompare(next.WardName))));
     };
 
     const handleChangeWard = e => {
@@ -208,9 +192,7 @@ function CheckoutForm() {
                         Họ và tên<span>*</span>
                     </label>
                     {formik.touched.name && formik.errors.name && (
-                        <span className={cx('form-error')}>
-                            {formik.errors.name}
-                        </span>
+                        <span className={cx('form-error')}>{formik.errors.name}</span>
                     )}
                 </div>
                 <div className={cx('email-field', 'input-field')}>
@@ -227,9 +209,7 @@ function CheckoutForm() {
                         Email<span>*</span>
                     </label>
                     {formik.touched.email && formik.errors.email && (
-                        <span className={cx('form-error')}>
-                            {formik.errors.email}
-                        </span>
+                        <span className={cx('form-error')}>{formik.errors.email}</span>
                     )}
                 </div>
                 <div className={cx('phone-field', 'input-field')}>
@@ -246,9 +226,7 @@ function CheckoutForm() {
                         Điện thoại<span>*</span>
                     </label>
                     {formik.touched.phone && formik.errors.phone && (
-                        <span className={cx('form-error')}>
-                            {formik.errors.phone}
-                        </span>
+                        <span className={cx('form-error')}>{formik.errors.phone}</span>
                     )}
                 </div>
                 <div className={cx('address-field', 'input-field')}>
@@ -265,9 +243,7 @@ function CheckoutForm() {
                         Địa chỉ<span>*</span>
                     </label>
                     {formik.touched.address && formik.errors.address && (
-                        <span className={cx('form-error')}>
-                            {formik.errors.address}
-                        </span>
+                        <span className={cx('form-error')}>{formik.errors.address}</span>
                     )}
                 </div>
                 <div className={cx('address-select')}>
@@ -285,20 +261,14 @@ function CheckoutForm() {
                             <option value="">Chọn Tỉnh/Thành phố*</option>
                             {provinces.length > 0 &&
                                 provinces.map(province => (
-                                    <option
-                                        key={province.ProvinceID}
-                                        value={province.ProvinceID}
-                                    >
+                                    <option key={province.ProvinceID} value={province.ProvinceID}>
                                         {province.ProvinceName}
                                     </option>
                                 ))}
                         </select>
-                        {formik.touched.provinceID &&
-                            formik.errors.provinceID && (
-                                <span className={cx('form-error')}>
-                                    {formik.errors.provinceID}
-                                </span>
-                            )}
+                        {formik.touched.provinceID && formik.errors.provinceID && (
+                            <span className={cx('form-error')}>{formik.errors.provinceID}</span>
+                        )}
                     </div>
                     <div className={cx('select')}>
                         <select
@@ -314,20 +284,14 @@ function CheckoutForm() {
                             <option value="">Chọn Quận/Huyện*</option>
                             {districts.length > 0 &&
                                 districts.map(district => (
-                                    <option
-                                        key={district.DistrictID}
-                                        value={district.DistrictID}
-                                    >
+                                    <option key={district.DistrictID} value={district.DistrictID}>
                                         {district.DistrictName}
                                     </option>
                                 ))}
                         </select>
-                        {formik.touched.districtID &&
-                            formik.errors.districtID && (
-                                <span className={cx('form-error')}>
-                                    {formik.errors.districtID}
-                                </span>
-                            )}
+                        {formik.touched.districtID && formik.errors.districtID && (
+                            <span className={cx('form-error')}>{formik.errors.districtID}</span>
+                        )}
                     </div>
                     <div className={cx('select')}>
                         <select
@@ -343,18 +307,13 @@ function CheckoutForm() {
                             <option value="">Chọn Phường/Xã*</option>
                             {wards.length > 0 &&
                                 wards.map(ward => (
-                                    <option
-                                        key={ward.WardCode}
-                                        value={ward.WardCode}
-                                    >
+                                    <option key={ward.WardCode} value={ward.WardCode}>
                                         {ward.WardName}
                                     </option>
                                 ))}
                         </select>
                         {formik.touched.wardCode && formik.errors.wardCode && (
-                            <span className={cx('form-error')}>
-                                {formik.errors.wardCode}
-                            </span>
+                            <span className={cx('form-error')}>{formik.errors.wardCode}</span>
                         )}
                     </div>
                 </div>
@@ -369,9 +328,7 @@ function CheckoutForm() {
                     ></textarea>
                     <label htmlFor="note">Ghi chú</label>
                     {formik.touched.note && formik.errors.note && (
-                        <span className={cx('form-error')}>
-                            {formik.errors.note}
-                        </span>
+                        <span className={cx('form-error')}>{formik.errors.note}</span>
                     )}
                 </div>
             </div>
@@ -392,11 +349,7 @@ function CheckoutForm() {
                     <span>{NumberWithCommas(price + shippingPrice)}đ</span>
                 </div>
             </div>
-            <Button
-                type="submit"
-                customClass={style}
-                // onClick={e => handleSubmitError(e)}
-            >
+            <Button type="submit" customClass={style}>
                 Đặt hàng
             </Button>
         </form>

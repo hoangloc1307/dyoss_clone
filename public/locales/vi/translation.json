@@ -34,7 +34,8 @@
     "button": {
         "moreInfor": "Tìm hiểu thêm",
         "viewAll": "Xem tất cả",
-        "viewDetail": "Xem sản phẩm"
+        "viewDetail": "Xem sản phẩm",
+        "submitButton": "Gửi"
     },
     "slider": {
         "previous": "Trước",
@@ -44,12 +45,22 @@
         "outOfStock": "Hết hàng"
     },
     "footer": {
-        "newsletterPlaceholder": "Nhập email để nhận ưu đãi...",
-        "submitButton": "Gửi",
         "address": "Địa chỉ",
         "copyright": "Dyoss giả tạo ra nhằm mục đích học React.",
         "terms": "Điều khoản điều kiện",
         "privacy": "Chính sách bảo mật"
+    },
+    "newsletter": {
+        "newsletter": "Đăng ký nhận thông tin",
+        "newsletterPlaceholder": "Nhập email để nhận ưu đãi...",
+        "invalidEmail": "Email không hợp lệ",
+        "requiredEmail": "Nhập email",
+        "subject": "Cảm ơn bạn đã đăng ký!",
+        "mailDear": "Thân gửi bạn",
+        "mailContent": "Cảm ơn bạn đã đăng ký theo dõi thông tin của DYOSS. Chúng tôi sẽ thông báo cho bạn thông tin sản phẩm mới, những chương trình khuyến mãi một cách nhanh nhất",
+        "mailThanks": "Cảm ơn bạn đã đăng ký.",
+        "pending": "Đang xử lý...",
+        "error": "Có lỗi xảy ra. Vui lòng thử lại sau."
     },
     "gallery": {
         "headingProducts": "Sản phẩm liên quan"

@@ -5,7 +5,6 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import style from './ProductSlider.module.scss';
-import 'swiper/css/bundle';
 import ProductCard from '~/components/ProductCard';
 
 const cx = classNames.bind(style);

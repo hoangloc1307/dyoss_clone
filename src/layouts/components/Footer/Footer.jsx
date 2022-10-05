@@ -5,7 +5,7 @@ import i18n from '~/i18n';
 
 import style from './Footer.module.scss';
 import { menuFooter, showrooms } from '~/assets/datas';
-import Button from '~/components/Button';
+import Newsletter from '~/components/Newsletter';
 
 const cx = classNames.bind(style);
 
@@ -15,13 +15,7 @@ function Footer() {
     return (
         <footer className={cx('footer')}>
             <div className={cx('container')}>
-                <div className={cx('newsletter')}>
-                    <h4 className={cx('title')}>Newsletter</h4>
-                    <form className={cx('form')}>
-                        <input type="email" placeholder={t('footer.newsletterPlaceholder')} />
-                        <Button customClass={style}>{t('footer.submitButton')}</Button>
-                    </form>
-                </div>
+                <Newsletter />
                 <div className={cx('footer-menu')}>
                     {menuFooter.map((menu, index) => (
                         <div className={cx('menu-block')} key={index}>

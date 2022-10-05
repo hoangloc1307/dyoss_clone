@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify';
+
 import Header from '~/layouts/components/Header';
 import Footer from '~/layouts/components/Footer';
 import TopLoading from '~/components/TopLoading';
@@ -8,6 +10,7 @@ function MasterLayout({ children }) {
             <Header />
             <TopLoading />
             {children}
+            <ToastContainer />
             <Footer />
         </>
     );

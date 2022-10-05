@@ -7,12 +7,12 @@ import { faCartPlus, faChevronLeft, faChevronRight, faEye, faXmark } from '@fort
 import { Link } from 'react-router-dom';
 import { PulseLoader } from 'react-spinners';
 import { useTranslation } from 'react-i18next';
+import i18n from '~/i18n';
 
 import style from './Gallery.module.scss';
 import * as func from '~/functions';
 import { addToCart, changeStatus, selectShowStatus } from '~/features/cart';
 import { galleryFetchImageInstagram, galleryFetchProducts } from '~/features/gallery';
-import i18n from '~/i18n';
 
 const cx = classNames.bind(style);
 

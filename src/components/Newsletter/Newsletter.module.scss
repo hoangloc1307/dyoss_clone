@@ -1,0 +1,53 @@
+.newsletter {
+    width: 480px;
+    margin: 0 auto 70px;
+
+    .title {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin: 35px;
+        text-align: center;
+    }
+
+    .form {
+        position: relative;
+
+        input {
+            background: #e5e5e5;
+            border: none;
+            outline: none;
+            height: 50px;
+            border-radius: 12px;
+            width: 480px;
+            padding-left: 20px;
+            padding-right: 160px;
+
+            &::placeholder {
+                color: #000000;
+            }
+        }
+
+        .button {
+            width: 140px;
+            position: absolute;
+            right: 0;
+            border-radius: 0 12px 12px 0;
+        }
+    }
+}
+
+.form-error {
+    font-size: 11px;
+    position: absolute;
+    left: 20px;
+    bottom: -3px;
+    transform: translateY(100%);
+    color: red;
+
+    &::before {
+        content: '* ';
+        font-size: 13px;
+    }
+}
