@@ -13,12 +13,16 @@ function ProductViewed() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const productViewd = JSON.parse(sessionStorage.getItem('productViewed'));
+        const productViewd = sessionStorage.getItem('productViewed');
 
         if (productViewd) {
-            http.get(http.Dyoss, `product/viewed?id=${productViewd.toString()}`).then(res => {
+            http.get(http.Dyoss, `product?column=id,name,price,stock,images,link&id=${productViewd}`).then(res => {
                 const orderList = [];
-                productViewd.map(id => orderList.push(res.find(item => item.id === id)));
+                productViewd.split(',').map(id => {
+                    const product = res.find(item => item.id === parseInt(id));
+                    orderList.push(product);
+                    return null;
+                });
                 setProducts(orderList.reverse());
             });
         }

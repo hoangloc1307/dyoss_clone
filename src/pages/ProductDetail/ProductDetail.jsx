@@ -41,28 +41,35 @@ function ProductDetail() {
         });
     }, [params.slug, dispatch, navigate]);
 
-    //Save into session storage
     useEffect(() => {
         if (!isEmpty(product)) {
-            let items;
-            const products = sessionStorage.getItem('productViewed');
-            if (products) {
-                items = JSON.parse(sessionStorage.getItem('productViewed'));
-                if (!items.includes(product.id)) {
-                    if (items.length > 5) {
-                        items.shift();
+            //Save into session storage
+            let items = sessionStorage.getItem('productViewed') || '';
+            if (items) {
+                const ids = items.split(',');
+
+                if (!ids.includes(product.id.toString())) {
+                    if (ids.length > 5) {
+                        ids.shift();
                     }
-                    items.push(product.id);
+                    ids.push(product.id);
                 } else {
-                    const index = items.indexOf(product.id);
-                    items.splice(index, 1);
-                    items.push(product.id);
+                    const index = ids.indexOf(product.id.toString());
+                    ids.splice(index, 1);
+                    ids.push(product.id);
                 }
+
+                items = ids.join(',');
             } else {
-                items = [product.id];
+                items += product.id;
             }
-            sessionStorage.setItem('productViewed', JSON.stringify(items));
+            sessionStorage.setItem('productViewed', items);
             dispatch(changeProgress(100));
+
+            //Get box options
+            if (product.type === 'box') {
+                http.get(http.Dyoss, `product/options/${params.slug}`).then(res => console.log(res));
+            }
         }
     }, [product, dispatch]);
 

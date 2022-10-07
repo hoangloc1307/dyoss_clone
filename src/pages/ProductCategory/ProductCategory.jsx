@@ -30,7 +30,7 @@ function ProductCategory() {
                 url = 'product/collections?type=watch&sex=w';
                 break;
             case 'accessory':
-                url = 'product/collections?type=accessory';
+                url = 'product/collections?type=strap,bracelet';
                 break;
             default:
         }

@@ -24,11 +24,11 @@ function SearchResult() {
         dispatch(changeProgress(50));
         let url;
         if (keyword) {
-            url = `product/search?name=${keyword}`;
+            url = `product?name=${keyword}`;
             setDisplayKeyword(keyword);
         } else {
             const searchParams = new URLSearchParams(location.search);
-            url = `product/search?name=${searchParams.get('name')}`;
+            url = `product?name=${searchParams.get('name')}`;
             setDisplayKeyword(searchParams.get('name'));
         }
         http.get(http.Dyoss, url).then(res => {

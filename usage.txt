@@ -1,0 +1,47 @@
+[GET] /api/product
+
+Lấy dữ liệu sản phẩm.
+
+Query string:
+- column     : Chỉ định cột, phân tách bởi dấu phẩy. VD: column=name,age
+- id         : Chỉ định id, phân tách bởi dấu phẩy. VD: id=1,2
+- name       : Chỉ định tên gần giống (%%). VD: name=black
+- type       : Chỉ định loại cụ thể, phân tách bởi dấu phẩy. VD: type=watch,strap
+- collection : Chỉ định bộ sưu tập, phân tách bởi dấu phẩy. VD: collection=1,2,3
+- sex        : Chỉ định giới tính. VD: sex=M
+- priceMin   : Lấy giá từ priceMin trở lên. VD: priceMin=2000000
+- priceMax   : Lấy giá từ priceMax trở xuống. VD: priceMax=4000000
+- inStock    : Nếu bằng true lấy sản phẩm còn hàng và ngược lại false. VD: inStock=true
+               Nếu bằng số thì lấy sản phẩm có stock >= inStock. VD: inStock=30
+- link       : Chỉ định link sản phẩm, phân tách bởi dấu phẩy. VD: link=link1,link2
+- orderBy    : Sắp xếp theo cấu trúc column.sort, phân tách bởi dấu phẩy. VD: orderBy=name.desc,age.asc
+- limit      : Giới hạn số hàng theo cấu trúc limit,offset. VD: limit=5,0
+
+=======================================================================================================
+
+[GET] /api/product/detail/:slug/:amount
+
+Lấy thông tin chi tiết của sản phẩm và thông tin cơ bản các sản phẩm cùng bộ sưu tập, giới tính.
+
+Params:
+- :slug      : Link sản phẩm. VD: iconic-white-tan-40
+- :amount    : Số lượng sản phẩm liên quan. VD: 5
+
+=======================================================================================================
+
+[GET] /api/product/collections
+
+Lấy thông tin bộ sưu tập và các sản phẩm thuộc bộ sưu tập đó.
+
+Query string:
+- type       : Chỉ định loại sản phẩm, phân tách bởi dấy phẩy. VD: type=strap,watch
+- sex        : Chỉ định giới tính. VD sex=M
+
+=======================================================================================================
+
+[GET] /api/product/options/:slug
+
+Lấy các option của các box.
+
+Params:
+- :slug      : Link sản phẩm. VD: rosie-box-rose-gold
