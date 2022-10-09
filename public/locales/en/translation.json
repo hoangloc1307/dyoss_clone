@@ -31,6 +31,10 @@
         "miyotaMachine": "Japan Miyota Machine",
         "description": "Dyoss' latest masterpiece with its luxurious, minimalistic, modern design has made many fashionistas super happy. It's more surprising that it can be combined with any fashion style you love."
     },
+    "productDetail": {
+        "addToCart": "Add to cart successfully.",
+        "chooseOption": "Please choose product options."
+    },
     "button": {
         "moreInfor": "More information",
         "viewAll": "View All",

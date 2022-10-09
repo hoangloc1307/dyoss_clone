@@ -54,11 +54,11 @@ function CheckoutForm() {
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                total: product.total,
+                amount: product.amount,
+                option: product.option,
             }));
             values.itemsPrice = price;
             values.shippingPrice = shippingPrice;
-            console.log(values);
             alert('Đã ghi thông tin trong console.');
         },
     });

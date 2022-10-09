@@ -3,7 +3,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as http from '~/utils/http';
 
 export const galleryFetchProducts = createAsyncThunk('gallery/fetchProducts', async payload => {
-    const response = await http.get(http.Dyoss, `product/?link=${payload.slugString}&column=id,name,price,link,images`);
+    const response = await http.get(
+        http.Dyoss,
+        `product/?link=${payload.slugString}&column=id,name,price,link,images,type`
+    );
     return response;
 });
 

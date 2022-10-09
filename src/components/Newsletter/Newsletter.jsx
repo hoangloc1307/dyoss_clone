@@ -39,14 +39,13 @@ function Newsletter() {
                         error: t('newsletter.error'),
                     },
                     {
-                        position: toast.POSITION.TOP_RIGHT,
+                        position: toast.POSITION.BOTTOM_RIGHT,
                         autoClose: 3000,
                         closeOnClick: true,
                     }
                 );
 
                 formik.resetForm();
-                console.log(values);
             }
         },
     });

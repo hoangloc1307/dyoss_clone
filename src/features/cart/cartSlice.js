@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
+import * as _ from 'lodash';
 
 const initialState = {
     items: [],
@@ -9,51 +10,61 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addToCart: (state, action) => {
-            const { id } = action.payload;
+        addToCart: {
+            reducer(state, action) {
+                const { id, option } = action.payload;
 
-            const existsItem = state.items.find(item => item.id === id);
+                const existsItem = state.items.find(item => item.id === id && _.isEqual(item.option, option));
 
-            if (existsItem) {
-                existsItem.total++;
-            } else {
-                state.items.push(action.payload);
-            }
+                if (existsItem) {
+                    existsItem.amount++;
+                } else {
+                    state.items.push(action.payload);
+                }
 
-            state.showStatus = true;
+                state.showStatus = true;
+            },
+            prepare(id, name, price, link, image, option) {
+                return {
+                    payload: {
+                        cartId: nanoid(),
+                        amount: 1,
+                        id,
+                        name,
+                        price,
+                        link,
+                        image,
+                        option,
+                    },
+                };
+            },
         },
-        changeStatus: (state, action) => {
-            state.showStatus =
-                action.payload.status === 'auto'
-                    ? !state.showStatus
-                    : action.payload.status;
+        changeStatus(state, action) {
+            state.showStatus = action.payload.status === 'auto' ? !state.showStatus : action.payload.status;
         },
-        updateCartItem: (state, action) => {
-            const { id, type } = action.payload;
+        updateCartItem(state, action) {
+            const { cartId, type } = action.payload;
 
-            const existsItem = state.items.find(item => item.id === id);
+            const existsItem = state.items.find(item => item.cartId === cartId);
 
             if (type === 'increase') {
-                existsItem.total++;
+                existsItem.amount++;
             } else if (type === 'decrease') {
-                if (existsItem.total > 1) {
-                    existsItem.total--;
+                if (existsItem.amount > 1) {
+                    existsItem.amount--;
                 } else {
-                    state.items = state.items.filter(
-                        item => item.id !== existsItem.id
-                    );
+                    state.items = state.items.filter(item => item.cartId !== existsItem.cartId);
                 }
             }
         },
-        removeItem: (state, action) => {
-            const { id } = action.payload;
+        removeItem(state, action) {
+            const { cartId } = action.payload;
 
-            state.items = state.items.filter(item => item.id !== id);
+            state.items = state.items.filter(item => item.cartId !== cartId);
         },
     },
 });
 
 export default cartSlice.reducer;
 
-export const { addToCart, changeStatus, updateCartItem, removeItem } =
-    cartSlice.actions;
+export const { addToCart, changeStatus, updateCartItem, removeItem } = cartSlice.actions;

@@ -121,16 +121,7 @@ function Gallery() {
     };
 
     const handleAddToCart = item => {
-        dispatch(
-            addToCart({
-                id: item.id,
-                name: item.name,
-                price: item.price,
-                link: item.link,
-                image: JSON.parse(item.images)[0],
-                total: 1,
-            })
-        );
+        dispatch(addToCart(item.id, item.name, item.price, item.link, JSON.parse(item.images)[0], {}));
 
         setShowDetail(false);
     };
@@ -199,12 +190,14 @@ function Gallery() {
                                                         >
                                                             <FontAwesomeIcon icon={faEye} />
                                                         </Link>
-                                                        <div
-                                                            className={cx('add-to-cart')}
-                                                            onClick={() => handleAddToCart(item)}
-                                                        >
-                                                            <FontAwesomeIcon icon={faCartPlus} />
-                                                        </div>
+                                                        {item.type !== 'box' && (
+                                                            <div
+                                                                className={cx('add-to-cart')}
+                                                                onClick={() => handleAddToCart(item)}
+                                                            >
+                                                                <FontAwesomeIcon icon={faCartPlus} />
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                                 <div className={cx('product-content')}>
@@ -229,11 +222,8 @@ function Gallery() {
                             <div className={cx('prev', 'btn')} onClick={() => handleNavigateButtonClick('prev')}>
                                 <FontAwesomeIcon icon={faChevronLeft} />
                             </div>
-                            <div className={cx('next', 'btn')}>
-                                <FontAwesomeIcon
-                                    icon={faChevronRight}
-                                    onClick={() => handleNavigateButtonClick('next')}
-                                />
+                            <div className={cx('next', 'btn')} onClick={() => handleNavigateButtonClick('next')}>
+                                <FontAwesomeIcon icon={faChevronRight} />
                             </div>
                         </div>
                     </div>

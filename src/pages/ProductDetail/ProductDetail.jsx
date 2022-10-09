@@ -5,6 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { useState } from 'react';
 import _ from 'lodash';
+import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 import style from './ProductDetail.module.scss';
 import { NumberWithCommas } from '~/functions';
@@ -14,19 +16,23 @@ import { changeProgress } from '~/features/loader';
 import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductByCategory from '~/components/ProductByCategory';
+import ProductOption from '~/components/ProductOption';
 
 const cx = classNames.bind(style);
 
 function ProductDetail() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const params = useParams();
     const [product, setProduct] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
+    const [options, setOptions] = useState({});
+    const [optionSelected, setOptionSelected] = useState({});
 
     //Get product detail
     useEffect(() => {
-        dispatch(changeProgress(50));
+        dispatch(changeProgress(30));
         http.get(http.Dyoss, `product/detail/${params.slug}/4`).then(response => {
             if (!_.isEmpty(response)) {
                 const prod = response.detail;
@@ -34,7 +40,7 @@ function ProductDetail() {
                 prod.images = JSON.parse(prod.images);
                 setProduct(prod);
                 setRelatedProducts(response.relatedProducts);
-                dispatch(changeProgress(80));
+                dispatch(changeProgress(50));
             } else {
                 navigate('/');
             }
@@ -64,14 +70,51 @@ function ProductDetail() {
                 items += product.id;
             }
             sessionStorage.setItem('productViewed', items);
-            dispatch(changeProgress(100));
-
+            dispatch(changeProgress(80));
             //Get box options
             if (product.type === 'box') {
-                http.get(http.Dyoss, `product/options/${params.slug}`).then(res => console.log(res));
+                http.get(http.Dyoss, `product/options/${params.slug}`).then(res => {
+                    setOptions(res);
+                    dispatch(changeProgress(100));
+                });
+            } else {
+                dispatch(changeProgress(100));
             }
         }
+        // eslint-disable-next-line
     }, [product, dispatch]);
+
+    const handleChoseItem = (type, item) => {
+        setOptionSelected({ ...optionSelected, [type]: item });
+    };
+
+    const handleAddToCart = () => {
+        const optionExists = [];
+        for (const [key, value] of Object.entries(options)) {
+            if (value.length > 0) {
+                optionExists.push(key);
+            }
+        }
+
+        const check = optionExists.every(r => Object.keys(optionSelected).indexOf(r) >= 0);
+
+        if (check) {
+            dispatch(
+                addToCart(product.id, product.name, product.price, product.link, product.images[0], optionSelected)
+            );
+            toast.success(t('productDetail.addToCart'), {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 3000,
+                closeOnClick: true,
+            });
+        } else {
+            toast.error(t('productDetail.chooseOption'), {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 3000,
+                closeOnClick: true,
+            });
+        }
+    };
 
     return (
         <>
@@ -91,24 +134,29 @@ function ProductDetail() {
                                 </p>
                                 <p className={cx('description')}>{product.description}</p>
                                 <p className={cx('note')}>{product.note}</p>
+                                <div className={cx('options')}>
+                                    {!_.isEmpty(options) && options.watch.length > 0 && (
+                                        <ProductOption
+                                            title={'Chọn đồng hồ'}
+                                            options={options.watch}
+                                            type={'watch'}
+                                            current={optionSelected.watch}
+                                            onChose={handleChoseItem}
+                                        />
+                                    )}
+                                    {!_.isEmpty(options) && options.strap.length > 0 && (
+                                        <ProductOption
+                                            title={'Chọn dây đeo'}
+                                            options={options.strap}
+                                            type={'strap'}
+                                            current={optionSelected.strap}
+                                            onChose={handleChoseItem}
+                                        />
+                                    )}
+                                </div>
                                 {product.stock > 0 && (
                                     <div className={cx('buy')}>
-                                        <Button
-                                            onClick={() => {
-                                                dispatch(
-                                                    addToCart({
-                                                        id: product.id,
-                                                        name: product.name,
-                                                        price: product.price,
-                                                        link: product.link,
-                                                        image: product.images[0],
-                                                        total: 1,
-                                                    })
-                                                );
-                                            }}
-                                        >
-                                            Mua ngay
-                                        </Button>
+                                        <Button onClick={handleAddToCart}>Mua ngay</Button>
                                     </div>
                                 )}
                                 <ul className={cx('features')}>

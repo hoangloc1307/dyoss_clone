@@ -42,11 +42,16 @@
     width: 350px;
 
     .name {
-        margin-bottom: 15px;
         display: block;
         font-weight: 600;
         font-family: 'Gotham Light';
         font-size: 18px;
+    }
+
+    .options {
+        margin-bottom: 15px;
+        font-size: 13px;
+        color: #898989;
     }
 
     .price {

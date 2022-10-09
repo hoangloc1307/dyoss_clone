@@ -31,6 +31,10 @@
         "miyotaMachine": "Máy Miyota Nhật Bản",
         "description": "Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu thích."
     },
+    "productDetail": {
+        "addToCart": "Đã thêm sản phẩm vào giỏ hàng.",
+        "chooseOption": "Vui lòng chọn các sản phẩm tuỳ chọn."
+    },
     "button": {
         "moreInfor": "Tìm hiểu thêm",
         "viewAll": "Xem tất cả",

@@ -71,11 +71,11 @@ function Cart({ customClass }) {
                                                 <div className={cx('amount')}>
                                                     <span>SL:</span>
                                                     <InputNumber
-                                                        value={item.total}
+                                                        value={item.amount}
                                                         onIncrease={() =>
                                                             dispatch(
                                                                 updateCartItem({
-                                                                    id: item.id,
+                                                                    cartId: item.cartId,
                                                                     type: 'increase',
                                                                 })
                                                             )
@@ -83,7 +83,7 @@ function Cart({ customClass }) {
                                                         onDecrease={() =>
                                                             dispatch(
                                                                 updateCartItem({
-                                                                    id: item.id,
+                                                                    cartId: item.cartId,
                                                                     type: 'decrease',
                                                                 })
                                                             )
@@ -97,7 +97,7 @@ function Cart({ customClass }) {
                                                 onClick={() => {
                                                     dispatch(
                                                         removeItem({
-                                                            id: item.id,
+                                                            cartId: item.cartId,
                                                         })
                                                     );
                                                 }}
