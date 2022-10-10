@@ -1,14 +1,15 @@
 import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
 import { useEffect, useState } from 'react';
-import * as Yup from 'yup';
 import { useSelector } from 'react-redux';
+import * as Yup from 'yup';
 
-import style from './CheckoutForm.module.scss';
 import Button from '~/components/Button';
-import * as http from '~/utils/http';
+import InputField from '~/components/InputField';
+import { selectCartItems, selectTotalPrice } from '~/features/cart';
 import { IsValidPhone, NumberWithCommas } from '~/functions';
-import { selectTotalPrice, selectCartItems } from '~/features/cart';
+import * as http from '~/utils/http';
+import style from './CheckoutForm.module.scss';
 
 const cx = classNames.bind(style);
 
@@ -178,74 +179,58 @@ function CheckoutForm() {
         >
             <div className={cx('contact')}>
                 <h2 className={cx('title')}>Thông tin cá nhân</h2>
-                <div className={cx('name-field', 'input-field')}>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="."
-                        value={formik.values.name}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <label htmlFor="name">
-                        Họ và tên<span>*</span>
-                    </label>
-                    {formik.touched.name && formik.errors.name && (
-                        <span className={cx('form-error')}>{formik.errors.name}</span>
-                    )}
-                </div>
-                <div className={cx('email-field', 'input-field')}>
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="."
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <label htmlFor="email">
-                        Email<span>*</span>
-                    </label>
-                    {formik.touched.email && formik.errors.email && (
-                        <span className={cx('form-error')}>{formik.errors.email}</span>
-                    )}
-                </div>
-                <div className={cx('phone-field', 'input-field')}>
-                    <input
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        placeholder="."
-                        value={formik.values.phone}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <label htmlFor="phone">
-                        Điện thoại<span>*</span>
-                    </label>
-                    {formik.touched.phone && formik.errors.phone && (
-                        <span className={cx('form-error')}>{formik.errors.phone}</span>
-                    )}
-                </div>
-                <div className={cx('address-field', 'input-field')}>
-                    <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        placeholder="."
-                        value={formik.values.address}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <label htmlFor="address">
-                        Địa chỉ<span>*</span>
-                    </label>
-                    {formik.touched.address && formik.errors.address && (
-                        <span className={cx('form-error')}>{formik.errors.address}</span>
-                    )}
-                </div>
+                <InputField
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="."
+                    value={formik.values.name}
+                    label="Họ và tên"
+                    require
+                    touched={formik.touched.name}
+                    error={formik.errors.name}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                <InputField
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="."
+                    value={formik.values.email}
+                    label="Email"
+                    require
+                    touched={formik.touched.email}
+                    error={formik.errors.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                <InputField
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    placeholder="."
+                    value={formik.values.phone}
+                    label="Điện thoại"
+                    require
+                    touched={formik.touched.phone}
+                    error={formik.errors.phone}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+                <InputField
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="."
+                    value={formik.values.address}
+                    label="Địa chỉ"
+                    require
+                    touched={formik.touched.address}
+                    error={formik.errors.address}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
                 <div className={cx('address-select')}>
                     <div className={cx('select')}>
                         <select
@@ -317,20 +302,18 @@ function CheckoutForm() {
                         )}
                     </div>
                 </div>
-                <div className={cx('note-field', 'input-field')}>
-                    <textarea
-                        id="note"
-                        name="note"
-                        placeholder="."
-                        value={formik.values.note}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    ></textarea>
-                    <label htmlFor="note">Ghi chú</label>
-                    {formik.touched.note && formik.errors.note && (
-                        <span className={cx('form-error')}>{formik.errors.note}</span>
-                    )}
-                </div>
+                <InputField
+                    type="textarea"
+                    id="note"
+                    name="note"
+                    placeholder="."
+                    value={formik.values.note}
+                    label="Ghi chú"
+                    touched={formik.touched.note}
+                    error={formik.errors.note}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
             </div>
             <div className={cx('total')}>
                 <h2 className={cx('title')}>Thanh toán</h2>

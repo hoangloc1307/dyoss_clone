@@ -1,25 +1,25 @@
-import classNames from 'classnames/bind';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
+import Button from '~/components/Button';
+import InputNumber from '~/components/InputNumber';
 import {
     changeStatus,
+    removeItem,
     selectCartItems,
     selectShowStatus,
     selectTotalItems,
     selectTotalPrice,
     updateCartItem,
-    removeItem,
 } from '~/features/cart';
-import style from './Cart.module.scss';
 import { NumberWithCommas } from '~/functions';
-import Button from '~/components/Button';
-import InputNumber from '~/components/InputNumber';
+import style from './Cart.module.scss';
 
 const cx = classNames.bind(style);
 

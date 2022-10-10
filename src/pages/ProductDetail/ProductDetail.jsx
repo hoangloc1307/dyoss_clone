@@ -1,22 +1,20 @@
 import classNames from 'classnames/bind';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { isEmpty } from 'lodash';
-import { useState } from 'react';
-import _ from 'lodash';
-import { toast } from 'react-toastify';
+import _, { isEmpty } from 'lodash';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-import style from './ProductDetail.module.scss';
-import { NumberWithCommas } from '~/functions';
-import * as http from '~/utils/http';
-import { addToCart } from '~/features/cart';
-import { changeProgress } from '~/features/loader';
-import ProductSlider from '~/components/ProductSlider';
 import Button from '~/components/Button';
 import ProductByCategory from '~/components/ProductByCategory';
 import ProductOption from '~/components/ProductOption';
+import ProductSlider from '~/components/ProductSlider';
+import { addToCart } from '~/features/cart';
+import { changeProgress } from '~/features/loader';
+import { NumberWithCommas } from '~/functions';
+import * as http from '~/utils/http';
+import style from './ProductDetail.module.scss';
 
 const cx = classNames.bind(style);
 

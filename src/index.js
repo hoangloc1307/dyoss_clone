@@ -1,11 +1,10 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import GlobalStyles from '~/components/GlobalStyles';
-import store from '~/app/store';
-import './i18n';
 import App from '~/App';
+import store from '~/app/store';
+import GlobalStyles from '~/components/GlobalStyles';
+import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

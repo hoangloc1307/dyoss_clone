@@ -1,8 +1,8 @@
 import { ToastContainer } from 'react-toastify';
 
-import Header from '~/layouts/components/Header';
-import Footer from '~/layouts/components/Footer';
 import TopLoading from '~/components/TopLoading';
+import Footer from '~/layouts/components/Footer';
+import Header from '~/layouts/components/Header';
 
 function MasterLayout({ children }) {
     return (

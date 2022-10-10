@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import style from './SearchResult.module.scss';
-import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
 import { changeProgress } from '~/features/loader';
+import * as http from '~/utils/http';
+import style from './SearchResult.module.scss';
 
 const cx = classNames.bind(style);
 

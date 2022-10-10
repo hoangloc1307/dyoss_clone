@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-
-import style from './AboutUs.module.scss';
-import images from '~/assets/images';
 import { useEffect, useState } from 'react';
-import i18n from '~/i18n';
 import { useTranslation } from 'react-i18next';
+import i18n from '~/i18n';
+
+import images from '~/assets/images';
+import style from './AboutUs.module.scss';
 
 const cx = classNames.bind(style);
 

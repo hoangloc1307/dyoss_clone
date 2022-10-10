@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
-
-import style from './Loader.module.scss';
-import images from '~/assets/images';
 import { useSelector } from 'react-redux';
+
+import images from '~/assets/images';
+import style from './Loader.module.scss';
 
 const cx = classNames.bind(style);
 

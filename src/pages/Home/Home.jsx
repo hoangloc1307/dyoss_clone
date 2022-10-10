@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
-import style from './Home.module.scss';
 import images from '~/assets/images';
-import { fetchProducts } from '~/features/products';
-import { changeProgress } from '~/features/loader';
+import Button from '~/components/Button';
 import ProductByCategory from '~/components/ProductByCategory';
 import ProductSlider from '~/components/ProductSlider';
-import Button from '~/components/Button';
 import ProductViewed from '~/components/ProductViewed';
+import { changeProgress } from '~/features/loader';
+import { fetchProducts } from '~/features/products';
+import style from './Home.module.scss';
 
 const cx = classNames.bind(style);
 

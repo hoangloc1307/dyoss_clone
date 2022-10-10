@@ -1,6 +1,6 @@
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingBar from 'react-top-loading-bar';
-import { memo } from 'react';
 
 import { changeProgress } from '~/features/loader';
 

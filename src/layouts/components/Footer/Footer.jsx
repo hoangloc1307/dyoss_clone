@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import i18n from '~/i18n';
 
-import style from './Footer.module.scss';
 import { menuFooter, showrooms } from '~/assets/datas';
 import Newsletter from '~/components/Newsletter';
+import style from './Footer.module.scss';
 
 const cx = classNames.bind(style);
 

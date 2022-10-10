@@ -1,12 +1,12 @@
-import classNames from 'classnames/bind';
-import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
+import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
+import * as Yup from 'yup';
 
-import style from './Newsletter.module.scss';
 import Button from '~/components/Button';
+import style from './Newsletter.module.scss';
 
 const cx = classNames.bind(style);
 

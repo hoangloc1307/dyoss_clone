@@ -1,0 +1,66 @@
+.input-field {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    margin-bottom: 5px;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px 12px;
+        margin-top: 12px;
+        border: none;
+        outline: none;
+        font-family: 'Gotham Book';
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+            top: 25%;
+        }
+    }
+
+    textarea {
+        resize: none;
+        height: 80px;
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+            top: 10%;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        padding: 0 12px;
+        width: 100%;
+        background: #ffffff;
+        transform: translateY(-50%);
+        color: #898989;
+        transition: 0.2s ease-in-out;
+        cursor: text;
+
+        span {
+            color: red;
+        }
+    }
+}
+
+.form-error {
+    font-size: 11px;
+    margin-bottom: 15px;
+    color: red;
+    display: block;
+
+    &::before {
+        content: '* ';
+        font-size: 13px;
+    }
+}

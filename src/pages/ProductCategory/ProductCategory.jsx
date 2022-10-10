@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
-import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import style from './ProductCategory.module.scss';
-import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
 import { changeProgress } from '~/features/loader';
+import * as http from '~/utils/http';
+import style from './ProductCategory.module.scss';
 
 const cx = classNames.bind(style);
 

@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import i18n from '~/i18n';
-import { useTranslation } from 'react-i18next';
 
-import style from './Header.module.scss';
-import images from '~/assets/images';
 import { menuHeader } from '~/assets/datas';
+import images from '~/assets/images';
 import Cart from '~/components/Cart';
 import Search from '~/components/Search';
+import style from './Header.module.scss';
 
 const cx = classNames.bind(style);
 
@@ -42,10 +42,10 @@ function Header() {
                             </a>
                         </div>
                         <div className={cx('topbar-right')}>
-                            <Link to={'/'} className={cx('right-item')}>
+                            <Link to={'/login'} className={cx('right-item')}>
                                 {t('header.login')}
                             </Link>
-                            <Link to={'/'} className={cx('right-item')}>
+                            <Link to={'/register'} className={cx('right-item')}>
                                 {t('header.register')}
                             </Link>
                             <div className={cx('right-item', 'flag')}>

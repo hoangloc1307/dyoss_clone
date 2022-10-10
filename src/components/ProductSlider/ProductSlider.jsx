@@ -1,11 +1,11 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, Thumbs } from 'swiper';
 import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Autoplay, Navigation, Thumbs } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import style from './ProductSlider.module.scss';
 import ProductCard from '~/components/ProductCard';
+import style from './ProductSlider.module.scss';
 
 const cx = classNames.bind(style);
 

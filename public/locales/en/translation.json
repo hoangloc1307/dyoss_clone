@@ -69,5 +69,35 @@
     "gallery": {
         "headingProducts": "Related products"
     },
-    "viewedProduct": "Viewed products"
+    "viewedProduct": "Viewed products",
+    "login": {
+        "login": "Login",
+        "user": "Email or phone number",
+        "userError": "Input email or phone number!",
+        "password": "Password",
+        "passwordError": "Input password!",
+        "remember": "Remember me",
+        "forgot": "Forgot password",
+        "clickHere": "Click here",
+        "orLogin": "Or login with",
+        "dontHaveAccount": "You don't have account?"
+    },
+    "register": {
+        "register": "Register",
+        "invalidEmail": "Invalid email!",
+        "requiredEmail": "Email required!",
+        "phone": "Phone",
+        "requiredPhone": "Phone required!",
+        "name": "Name",
+        "requiredName": "Name required!",
+        "password": "Password",
+        "requiredPassword": "Password required!",
+        "minPassword": "Password must be at least 8 characters!",
+        "confirmPassword": "Confirm password",
+        "requiredConfirmPassword": "Confirm password required!",
+        "confirmPasswordError": "Confirm password not match!",
+        "accept": "I have reviewed and agree to the Dyoss's policy.",
+        "requiredAccept": "Please accept the creation of a new customer account!",
+        "haveAccount": "You already have an account."
+    }
 }

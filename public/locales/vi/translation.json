@@ -69,5 +69,35 @@
     "gallery": {
         "headingProducts": "Sản phẩm liên quan"
     },
-    "viewedProduct": "Sảm phẩm đã xem"
+    "viewedProduct": "Sảm phẩm đã xem",
+    "login": {
+        "login": "Đăng nhập",
+        "user": "Email hoặc số điện thoại",
+        "userError": "Nhập email hoặc số điện thoại!",
+        "password": "Mật khẩu",
+        "passwordError": "Nhập mật khẩu!",
+        "remember": "Nhớ mật khẩu",
+        "forgot": "Quên mật khẩu",
+        "clickHere": "Bấm vào đây",
+        "orLogin": "Hoặc đăng nhập bằng",
+        "dontHaveAccount": "Bạn chưa có tài khoản?"
+    },
+    "register": {
+        "register": "Đăng ký",
+        "invalidEmail": "Email không hợp lệ!",
+        "requiredEmail": "Nhập email!",
+        "phone": "Điện thoại",
+        "requiredPhone": "Nhập số điện thoại!",
+        "name": "Họ tên",
+        "requiredName": "Nhập tên!",
+        "password": "Mật khẩu",
+        "requiredPassword": "Nhập mật khẩu!",
+        "minPassword": "Mật khẩu phải dài ít nhất 8 kí tự!",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "requiredConfirmPassword": "Nhập lại mật khẩu!",
+        "confirmPasswordError": "Xác nhận mật khẩu không đúng!",
+        "accept": "Tôi đã xem và đồng ý với chính sách của Dyoss.",
+        "requiredAccept": "Vui lòng chấp nhận điều khoản để tạo tài khoản mới!",
+        "haveAccount": "Bạn đã có tài khoản."
+    }
 }

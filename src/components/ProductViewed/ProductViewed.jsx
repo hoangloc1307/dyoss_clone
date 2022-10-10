@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState, memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import style from './ProductViewed.module.scss';
-import * as http from '~/utils/http';
 import ProductByCategory from '~/components/ProductByCategory';
+import * as http from '~/utils/http';
+import style from './ProductViewed.module.scss';
 
 const cx = classNames.bind(style);
 

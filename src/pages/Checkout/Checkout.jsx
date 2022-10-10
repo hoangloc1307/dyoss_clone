@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import style from './Checkout.module.scss';
-import InputNumber from '~/components/InputNumber';
 import CheckoutForm from '~/components/CheckoutForm';
+import InputNumber from '~/components/InputNumber';
 import { removeItem, selectCartItems, selectTotalItems, updateCartItem } from '~/features/cart';
 import { NumberWithCommas } from '~/functions';
+import style from './Checkout.module.scss';
 
 const cx = classNames.bind(style);
 
@@ -41,7 +41,7 @@ function Checkout() {
                                             Đơn giá: <span>{NumberWithCommas(product.price)}đ</span>
                                         </p>
                                         <div className={cx('amount')}>
-                                            <p>SL:</p>
+                                            <p>Số lượng:</p>
                                             <InputNumber
                                                 value={product.amount}
                                                 onIncrease={() =>
@@ -70,7 +70,7 @@ function Checkout() {
                                         className={cx('remove')}
                                         onClick={() => dipatch(removeItem({ cartId: product.cartId }))}
                                     >
-                                        Remove
+                                        Xóa
                                     </div>
                                 </li>
                             ))}

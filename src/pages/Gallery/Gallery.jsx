@@ -1,24 +1,25 @@
-import classNames from 'classnames/bind';
-import { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCartPlus, faChevronLeft, faChevronRight, faEye, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import { PulseLoader } from 'react-spinners';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { PulseLoader } from 'react-spinners';
 import i18n from '~/i18n';
 
-import style from './Gallery.module.scss';
-import * as func from '~/functions';
 import { addToCart, changeStatus, selectShowStatus } from '~/features/cart';
 import { galleryFetchImageInstagram, galleryFetchProducts } from '~/features/gallery';
+import * as func from '~/functions';
+import style from './Gallery.module.scss';
 
 const cx = classNames.bind(style);
 
 function Gallery() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const popup = useRef();
 
     const [showDetail, setShowDetail] = useState(false);
@@ -121,9 +122,14 @@ function Gallery() {
     };
 
     const handleAddToCart = item => {
-        dispatch(addToCart(item.id, item.name, item.price, item.link, JSON.parse(item.images)[0], {}));
-
-        setShowDetail(false);
+        if (item.type !== 'box') {
+            dispatch(addToCart(item.id, item.name, item.price, item.link, JSON.parse(item.images)[0], {}));
+            setShowDetail(false);
+        } else {
+            document.body.style.overflow = 'unset';
+            popup.current.blur();
+            navigate(`/product/${item.link}`);
+        }
     };
 
     return (
@@ -190,14 +196,12 @@ function Gallery() {
                                                         >
                                                             <FontAwesomeIcon icon={faEye} />
                                                         </Link>
-                                                        {item.type !== 'box' && (
-                                                            <div
-                                                                className={cx('add-to-cart')}
-                                                                onClick={() => handleAddToCart(item)}
-                                                            >
-                                                                <FontAwesomeIcon icon={faCartPlus} />
-                                                            </div>
-                                                        )}
+                                                        <div
+                                                            className={cx('add-to-cart')}
+                                                            onClick={() => handleAddToCart(item)}
+                                                        >
+                                                            <FontAwesomeIcon icon={faCartPlus} />
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className={cx('product-content')}>

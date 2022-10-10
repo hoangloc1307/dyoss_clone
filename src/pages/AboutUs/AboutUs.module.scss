@@ -1,11 +1,6 @@
 .about-us {
     margin: 50px 0;
     text-align: center;
-
-    .inner {
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-    }
 }
 
 .block {
@@ -16,6 +11,10 @@
 
     &:last-child {
         border: none;
+    }
+
+    &:first-child {
+        padding-top: 0;
     }
 
     p {
