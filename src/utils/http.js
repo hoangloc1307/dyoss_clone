@@ -9,7 +9,11 @@ export const GHN = axios.create({
 });
 
 export const Dyoss = axios.create({
-    baseURL: 'https://dyoss-clone-be-tz1r.vercel.app/api/',
+    baseURL: process.env.REACT_APP_DYOSS_BACKEND_API_URL,
+    timeout: 5000,
+    headers: {
+        'Content-Type': 'application/json',
+    },
 });
 
 export const Instagram = axios.create({
@@ -21,7 +25,7 @@ export const get = async (instance, path, option = {}) => {
     return reponse.data;
 };
 
-export const post = async (instance, path, option = {}) => {
-    const reponse = await instance.post(path, option);
+export const post = async (instance, path, data, option = {}) => {
+    const reponse = await instance.post(path, data, option);
     return reponse.data;
 };

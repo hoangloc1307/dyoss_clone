@@ -90,6 +90,8 @@
         "requiredPhone": "Phone required!",
         "name": "Name",
         "requiredName": "Name required!",
+        "address": "Address",
+        "requiredAddress": "Address required!",
         "password": "Password",
         "requiredPassword": "Password required!",
         "minPassword": "Password must be at least 8 characters!",
@@ -98,6 +100,10 @@
         "confirmPasswordError": "Confirm password not match!",
         "accept": "I have reviewed and agree to the Dyoss's policy.",
         "requiredAccept": "Please accept the creation of a new customer account!",
-        "haveAccount": "You already have an account."
+        "haveAccount": "You already have an account.",
+        "success": "Create new account successfully. Redirecting to login page.",
+        "error": {
+            "400": "Email or phone exists."
+        }
     }
 }

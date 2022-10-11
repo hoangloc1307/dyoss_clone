@@ -1,23 +1,27 @@
 import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import InputField from '~/components/InputField';
+import * as http from '~/utils/http';
 import style from './Register.module.scss';
 
 const cx = classNames.bind(style);
 
 function Register() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
             email: '',
             phone: '',
             name: '',
+            address: '',
             password: '',
             confirmPassword: '',
             accept: false,
@@ -26,6 +30,7 @@ function Register() {
             email: Yup.string().email('register.invalidEmail').required('register.requiredEmail'),
             phone: Yup.string().required('register.requiredPhone'),
             name: Yup.string().required('register.requiredName'),
+            address: Yup.string().required('register.requiredAddress'),
             password: Yup.string().required('register.requiredPassword').min(8, 'register.minPassword'),
             confirmPassword: Yup.string()
                 .required('register.requiredConfirmPassword')
@@ -33,7 +38,27 @@ function Register() {
             accept: Yup.boolean().oneOf([true], 'register.requiredAccept'),
         }),
         onSubmit: values => {
-            console.log(values);
+            const { email, phone, name, address, password } = values;
+            http.post(http.Dyoss, 'auth/register', { email, phone, name, address, password })
+                .then(res => {
+                    formik.resetForm();
+                    toast.success(t('register.success'), {
+                        position: toast.POSITION.BOTTOM_RIGHT,
+                        autoClose: 3000,
+                        closeOnClick: true,
+                        onClose: () => {
+                            navigate('/login');
+                        },
+                    });
+                })
+                .catch(err => {
+                    const errorCode = err.response.data.code.toString();
+                    toast.error(t(`register.error.${errorCode}`), {
+                        position: toast.POSITION.BOTTOM_RIGHT,
+                        autoClose: 3000,
+                        closeOnClick: true,
+                    });
+                });
         },
     });
 
@@ -78,6 +103,19 @@ function Register() {
                         require
                         touched={formik.touched.name}
                         error={formik.errors.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                    />
+                    <InputField
+                        type="text"
+                        id="address"
+                        name="address"
+                        placeholder="."
+                        value={formik.values.address}
+                        label={t('register.address')}
+                        require
+                        touched={formik.touched.address}
+                        error={formik.errors.address}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                     />

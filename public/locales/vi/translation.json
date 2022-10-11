@@ -90,6 +90,8 @@
         "requiredPhone": "Nhập số điện thoại!",
         "name": "Họ tên",
         "requiredName": "Nhập tên!",
+        "address": "Địa chỉ",
+        "requiredAddress": "Nhập địa chỉ!",
         "password": "Mật khẩu",
         "requiredPassword": "Nhập mật khẩu!",
         "minPassword": "Mật khẩu phải dài ít nhất 8 kí tự!",
@@ -98,6 +100,10 @@
         "confirmPasswordError": "Xác nhận mật khẩu không đúng!",
         "accept": "Tôi đã xem và đồng ý với chính sách của Dyoss.",
         "requiredAccept": "Vui lòng chấp nhận điều khoản để tạo tài khoản mới!",
-        "haveAccount": "Bạn đã có tài khoản."
+        "haveAccount": "Bạn đã có tài khoản.",
+        "success": "Đăng ký thành công. Đang chuyển đến trang đăng nhập.",
+        "error": {
+            "400": "Email hoặc số điện thoại đã tồn tại."
+        }
     }
 }
