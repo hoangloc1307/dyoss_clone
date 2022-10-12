@@ -1,0 +1,49 @@
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.icon {
+    color: #fff;
+}
+
+.name {
+    font-size: 13px;
+    color: #fff;
+}
+
+.wrapper {
+    background: #fff;
+    padding: 12px;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -100%);
+        border: 10px solid;
+        border-color: transparent transparent #fff transparent;
+    }
+}
+
+.options {
+    font-size: 13px;
+
+    li > * {
+        display: block;
+        padding: 4px 8px;
+        margin-block: 5px;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

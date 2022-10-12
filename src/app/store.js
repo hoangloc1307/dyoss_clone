@@ -5,6 +5,7 @@ import galleryReducer from '~/features/gallery';
 import loaderReducer from '~/features/loader';
 import productsReducer from '~/features/products';
 import searchReducer from '~/features/search';
+import userReducer from '~/features/user';
 
 export default configureStore({
     reducer: {
@@ -13,5 +14,6 @@ export default configureStore({
         loader: loaderReducer,
         search: searchReducer,
         gallery: galleryReducer,
+        user: userReducer,
     },
 });

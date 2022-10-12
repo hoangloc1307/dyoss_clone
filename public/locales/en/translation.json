@@ -1,6 +1,5 @@
 {
     "header": {
-        "hotline": "Hotline",
         "login": "Login",
         "register": "Register",
         "man": "Man",
@@ -80,7 +79,11 @@
         "forgot": "Forgot password",
         "clickHere": "Click here",
         "orLogin": "Or login with",
-        "dontHaveAccount": "You don't have account?"
+        "dontHaveAccount": "You don't have account?",
+        "errors": {
+            "invalidUser": "Email or phone not exists.",
+            "wrongPassword": "Wrong password."
+        }
     },
     "register": {
         "register": "Register",

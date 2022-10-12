@@ -3,17 +3,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import InputField from '~/components/InputField';
+import { setCurrentUser } from '~/features/user/userSlice';
+import * as http from '~/utils/http';
 import style from './Login.module.scss';
 
 const cx = classNames.bind(style);
 
 function Login() {
+    const dispatch = useDispatch();
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -28,7 +34,20 @@ function Login() {
         validateOnChange: false,
         validateOnBlur: false,
         onSubmit: values => {
-            console.log(values);
+            http.post(http.Dyoss, 'auth/login', { username: values.user, password: values.password })
+                .then(res => {
+                    localStorage.setItem('accessToken', res.accessToken);
+                    dispatch(setCurrentUser(res.accessToken));
+                    navigate('/');
+                })
+                .catch(err => {
+                    const errorCode = err.response.data.status;
+                    toast.error(t(`login.errors.${errorCode}`), {
+                        position: toast.POSITION.BOTTOM_RIGHT,
+                        autoClose: 3000,
+                        closeOnClick: true,
+                    });
+                });
         },
     });
 
@@ -51,7 +70,7 @@ function Login() {
                         onBlur={formik.handleBlur}
                     />
                     <InputField
-                        type="text"
+                        type="password"
                         id="password"
                         name="password"
                         placeholder="."

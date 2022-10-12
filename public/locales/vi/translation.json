@@ -1,6 +1,5 @@
 {
     "header": {
-        "hotline": "Điện thoại",
         "login": "Đăng nhập",
         "register": "Đăng ký",
         "man": "Nam",
@@ -80,7 +79,11 @@
         "forgot": "Quên mật khẩu",
         "clickHere": "Bấm vào đây",
         "orLogin": "Hoặc đăng nhập bằng",
-        "dontHaveAccount": "Bạn chưa có tài khoản?"
+        "dontHaveAccount": "Bạn chưa có tài khoản?",
+        "errors": {
+            "invalidUser": "Email hoặc số điện thoại không tồn tại.",
+            "wrongPassword": "Sai mật khẩu."
+        }
     },
     "register": {
         "register": "Đăng ký",

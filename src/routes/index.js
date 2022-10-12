@@ -1,4 +1,5 @@
 import AboutUs from '~/pages/AboutUs';
+import Dashboard from '~/pages/Admin/Dashboard';
 import Blogs from '~/pages/Blogs';
 import Checkout from '~/pages/Checkout';
 import Gallery from '~/pages/Gallery';
@@ -16,14 +17,17 @@ const publicRoutes = [
     { path: '/blogs', component: Blogs },
     { path: '/checkout', component: Checkout },
     { path: '/gallery', component: Gallery },
-    { path: '/login', component: Login },
     { path: '/product/:slug', component: ProductDetail },
     { path: '/product-category/:type', component: ProductCategory },
-    { path: '/register', component: Register },
     { path: '/search', component: SearchResult },
     { path: '*', component: PageNotFound },
 ];
 
-const privateRoutes = [];
+const privateRoutes = [{ path: '/admin', component: Dashboard, roles: [5] }];
 
-export { publicRoutes, privateRoutes };
+const restrictRoutes = [
+    { path: '/login', component: Login },
+    { path: '/register', component: Register },
+];
+
+export { publicRoutes, privateRoutes, restrictRoutes };

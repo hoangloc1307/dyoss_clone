@@ -2,7 +2,7 @@
 
 //Variables
 $item-height: 50px;
-$item-padding-vertical: 15px;
+$item-padding-vertical: 10px;
 
 // .header {
 //     z-index: 1;
@@ -44,7 +44,7 @@ $item-padding-vertical: 15px;
         }
     }
 
-    &::after {
+    &:not(:last-child)::after {
         content: '';
         height: 40%;
         border-left: 1px solid #ffffff;
@@ -86,7 +86,13 @@ $item-padding-vertical: 15px;
     position: relative;
     text-transform: uppercase;
 
-    &:not(:last-child)::after {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.login-options {
+    .right-item:not(:last-child)::after {
         content: '';
         height: 10px;
         border-left: 1px solid #ffffff;
@@ -96,13 +102,10 @@ $item-padding-vertical: 15px;
         top: 50%;
         transform: translateY(-50%);
     }
-
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 .flag {
+    margin-left: 12px;
     display: flex;
     align-items: center;
     gap: 6px;

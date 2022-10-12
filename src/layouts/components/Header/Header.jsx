@@ -9,12 +9,16 @@ import images from '~/assets/images';
 import Cart from '~/components/Cart';
 import Search from '~/components/Search';
 import style from './Header.module.scss';
+import { useSelector } from 'react-redux';
+import UserOption from '~/components/UserOption';
 
 const cx = classNames.bind(style);
 
 function Header() {
     const location = useLocation();
     const { t } = useTranslation();
+
+    const userLogin = useSelector(state => state.user);
 
     const [homePage, setHomePage] = useState(false);
 
@@ -37,20 +41,30 @@ function Header() {
                             <Link to={'/'} className={cx('left-item')}>
                                 <img src={images.neoLogo} alt="Dyoss Neo" />
                             </Link>
-                            <a href="tel:0123456789" className={cx('hotline')}>
-                                {t('header.hotline')}: 0123 456 789
-                            </a>
                         </div>
                         <div className={cx('topbar-right')}>
-                            <Link to={'/login'} className={cx('right-item')}>
-                                {t('header.login')}
-                            </Link>
-                            <Link to={'/register'} className={cx('right-item')}>
-                                {t('header.register')}
-                            </Link>
+                            {!userLogin.isLogin ? (
+                                <div className={cx('login-options')}>
+                                    <Link to={'/login'} className={cx('right-item')}>
+                                        {t('header.login')}
+                                    </Link>
+                                    <Link to={'/register'} className={cx('right-item')}>
+                                        {t('header.register')}
+                                    </Link>
+                                </div>
+                            ) : (
+                                <UserOption username={userLogin.user.name} />
+                            )}
                             <div className={cx('right-item', 'flag')}>
-                                <img src={images.flagVN} alt="Tiếng Việt" onClick={() => i18n.changeLanguage('vi')} />
-                                <img src={images.flagEN} alt="English" onClick={() => i18n.changeLanguage('en')} />
+                                {i18n.language === 'en' ? (
+                                    <img
+                                        src={images.flagVN}
+                                        alt="Tiếng Việt"
+                                        onClick={() => i18n.changeLanguage('vi')}
+                                    />
+                                ) : (
+                                    <img src={images.flagEN} alt="English" onClick={() => i18n.changeLanguage('en')} />
+                                )}
                             </div>
                         </div>
                     </div>
