@@ -4,13 +4,14 @@ import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import InputField from '~/components/InputField';
 import { setCurrentUser } from '~/features/user/userSlice';
+import usePageTitle from '~/hooks/usePageTitle';
 import * as http from '~/utils/http';
 import style from './Login.module.scss';
 
@@ -19,7 +20,7 @@ const cx = classNames.bind(style);
 function Login() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
-    const navigate = useNavigate();
+    usePageTitle(t('login.login'));
 
     const formik = useFormik({
         initialValues: {
@@ -38,7 +39,6 @@ function Login() {
                 .then(res => {
                     localStorage.setItem('accessToken', res.accessToken);
                     dispatch(setCurrentUser(res.accessToken));
-                    navigate('/');
                 })
                 .catch(err => {
                     const errorCode = err.response.data.status;

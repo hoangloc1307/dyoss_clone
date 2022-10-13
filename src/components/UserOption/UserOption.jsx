@@ -27,7 +27,7 @@ function UserOption({ username }) {
                                 <Link>Thông tin cá nhân</Link>
                             </li>
                             <li>
-                                <Link to={'/admin'}>Admin</Link>
+                                <Link>Thông tin đơn hàng</Link>
                             </li>
                             <li>
                                 <span

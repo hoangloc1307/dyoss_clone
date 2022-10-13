@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Trans, useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ const cx = classNames.bind(style);
 
 function Checkout() {
     const dipatch = useDispatch();
+    const { t } = useTranslation();
 
     const products = useSelector(selectCartItems);
     const totalItems = useSelector(selectTotalItems);
@@ -19,7 +21,9 @@ function Checkout() {
     return (
         <main className={cx('checkout-page')}>
             <div className={cx('container')}>
-                <h1 className={cx('title')}>Đơn hàng của bạn ({totalItems} sản phẩm)</h1>
+                <h1 className={cx('title')}>
+                    <Trans i18nKey="checkout.orderTitle">{{ totalItems }}</Trans>
+                </h1>
                 {products.length > 0 && (
                     <>
                         <ul className={cx('list-products')}>
@@ -38,10 +42,10 @@ function Checkout() {
                                             ))}
                                         </div>
                                         <p className={cx('price')}>
-                                            Đơn giá: <span>{NumberWithCommas(product.price)}đ</span>
+                                            {t('checkout.unitPrice')}: <span>{NumberWithCommas(product.price)}đ</span>
                                         </p>
                                         <div className={cx('amount')}>
-                                            <p>Số lượng:</p>
+                                            <p>{t('checkout.quantity')}:</p>
                                             <InputNumber
                                                 value={product.amount}
                                                 onIncrease={() =>
@@ -63,14 +67,15 @@ function Checkout() {
                                             />
                                         </div>
                                         <div className={cx('total')}>
-                                            Tổng cộng: <span>{NumberWithCommas(product.price * product.amount)}đ</span>
+                                            {t('checkout.total')}:{' '}
+                                            <span>{NumberWithCommas(product.price * product.amount)}đ</span>
                                         </div>
                                     </div>
                                     <div
                                         className={cx('remove')}
                                         onClick={() => dipatch(removeItem({ cartId: product.cartId }))}
                                     >
-                                        Xóa
+                                        {t('checkout.remove')}
                                     </div>
                                 </li>
                             ))}

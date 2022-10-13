@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import InputField from '~/components/InputField';
+import usePageTitle from '~/hooks/usePageTitle';
 import * as http from '~/utils/http';
 import style from './Register.module.scss';
 
@@ -15,6 +16,7 @@ const cx = classNames.bind(style);
 function Register() {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    usePageTitle(t('register.register'));
 
     const formik = useFormik({
         initialValues: {

@@ -28,7 +28,7 @@ function Search({ customClass }) {
         if (e.type === 'click' || (e.type === 'keydown' && e.code === 'Enter')) {
             dispatch(setKeywordValue(keyword));
             setKeyword('');
-            navigate(`/search?name=${keyword}`, {});
+            navigate(`/search?name=${keyword}`, { state: { keyword } });
         }
     };
 
@@ -60,7 +60,7 @@ function Search({ customClass }) {
                             onKeyDown={e => handleSearchClick(e)}
                         />
                         <span className={cx('search-button')} onClick={e => handleSearchClick(e)}>
-                            {t('search.button')}
+                            {t('button.search')}
                         </span>
                     </div>
                 </>

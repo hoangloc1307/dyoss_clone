@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
@@ -10,10 +10,10 @@ import { setCurrentUser } from './features/user/userSlice';
 
 function App() {
     const dispatch = useDispatch();
+    const [lastSessionLoaded, setLastSessionLoaded] = useState(false);
 
     const userLogin = useSelector(state => state.user);
 
-    console.log(userLogin);
     useEffect(() => {
         //Check access token exists in local storage
         const accessToken = localStorage.getItem('accessToken');
@@ -28,48 +28,60 @@ function App() {
                 //Hết hạn
             }
         }
+        setLastSessionLoaded(true);
         // eslint-disable-next-line
     }, []);
 
     return (
-        <ScrollToTop>
-            <MasterLayout>
-                <Routes>
-                    {publicRoutes.map((route, index) => {
-                        const Page = route.component;
-                        return <Route key={index} path={route.path} element={<Page />} />;
-                    })}
-                    {privateRoutes.map((route, index) => {
-                        const Page = route.component;
-                        return (
-                            <Route
-                                key={index}
-                                path={route.path}
-                                element={
-                                    route.roles.includes(userLogin.user.role) ? (
-                                        <Page />
-                                    ) : userLogin.isLogin ? (
-                                        <Navigate to={'/'} />
-                                    ) : (
-                                        <Navigate to={'/login'} />
-                                    )
-                                }
-                            />
-                        );
-                    })}
-                    {restrictRoutes.map((route, index) => {
-                        const Page = route.component;
-                        return (
-                            <Route
-                                key={index}
-                                path={route.path}
-                                element={!userLogin.isLogin ? <Page /> : <Navigate to={'/'} />}
-                            />
-                        );
-                    })}
-                </Routes>
-            </MasterLayout>
-        </ScrollToTop>
+        <>
+            {lastSessionLoaded && (
+                <ScrollToTop>
+                    <MasterLayout>
+                        <Routes>
+                            {/* Public Routes */}
+                            {publicRoutes.map((route, index) => {
+                                const Page = route.component;
+                                return <Route key={index} path={route.path} element={<Page />} />;
+                            })}
+
+                            {/* Private Routes */}
+                            {privateRoutes.map((route, index) => {
+                                const Page = route.component;
+                                return (
+                                    <Route
+                                        key={index}
+                                        path={route.path}
+                                        element={
+                                            userLogin.isLogin ? (
+                                                route.roles.includes(userLogin.user.role) ? (
+                                                    <Page />
+                                                ) : (
+                                                    <Navigate to={'/'} />
+                                                )
+                                            ) : (
+                                                <Navigate to={'/login'} />
+                                            )
+                                        }
+                                    />
+                                );
+                            })}
+
+                            {/* Restrict Routes */}
+                            {restrictRoutes.map((route, index) => {
+                                const Page = route.component;
+                                return (
+                                    <Route
+                                        key={index}
+                                        path={route.path}
+                                        element={!userLogin.isLogin ? <Page /> : <Navigate to={-1} />}
+                                    />
+                                );
+                            })}
+                        </Routes>
+                    </MasterLayout>
+                </ScrollToTop>
+            )}
+        </>
     );
 }
 

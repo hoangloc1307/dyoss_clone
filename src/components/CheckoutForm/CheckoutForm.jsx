@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useFormik } from 'formik';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import * as Yup from 'yup';
 
@@ -14,6 +15,8 @@ import style from './CheckoutForm.module.scss';
 const cx = classNames.bind(style);
 
 function CheckoutForm() {
+    const { t } = useTranslation();
+
     //State
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
@@ -40,10 +43,10 @@ function CheckoutForm() {
             note: '',
         },
         validationSchema: Yup.object({
-            name: Yup.string().required('Nhập tên!'),
-            email: Yup.string().email('Email không hợp lệ!').required('Nhập email!'),
-            address: Yup.string().required('Nhập địa chỉ!'),
-            provinceID: Yup.string().required('Chọn tỉnh/thành phố!'),
+            name: Yup.string().required('checkout.requiredName'),
+            email: Yup.string().email('checkout.invalidEmail').required('checkout.requiredEmail'),
+            address: Yup.string().required('checkout.requiredAddress'),
+            provinceID: Yup.string().required('checkout.selectCity'),
             note: Yup.string().nullable(),
         }),
         validate: customValidate,
@@ -60,6 +63,7 @@ function CheckoutForm() {
             }));
             values.itemsPrice = price;
             values.shippingPrice = shippingPrice;
+            console.log(values);
             alert('Đã ghi thông tin trong console.');
         },
     });
@@ -69,36 +73,28 @@ function CheckoutForm() {
 
         //Phone
         if (!values.phone) {
-            errors.phone = 'Nhập số điện thoại!';
+            errors.phone = 'checkout.requiredPhone';
         } else if (!IsValidPhone(values.phone)) {
-            errors.phone = 'Số điện thoại không hợp lệ!';
+            errors.phone = 'checkout.invalidPhone';
         }
 
         //District
         if (!values.districtID) {
             if (!values.provinceID) {
-                errors.districtID = 'Chọn tỉnh/thành phố trước!';
+                errors.districtID = t('checkout.selectCityFirst');
             } else {
-                errors.districtID = 'Chọn quận/huyện!';
+                errors.districtID = t('checkout.selectDistrict');
             }
         }
 
         //Ward
         if (!values.wardCode) {
             if (!values.districtID) {
-                errors.wardCode = 'Chọn quận/huyện trước!';
+                errors.wardCode = t('checkout.selectDistrictFirst');
             } else {
-                errors.wardCode = 'Chọn phường/xã!';
+                errors.wardCode = t('checkout.selectWard');
             }
         }
-
-        //Name
-        // if (!values.name) {
-        //     errors.name = 'Vui lòng nhập họ tên!';
-        // } else if (!IsValidName(values.name)) {
-        //     errors.name = 'Họ tên không hợp lệ!';
-        // }
-
         return errors;
     }
 
@@ -178,14 +174,14 @@ function CheckoutForm() {
             }}
         >
             <div className={cx('contact')}>
-                <h2 className={cx('title')}>Thông tin cá nhân</h2>
+                <h2 className={cx('title')}>{t('checkout.contactInfo')}</h2>
                 <InputField
                     type="text"
                     id="name"
                     name="name"
                     placeholder="."
                     value={formik.values.name}
-                    label="Họ và tên"
+                    label={t('checkout.name')}
                     require
                     touched={formik.touched.name}
                     error={formik.errors.name}
@@ -211,7 +207,7 @@ function CheckoutForm() {
                     name="phone"
                     placeholder="."
                     value={formik.values.phone}
-                    label="Điện thoại"
+                    label={t('checkout.phone')}
                     require
                     touched={formik.touched.phone}
                     error={formik.errors.phone}
@@ -224,7 +220,7 @@ function CheckoutForm() {
                     name="address"
                     placeholder="."
                     value={formik.values.address}
-                    label="Địa chỉ"
+                    label={t('checkout.address')}
                     require
                     touched={formik.touched.address}
                     error={formik.errors.address}
@@ -243,7 +239,7 @@ function CheckoutForm() {
                             onChange={e => handleChangeProvince(e)}
                             onBlur={formik.handleBlur}
                         >
-                            <option value="">Chọn Tỉnh/Thành phố*</option>
+                            <option value="">{t('checkout.selectCityOption')} *</option>
                             {provinces.length > 0 &&
                                 provinces.map(province => (
                                     <option key={province.ProvinceID} value={province.ProvinceID}>
@@ -252,7 +248,7 @@ function CheckoutForm() {
                                 ))}
                         </select>
                         {formik.touched.provinceID && formik.errors.provinceID && (
-                            <span className={cx('form-error')}>{formik.errors.provinceID}</span>
+                            <span className={cx('form-error')}>{t(formik.errors.provinceID)}</span>
                         )}
                     </div>
                     <div className={cx('select')}>
@@ -266,7 +262,7 @@ function CheckoutForm() {
                             onChange={e => handleChangeDistrict(e)}
                             onBlur={formik.handleBlur}
                         >
-                            <option value="">Chọn Quận/Huyện*</option>
+                            <option value="">{t('checkout.selectDistrictOption')} *</option>
                             {districts.length > 0 &&
                                 districts.map(district => (
                                     <option key={district.DistrictID} value={district.DistrictID}>
@@ -289,7 +285,7 @@ function CheckoutForm() {
                             onChange={e => handleChangeWard(e)}
                             onBlur={formik.handleBlur}
                         >
-                            <option value="">Chọn Phường/Xã*</option>
+                            <option value="">{t('checkout.selectWardOption')} *</option>
                             {wards.length > 0 &&
                                 wards.map(ward => (
                                     <option key={ward.WardCode} value={ward.WardCode}>
@@ -308,7 +304,7 @@ function CheckoutForm() {
                     name="note"
                     placeholder="."
                     value={formik.values.note}
-                    label="Ghi chú"
+                    label={t('checkout.note')}
                     touched={formik.touched.note}
                     error={formik.errors.note}
                     onChange={formik.handleChange}
@@ -316,24 +312,24 @@ function CheckoutForm() {
                 />
             </div>
             <div className={cx('total')}>
-                <h2 className={cx('title')}>Thanh toán</h2>
+                <h2 className={cx('title')}>{t('checkout.checkout')}</h2>
                 <div className={cx('detail-price')}>
                     <div className={cx('price')}>
-                        <span>Đơn hàng</span>
+                        <span>{t('checkout.itemsPrice')}</span>
                         <span>{NumberWithCommas(price)}đ</span>
                     </div>
                     <div className={cx('price')}>
-                        <span>Phí giao</span>
+                        <span>{t('checkout.shippingPrice')}</span>
                         <span>{NumberWithCommas(shippingPrice)}đ</span>
                     </div>
                 </div>
                 <div className={cx('total-price')}>
-                    <span>Tổng cộng</span>
+                    <span>{t('checkout.total')}</span>
                     <span>{NumberWithCommas(price + shippingPrice)}đ</span>
                 </div>
             </div>
             <Button type="submit" customClass={style}>
-                Đặt hàng
+                {t('button.order')}
             </Button>
         </form>
     );

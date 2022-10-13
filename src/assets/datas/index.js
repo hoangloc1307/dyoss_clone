@@ -10,100 +10,100 @@ const menuHeader = [
 
 const menuFooter = [
     {
-        titleVI: 'Sản phẩm',
-        titleEN: 'Products',
+        titlevi: 'Sản phẩm',
+        titleen: 'Products',
         list: [
             {
-                titleVI: 'Đồng hồ nam',
-                titleEN: "Men's watches",
+                titlevi: 'Đồng hồ nam',
+                titleen: "Men's watches",
                 link: '/product-category/man',
             },
             {
-                titleVI: 'Đồng hồ nữ',
-                titleEN: "Women's watches",
+                titlevi: 'Đồng hồ nữ',
+                titleen: "Women's watches",
                 link: '/product-category/woman',
             },
         ],
     },
     {
-        titleVI: 'Về DYOSS',
-        titleEN: 'About DYOSS',
+        titlevi: 'Về DYOSS',
+        titleen: 'About DYOSS',
         list: [
             {
-                titleVI: 'Giới thiệu',
-                titleEN: 'Introduce',
+                titlevi: 'Giới thiệu',
+                titleen: 'Introduce',
                 link: '/about-us',
             },
             {
-                titleVI: 'Bài viết',
-                titleEN: 'Blogs',
+                titlevi: 'Bài viết',
+                titleen: 'Blogs',
                 link: '/blogs',
             },
             {
-                titleVI: 'Câu hỏi thường gặp',
-                titleEN: 'FAQ',
+                titlevi: 'Câu hỏi thường gặp',
+                titleen: 'FAQ',
                 link: '/',
             },
             {
-                titleVI: 'Thanh toán & giao nhận',
-                titleEN: 'Payment & shipping',
+                titlevi: 'Thanh toán & giao nhận',
+                titleen: 'Payment & shipping',
                 link: '/',
             },
             {
-                titleVI: 'Chế độ bảo hành',
-                titleEN: 'Warranty policy',
+                titlevi: 'Chế độ bảo hành',
+                titleen: 'Warranty policy',
                 link: '/',
             },
             {
-                titleVI: 'Liên hệ',
-                titleEN: 'Contact',
-                link: '/',
-            },
-        ],
-    },
-    {
-        titleVI: 'Cộng đồng',
-        titleEN: 'Social',
-        list: [
-            {
-                titleVI: 'Instagram',
-                titleEN: 'Instagram',
-                link: '/',
-            },
-            {
-                titleVI: 'Facebook',
-                titleEN: 'Facebook',
-                link: '/',
-            },
-            {
-                titleVI: 'Youtube',
-                titleEN: 'Youtube',
-                link: '/',
-            },
-            {
-                titleVI: 'Pinterest',
-                titleEN: 'Pinterest',
+                titlevi: 'Liên hệ',
+                titleen: 'Contact',
                 link: '/',
             },
         ],
     },
     {
-        titleVI: 'Liên hệ',
-        titleEN: 'Contact',
+        titlevi: 'Cộng đồng',
+        titleen: 'Social',
         list: [
             {
-                titleVI: 'Điện thoại: 0123 456 789',
-                titleEN: 'Hotline: 0123 456 789',
+                titlevi: 'Instagram',
+                titleen: 'Instagram',
                 link: '/',
             },
             {
-                titleVI: 'Zalo: 0123 456 789',
-                titleEN: 'Zalo: 0123 456 789',
+                titlevi: 'Facebook',
+                titleen: 'Facebook',
                 link: '/',
             },
             {
-                titleVI: 'Viber: 0123 456 789',
-                titleEN: 'Viber: 0123 456 789',
+                titlevi: 'Youtube',
+                titleen: 'Youtube',
+                link: '/',
+            },
+            {
+                titlevi: 'Pinterest',
+                titleen: 'Pinterest',
+                link: '/',
+            },
+        ],
+    },
+    {
+        titlevi: 'Liên hệ',
+        titleen: 'Contact',
+        list: [
+            {
+                titlevi: 'Điện thoại: 0123 456 789',
+                titleen: 'Hotline: 0123 456 789',
+                link: '/',
+            },
+            {
+                titlevi: 'Zalo: 0123 456 789',
+                titleen: 'Zalo: 0123 456 789',
+                link: '/',
+            },
+            {
+                titlevi: 'Viber: 0123 456 789',
+                titleen: 'Viber: 0123 456 789',
                 link: '/',
             },
         ],
@@ -112,17 +112,17 @@ const menuFooter = [
 
 const showrooms = [
     {
-        nameVI: 'SHOWROOM 1 VÀ BẢO HÀNH DYOSS',
-        nameEN: 'SHOWROOM 1 AND DYOSS WARRANTY',
-        addressVI: '453/32 Nguyễn Đình Chiểu, Phường 5, Quận 3, Thành Phố Hồ Chí Minh.',
-        addressEN: '453/32 Nguyen Dinh Chieu, Ward 5, District 3, Ho Chi Minh City.',
+        namevi: 'SHOWROOM 1 VÀ BẢO HÀNH DYOSS',
+        nameen: 'SHOWROOM 1 AND DYOSS WARRANTY',
+        addressvi: '453/32 Nguyễn Đình Chiểu, Phường 5, Quận 3, Thành Phố Hồ Chí Minh.',
+        addressen: '453/32 Nguyen Dinh Chieu, Ward 5, District 3, Ho Chi Minh City.',
         hotline: '0123 456 789',
     },
     {
-        nameVI: 'SHOWROOM 2',
-        nameEN: 'SHOWROOM 2',
-        addressVI: '3/31 Thành Thái, Phường 14, Quận 10, Thành Phố Hồ Chí Minh.',
-        addressEN: '3/31 Thanh Thai, Ward 14, District 10, Ho Chi Minh City.',
+        namevi: 'SHOWROOM 2',
+        nameen: 'SHOWROOM 2',
+        addressvi: '3/31 Thành Thái, Phường 14, Quận 10, Thành Phố Hồ Chí Minh.',
+        addressen: '3/31 Thanh Thai, Ward 14, District 10, Ho Chi Minh City.',
         hotline: '0123 456 789',
     },
 ];

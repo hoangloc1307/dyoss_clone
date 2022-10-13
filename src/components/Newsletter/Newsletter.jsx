@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
+import * as http from '~/utils/http';
 import Button from '~/components/Button';
 import style from './Newsletter.module.scss';
 
@@ -31,19 +32,37 @@ function Newsletter() {
                     thanks: t('newsletter.mailThanks'),
                 };
 
-                toast.promise(
-                    emailjs.send('service_f031n8k', 'template_qfeabqb', mailData, process.env.REACT_APP_EMAILJS_KEY),
-                    {
-                        pending: t('newsletter.pending'),
-                        success: t('newsletter.subject'),
-                        error: t('newsletter.error'),
-                    },
-                    {
-                        position: toast.POSITION.BOTTOM_RIGHT,
-                        autoClose: 3000,
-                        closeOnClick: true,
-                    }
-                );
+                http.post(http.Dyoss, 'home/newsletter', { email: values.email })
+                    .then(res => {
+                        toast.promise(
+                            emailjs.send(
+                                'service_f031n8k',
+                                'template_qfeabqb',
+                                mailData,
+                                process.env.REACT_APP_EMAILJS_KEY
+                            ),
+                            {
+                                pending: t('newsletter.pending'),
+                                success: t('newsletter.subject'),
+                                error: t('newsletter.error'),
+                            },
+                            {
+                                position: toast.POSITION.BOTTOM_RIGHT,
+                                autoClose: 3000,
+                                closeOnClick: true,
+                            }
+                        );
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        if (err.response.data.status) {
+                            toast.error(t(`newsletter.${err.response.data.status}`), {
+                                position: toast.POSITION.BOTTOM_RIGHT,
+                                autoClose: 3000,
+                                closeOnClick: true,
+                            });
+                        }
+                    });
 
                 formik.resetForm();
             }

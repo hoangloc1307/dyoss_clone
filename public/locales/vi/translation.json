@@ -1,112 +1,145 @@
 {
+    "button": {
+        "moreInfor": "Tìm hiểu thêm",
+        "search": "Tìm kiếm",
+        "submitButton": "Gửi",
+        "viewAll": "Xem tất cả",
+        "viewDetail": "Xem sản phẩm",
+        "order": "Đặt hàng"
+    },
+    "cart": {
+        "checkout": "Thanh toán",
+        "noItem": "Bạn chưa chọn sản phẩm nào!",
+        "total": "Tổng cộng"
+    },
+    "footer": {
+        "address": "Địa chỉ",
+        "copyright": "Dyoss giả tạo ra nhằm mục đích học React.",
+        "privacy": "Chính sách bảo mật",
+        "terms": "Điều khoản điều kiện"
+    },
+    "gallery": {
+        "headingProducts": "Sản phẩm liên quan"
+    },
     "header": {
-        "login": "Đăng nhập",
-        "register": "Đăng ký",
-        "man": "Nam",
-        "woman": "Nữ",
+        "aboutUs": "Giới thiệu",
         "accessory": "Phụ kiện",
         "box": "The box",
         "gallery": "Thư viện ảnh",
-        "aboutUs": "Giới thiệu"
-    },
-    "search": {
-        "placeHolder": "Nhập từ khoá tìm kiếm...",
-        "button": "Tìm kiếm"
-    },
-    "cart": {
-        "noItem": "Bạn chưa chọn sản phẩm nào!",
-        "total": "Tổng cộng",
-        "checkout": "Thanh toán"
+        "login": "Đăng nhập",
+        "man": "Nam",
+        "register": "Đăng ký",
+        "woman": "Nữ"
     },
     "home": {
         "brandName": "Đồng hồ Dyoss",
-        "slogan": "Sự tối giản luôn hợp thời.",
-        "selling": "Sản phẩm bán chạy",
-        "womenWatches": "Đồng hồ nữ",
-        "menWatches": "Đồng hồ nam",
+        "description": "Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu thích.",
         "introduce": "Giới thiệu",
-        "scratchResistant": "Kính Sapphire chống trầy",
-        "waterResistant": "Chống nước 5ATM",
+        "menWatches": "Đồng hồ nam",
         "miyotaMachine": "Máy Miyota Nhật Bản",
-        "description": "Tuyệt tác mới nhất của Dyoss với thiết kế sang trọng, tối giản, hiện đại đã làm siêu lòng biết bao tín đồ thời trang. Bất ngờ hơn khi có thể phối với bất kì gu thời trang nào mà bạn yêu thích."
+        "scratchResistant": "Kính Sapphire chống trầy",
+        "selling": "Sản phẩm bán chạy",
+        "slogan": "Sự tối giản luôn hợp thời.",
+        "waterResistant": "Chống nước 5ATM",
+        "womenWatches": "Đồng hồ nữ"
+    },
+    "login": {
+        "clickHere": "Bấm vào đây",
+        "dontHaveAccount": "Bạn chưa có tài khoản?",
+        "errors": {
+            "invalidUser": "Email hoặc số điện thoại không tồn tại.",
+            "wrongPassword": "Sai mật khẩu."
+        },
+        "forgot": "Quên mật khẩu",
+        "login": "Đăng nhập",
+        "orLogin": "Hoặc đăng nhập bằng",
+        "password": "Mật khẩu",
+        "passwordError": "Nhập mật khẩu!",
+        "remember": "Nhớ mật khẩu",
+        "user": "Email hoặc số điện thoại",
+        "userError": "Nhập email hoặc số điện thoại!"
+    },
+    "newsletter": {
+        "error": "Có lỗi xảy ra. Vui lòng thử lại sau.",
+        "invalidEmail": "Email không hợp lệ",
+        "mailContent": "Cảm ơn bạn đã đăng ký theo dõi thông tin của DYOSS. Chúng tôi sẽ thông báo cho bạn thông tin sản phẩm mới, những chương trình khuyến mãi một cách nhanh nhất",
+        "mailDear": "Thân gửi bạn",
+        "mailThanks": "Cảm ơn bạn đã đăng ký.",
+        "newsletter": "Đăng ký nhận thông tin",
+        "newsletterPlaceholder": "Nhập email để nhận ưu đãi...",
+        "pending": "Đang xử lý...",
+        "requiredEmail": "Nhập email",
+        "subject": "Cảm ơn bạn đã đăng ký!",
+        "existsEmail": "Email đã tồn tại!"
+    },
+    "productCard": {
+        "outOfStock": "Hết hàng"
     },
     "productDetail": {
         "addToCart": "Đã thêm sản phẩm vào giỏ hàng.",
         "chooseOption": "Vui lòng chọn các sản phẩm tuỳ chọn."
     },
-    "button": {
-        "moreInfor": "Tìm hiểu thêm",
-        "viewAll": "Xem tất cả",
-        "viewDetail": "Xem sản phẩm",
-        "submitButton": "Gửi"
-    },
-    "slider": {
-        "previous": "Trước",
-        "next": "Sau"
-    },
-    "productCard": {
-        "outOfStock": "Hết hàng"
-    },
-    "footer": {
-        "address": "Địa chỉ",
-        "copyright": "Dyoss giả tạo ra nhằm mục đích học React.",
-        "terms": "Điều khoản điều kiện",
-        "privacy": "Chính sách bảo mật"
-    },
-    "newsletter": {
-        "newsletter": "Đăng ký nhận thông tin",
-        "newsletterPlaceholder": "Nhập email để nhận ưu đãi...",
-        "invalidEmail": "Email không hợp lệ",
-        "requiredEmail": "Nhập email",
-        "subject": "Cảm ơn bạn đã đăng ký!",
-        "mailDear": "Thân gửi bạn",
-        "mailContent": "Cảm ơn bạn đã đăng ký theo dõi thông tin của DYOSS. Chúng tôi sẽ thông báo cho bạn thông tin sản phẩm mới, những chương trình khuyến mãi một cách nhanh nhất",
-        "mailThanks": "Cảm ơn bạn đã đăng ký.",
-        "pending": "Đang xử lý...",
-        "error": "Có lỗi xảy ra. Vui lòng thử lại sau."
-    },
-    "gallery": {
-        "headingProducts": "Sản phẩm liên quan"
-    },
-    "viewedProduct": "Sảm phẩm đã xem",
-    "login": {
-        "login": "Đăng nhập",
-        "user": "Email hoặc số điện thoại",
-        "userError": "Nhập email hoặc số điện thoại!",
-        "password": "Mật khẩu",
-        "passwordError": "Nhập mật khẩu!",
-        "remember": "Nhớ mật khẩu",
-        "forgot": "Quên mật khẩu",
-        "clickHere": "Bấm vào đây",
-        "orLogin": "Hoặc đăng nhập bằng",
-        "dontHaveAccount": "Bạn chưa có tài khoản?",
-        "errors": {
-            "invalidUser": "Email hoặc số điện thoại không tồn tại.",
-            "wrongPassword": "Sai mật khẩu."
-        }
-    },
     "register": {
-        "register": "Đăng ký",
-        "invalidEmail": "Email không hợp lệ!",
-        "requiredEmail": "Nhập email!",
-        "phone": "Điện thoại",
-        "requiredPhone": "Nhập số điện thoại!",
-        "name": "Họ tên",
-        "requiredName": "Nhập tên!",
-        "address": "Địa chỉ",
-        "requiredAddress": "Nhập địa chỉ!",
-        "password": "Mật khẩu",
-        "requiredPassword": "Nhập mật khẩu!",
-        "minPassword": "Mật khẩu phải dài ít nhất 8 kí tự!",
-        "confirmPassword": "Xác nhận mật khẩu",
-        "requiredConfirmPassword": "Nhập lại mật khẩu!",
-        "confirmPasswordError": "Xác nhận mật khẩu không đúng!",
         "accept": "Tôi đã xem và đồng ý với chính sách của Dyoss.",
-        "requiredAccept": "Vui lòng chấp nhận điều khoản để tạo tài khoản mới!",
-        "haveAccount": "Bạn đã có tài khoản.",
-        "success": "Đăng ký thành công. Đang chuyển đến trang đăng nhập.",
+        "address": "Địa chỉ",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "confirmPasswordError": "Xác nhận mật khẩu không đúng!",
         "error": {
             "400": "Email hoặc số điện thoại đã tồn tại."
-        }
+        },
+        "haveAccount": "Bạn đã có tài khoản.",
+        "invalidEmail": "Email không hợp lệ!",
+        "minPassword": "Mật khẩu phải dài ít nhất 8 kí tự!",
+        "name": "Họ tên",
+        "password": "Mật khẩu",
+        "phone": "Điện thoại",
+        "register": "Đăng ký",
+        "requiredAccept": "Vui lòng chấp nhận điều khoản để tạo tài khoản mới!",
+        "requiredAddress": "Nhập địa chỉ!",
+        "requiredConfirmPassword": "Nhập lại mật khẩu!",
+        "requiredEmail": "Nhập email!",
+        "requiredName": "Nhập tên!",
+        "requiredPassword": "Nhập mật khẩu!",
+        "requiredPhone": "Nhập số điện thoại!",
+        "success": "Đăng ký thành công. Đang chuyển đến trang đăng nhập."
+    },
+    "search": {
+        "noResult": "Không tìm thấy kết quả nào cho",
+        "placeHolder": "Nhập từ khoá tìm kiếm...",
+        "searchResult": "Kết quả tìm kiếm"
+    },
+    "slider": {
+        "next": "Sau",
+        "previous": "Trước"
+    },
+    "viewedProduct": "Sảm phẩm đã xem",
+    "checkout": {
+        "orderTitle": "Đơn hàng của bạn ({{totalItems}} sản phẩm)",
+        "unitPrice": "Đơn giá",
+        "quantity": "Số lượng",
+        "total": "Tổng cộng",
+        "remove": "Xóa",
+        "contactInfo": "Thông tin liên hệ",
+        "name": "Họ tên",
+        "requiredName": "Nhập tên!",
+        "invalidEmail": "Email không hợp lệ!",
+        "requiredEmail": "Nhập email!",
+        "requiredAddress": "Nhập địa chỉ!",
+        "selectCity": "Chọn tỉnh/thành phố!",
+        "requiredPhone": "Nhập số điện thoại!",
+        "invalidPhone": "Số điện thoại không hợp lệ!",
+        "selectCityFirst": "Chọn tỉnh/thành phố trước!",
+        "selectDistrict": "Chọn quận/huyện!",
+        "selectDistrictFirst": "Chọn quận/huyện trước!",
+        "selectWard": "Chọn xã/phường!",
+        "phone": "Điện thoại",
+        "address": "Địa chỉ",
+        "note": "Ghi chú",
+        "checkout": "Thanh toán",
+        "itemsPrice": "Đơn hàng",
+        "shippingPrice": "Phí vận chuyển",
+        "selectCityOption": "Chọn tỉnh/thành phố",
+        "selectDistrictOption": "Chọn quận/huyện",
+        "selectWardOption": "Chọn xã/phường"
     }
 }

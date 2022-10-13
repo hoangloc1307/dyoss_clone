@@ -14,17 +14,23 @@ function ScrollToTop({ children }) {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
+        //Scroll to top when navigate
         window.scrollTo({
             top: 0,
-            // behavior: 'smooth',
         });
+
+        //Remove overflow when pop up is showing
+        document.body.style.overflow = 'unset';
     }, [location]);
 
     useEffect(() => {
+        //Show button scroll to top
         const handleScroll = () => {
-            setShow(window.scrollY >= 1000);
+            setShow(window.scrollY >= 600);
         };
+
         window.addEventListener('scroll', handleScroll);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };

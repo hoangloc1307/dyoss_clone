@@ -1,112 +1,145 @@
 {
+    "button": {
+        "moreInfor": "More information",
+        "search": "Search",
+        "submitButton": "Submit",
+        "viewAll": "View All",
+        "viewDetail": "Shop the look",
+        "order": "Order"
+    },
+    "cart": {
+        "checkout": "Checkout",
+        "noItem": "You have not selected any products!",
+        "total": "Total"
+    },
+    "footer": {
+        "address": "Address",
+        "copyright": "Dyoss clone to learning React.",
+        "privacy": "Privacy policy",
+        "terms": "Terms & conditions"
+    },
+    "gallery": {
+        "headingProducts": "Related products"
+    },
     "header": {
-        "login": "Login",
-        "register": "Register",
-        "man": "Man",
-        "woman": "Woman",
+        "aboutUs": "About us",
         "accessory": "Accessory",
         "box": "The box",
         "gallery": "Gallery",
-        "aboutUs": "About us"
-    },
-    "search": {
-        "placeHolder": "Enter search keyword...",
-        "button": "Search"
-    },
-    "cart": {
-        "noItem": "You have not selected any products!",
-        "total": "Total",
-        "checkout": "Checkout"
+        "login": "Login",
+        "man": "Man",
+        "register": "Register",
+        "woman": "Woman"
     },
     "home": {
         "brandName": "Dyoss Watch",
-        "slogan": "Simplicity is always trendy.",
-        "selling": "Selling products",
-        "womenWatches": "Women's Watches",
-        "menWatches": "Men's Watches",
+        "description": "Dyoss' latest masterpiece with its luxurious, minimalistic, modern design has made many fashionistas super happy. It's more surprising that it can be combined with any fashion style you love.",
         "introduce": "Introduce",
-        "scratchResistant": "Scratch resistant Sapphire glass",
-        "waterResistant": "5ATM water resistant",
+        "menWatches": "Men's Watches",
         "miyotaMachine": "Japan Miyota Machine",
-        "description": "Dyoss' latest masterpiece with its luxurious, minimalistic, modern design has made many fashionistas super happy. It's more surprising that it can be combined with any fashion style you love."
+        "scratchResistant": "Scratch resistant Sapphire glass",
+        "selling": "Selling products",
+        "slogan": "Simplicity is always trendy.",
+        "waterResistant": "5ATM water resistant",
+        "womenWatches": "Women's Watches"
+    },
+    "login": {
+        "clickHere": "Click here",
+        "dontHaveAccount": "You don't have account?",
+        "errors": {
+            "invalidUser": "Email or phone not exists.",
+            "wrongPassword": "Wrong password."
+        },
+        "forgot": "Forgot password",
+        "login": "Login",
+        "orLogin": "Or login with",
+        "password": "Password",
+        "passwordError": "Input password!",
+        "remember": "Remember me",
+        "user": "Email or phone number",
+        "userError": "Input email or phone number!"
+    },
+    "newsletter": {
+        "error": "We get some error. Please try again later.",
+        "invalidEmail": "Invalid email",
+        "mailContent": "Thank you for subscribing to DYOSS information. We will notify you of new product information and promotions as quickly as possible.",
+        "mailDear": "Dear you",
+        "mailThanks": "Thanks for subscribing.",
+        "newsletter": "Newsletter",
+        "newsletterPlaceholder": "Enter your email to receive offers...",
+        "pending": "Processing...",
+        "requiredEmail": "Required",
+        "subject": "Thanks for subscribing!",
+        "existsEmail": "Email exists!"
+    },
+    "productCard": {
+        "outOfStock": "Out of stock"
     },
     "productDetail": {
         "addToCart": "Add to cart successfully.",
         "chooseOption": "Please choose product options."
     },
-    "button": {
-        "moreInfor": "More information",
-        "viewAll": "View All",
-        "viewDetail": "Shop the look",
-        "submitButton": "Submit"
-    },
-    "slider": {
-        "previous": "Previous",
-        "next": "Next"
-    },
-    "productCard": {
-        "outOfStock": "Out of stock"
-    },
-    "footer": {
-        "address": "Address",
-        "copyright": "Dyoss clone to learning React.",
-        "terms": "Terms & conditions",
-        "privacy": "Privacy policy"
-    },
-    "newsletter": {
-        "newsletter": "Newsletter",
-        "newsletterPlaceholder": "Enter your email to receive offers...",
-        "invalidEmail": "Invalid email",
-        "requiredEmail": "Required",
-        "subject": "Thanks for subscribing!",
-        "mailDear": "Dear you",
-        "mailContent": "Thank you for subscribing to DYOSS information. We will notify you of new product information and promotions as quickly as possible.",
-        "mailThanks": "Thanks for subscribing.",
-        "pending": "Processing...",
-        "error": "We get some error. Please try again later."
-    },
-    "gallery": {
-        "headingProducts": "Related products"
-    },
-    "viewedProduct": "Viewed products",
-    "login": {
-        "login": "Login",
-        "user": "Email or phone number",
-        "userError": "Input email or phone number!",
-        "password": "Password",
-        "passwordError": "Input password!",
-        "remember": "Remember me",
-        "forgot": "Forgot password",
-        "clickHere": "Click here",
-        "orLogin": "Or login with",
-        "dontHaveAccount": "You don't have account?",
-        "errors": {
-            "invalidUser": "Email or phone not exists.",
-            "wrongPassword": "Wrong password."
-        }
-    },
     "register": {
-        "register": "Register",
-        "invalidEmail": "Invalid email!",
-        "requiredEmail": "Email required!",
-        "phone": "Phone",
-        "requiredPhone": "Phone required!",
-        "name": "Name",
-        "requiredName": "Name required!",
-        "address": "Address",
-        "requiredAddress": "Address required!",
-        "password": "Password",
-        "requiredPassword": "Password required!",
-        "minPassword": "Password must be at least 8 characters!",
-        "confirmPassword": "Confirm password",
-        "requiredConfirmPassword": "Confirm password required!",
-        "confirmPasswordError": "Confirm password not match!",
         "accept": "I have reviewed and agree to the Dyoss's policy.",
-        "requiredAccept": "Please accept the creation of a new customer account!",
-        "haveAccount": "You already have an account.",
-        "success": "Create new account successfully. Redirecting to login page.",
+        "address": "Address",
+        "confirmPassword": "Confirm password",
+        "confirmPasswordError": "Confirm password not match!",
         "error": {
             "400": "Email or phone exists."
-        }
+        },
+        "haveAccount": "You already have an account.",
+        "invalidEmail": "Invalid email!",
+        "minPassword": "Password must be at least 8 characters!",
+        "name": "Name",
+        "password": "Password",
+        "phone": "Phone",
+        "register": "Register",
+        "requiredAccept": "Please accept the creation of a new customer account!",
+        "requiredAddress": "Address required!",
+        "requiredConfirmPassword": "Confirm password required!",
+        "requiredEmail": "Email required!",
+        "requiredName": "Name required!",
+        "requiredPassword": "Password required!",
+        "requiredPhone": "Phone required!",
+        "success": "Create new account successfully. Redirecting to login page."
+    },
+    "search": {
+        "noResult": "No search results for",
+        "placeHolder": "Enter search keyword...",
+        "searchResult": "Search result"
+    },
+    "slider": {
+        "next": "Next",
+        "previous": "Previous"
+    },
+    "viewedProduct": "Viewed products",
+    "checkout": {
+        "orderTitle": "Your order ({{totalItems}} items)",
+        "unitPrice": "Unit price",
+        "quantity": "Quantity",
+        "total": "Total",
+        "remove": "Remove",
+        "contactInfo": "Contact information",
+        "name": "Name",
+        "requiredName": "Name required!",
+        "invalidEmail": "Invalid email!",
+        "requiredEmail": "Email required!",
+        "requiredAddress": "Address required!",
+        "selectCity": "Select province/city!",
+        "requiredPhone": "Phone required!",
+        "invalidPhone": "Invalid phone!",
+        "selectCityFirst": "Select province/city first!",
+        "selectDistrict": "Select district!",
+        "selectDistrictFirst": "Select district first!",
+        "selectWard": "Select ward!",
+        "phone": "Phone",
+        "address": "Address",
+        "note": "Note",
+        "checkout": "Checkout",
+        "itemsPrice": "Items price",
+        "shippingPrice": "Shipping price",
+        "selectCityOption": "Select province/city",
+        "selectDistrictOption": "Select district",
+        "selectWardOption": "Select ward"
     }
 }

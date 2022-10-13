@@ -10,6 +10,7 @@ import ProductSlider from '~/components/ProductSlider';
 import ProductViewed from '~/components/ProductViewed';
 import { changeProgress } from '~/features/loader';
 import { fetchProducts } from '~/features/products';
+import usePageTitle from '~/hooks/usePageTitle';
 import style from './Home.module.scss';
 
 const cx = classNames.bind(style);
@@ -17,6 +18,7 @@ const cx = classNames.bind(style);
 function Home() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
+    usePageTitle();
 
     const productStatus = useSelector(state => state.products.status);
     const sellingProducts = useSelector(state => state.products.sellingProducts);

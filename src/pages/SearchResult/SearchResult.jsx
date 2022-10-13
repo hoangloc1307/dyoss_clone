@@ -1,10 +1,12 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import ProductByCategory from '~/components/ProductByCategory';
 import { changeProgress } from '~/features/loader';
+import usePageTitle from '~/hooks/usePageTitle';
 import * as http from '~/utils/http';
 import style from './SearchResult.module.scss';
 
@@ -13,6 +15,8 @@ const cx = classNames.bind(style);
 function SearchResult() {
     const location = useLocation();
     const dispatch = useDispatch();
+    const { t } = useTranslation();
+    usePageTitle(`${location.state.keyword} - ${t('search.searchResult')}`);
 
     const [products, setProducts] = useState([]);
     const [displayKeyword, setDisplayKeyword] = useState('');
@@ -43,9 +47,14 @@ function SearchResult() {
                 {(fetchStatus === 0 || fetchStatus === 100) && (
                     <>
                         {products.length > 0 ? (
-                            <ProductByCategory title={`Search Result: "${displayKeyword}"`} listProduct={products} />
+                            <ProductByCategory
+                                title={`${t('search.searchResult')}: "${displayKeyword}"`}
+                                listProduct={products}
+                            />
                         ) : (
-                            <h2 className={cx('not-found')}>Không tìm thấy kết quả cho "{displayKeyword}"</h2>
+                            <h2 className={cx('not-found')}>
+                                {t('search.noResult')} "{displayKeyword}"
+                            </h2>
                         )}
                     </>
                 )}
